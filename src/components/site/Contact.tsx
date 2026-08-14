@@ -4,7 +4,6 @@ import {
   MapPin,
   Phone,
   Clock,
-  MessageCircle,
   CheckCircle2,
   Linkedin,
   Instagram,
@@ -17,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Reveal } from "./Reveal";
 import { SITE } from "@/lib/site";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 const BRANDS = [
   "Mercedes-Benz",
@@ -48,12 +48,38 @@ const FLEET_SIZES = ["1 – 5 vehicles", "6 – 20 vehicles", "21 – 100 vehicl
 const selectClass =
   "flex h-11 w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
+const CONTACT_INBOX = "office@autodome.ae";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const value = (key: string) => String(data.get(key) ?? "").trim() || "—";
+
+    const subject = `Website enquiry — ${value("service")} — ${value("fullName")}`;
+    const body = [
+      `Full Name: ${value("fullName")}`,
+      `Company: ${value("company")}`,
+      `Country: ${value("country")}`,
+      `Email: ${value("email")}`,
+      `Phone: ${value("phone")}`,
+      `Vehicle Brand: ${value("brand")}`,
+      `Service Required: ${value("service")}`,
+      `Fleet Size: ${value("fleetSize")}`,
+      "",
+      "Message:",
+      value("message"),
+      "",
+      "Sent from autodome.ae contact form",
+    ].join("\n");
+
+    window.location.href = `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
@@ -140,7 +166,7 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageCircle className="size-4" aria-hidden="true" />
+                    <WhatsAppIcon className="size-4" />
                     WhatsApp
                   </a>
                 </Button>

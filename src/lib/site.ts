@@ -5,7 +5,7 @@ export const SITE = {
     name: "ADL Automotive",
     url: "https://adlautomotive.com",
   },
-  email: "Office@autodome.ae",
+  email: "office@autodome.ae",
   phones: ["+971 6 565 8212", "+971 52 191 4444"],
   whatsapp: "971521914444",
   address: "407A, Al Sajaa Industrial, Sharjah — United Arab Emirates",
