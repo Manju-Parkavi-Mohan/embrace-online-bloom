@@ -20,7 +20,7 @@ export function Brands() {
   return (
     <section
       aria-label="Supported vehicle brands"
-      className="section-dark border-y border-border py-16 sm:py-20 lg:py-24"
+      className="section-dark border-y border-border py-12 sm:py-14 lg:py-16"
     >
       <div className="section-shell">
         <Reveal className="max-w-2xl">

@@ -11,7 +11,7 @@ const PILLARS = [
 
 export function Training() {
   return (
-    <section id="training" className="relative isolate overflow-hidden py-28 sm:py-32 lg:py-40">
+    <section id="training" className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
       <img
         src={trainingImage}
         alt="AutoDome instructor leading an advanced diagnostics training program"

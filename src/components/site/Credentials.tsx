@@ -24,7 +24,7 @@ const CERTIFICATIONS = [
 
 export function Credentials() {
   return (
-    <section id="credentials" className="bg-background py-20 sm:py-28 lg:py-36">
+    <section id="credentials" className="bg-background py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">

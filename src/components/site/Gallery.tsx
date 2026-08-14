@@ -27,7 +27,7 @@ export function Gallery() {
   };
 
   return (
-    <section className="py-20 sm:py-28 lg:py-36">
+    <section className="py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
           <Reveal className="min-w-0 max-w-3xl">
