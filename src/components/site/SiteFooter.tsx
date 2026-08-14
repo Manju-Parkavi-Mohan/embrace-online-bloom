@@ -14,26 +14,19 @@ const SERVICES = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary-deep text-primary-foreground">
+    <footer className="section-dark text-primary-foreground">
       <div className="section-shell py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary-foreground/10 p-1.5">
-                <img
-                  src={logo}
-                  alt="AutoDome logo"
-                  width={44}
-                  height={44}
-                  className="h-full w-full object-contain"
-                />
+                <img src={logo} alt="AutoDome logo" width={44} height={44} className="h-full w-full object-contain" />
               </span>
               <span className="font-display text-xl font-bold tracking-tight">AUTODOME</span>
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              A technology-driven automotive solutions provider specialising in commercial vehicles
-              and equipment — diagnostics, ECU solutions, repairs, genuine parts, training, and
-              workshop technology.
+              A technology-driven automotive solutions provider specialising in commercial vehicles and equipment —
+              diagnostics, ECU solutions, repairs, genuine parts, training, and workshop technology.
             </p>
             <div className="mt-7 flex gap-3">
               {[
@@ -54,9 +47,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Quick links">
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
-              Quick Links
-            </h2>
+            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Quick Links</h2>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -69,9 +60,7 @@ export function SiteFooter() {
           </nav>
 
           <div>
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
-              Services
-            </h2>
+            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Services</h2>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {SERVICES.map((service) => (
                 <li key={service}>
@@ -84,9 +73,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
-              Contact
-            </h2>
+            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Contact</h2>
             <ul className="mt-6 space-y-4 text-sm text-primary-foreground/75">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
@@ -105,10 +92,7 @@ export function SiteFooter() {
               ))}
               <li className="flex gap-3">
                 <Mail className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="transition-colors hover:text-primary-foreground"
-                >
+                <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-primary-foreground">
                   {SITE.email}
                 </a>
               </li>
@@ -140,7 +124,6 @@ export function SiteFooter() {
               {SITE.storefront.name}
             </a>
           </p>
-
         </div>
       </div>
     </footer>
