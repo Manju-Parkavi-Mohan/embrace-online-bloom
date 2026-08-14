@@ -134,10 +134,6 @@ export function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="mt-10 flex justify-end gap-3">
-              <CarouselPrevious className="static translate-y-0 size-11" />
-              <CarouselNext className="static translate-y-0 size-11" />
-            </div>
           </Carousel>
         </Reveal>
       </div>
