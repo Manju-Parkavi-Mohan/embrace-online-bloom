@@ -17,9 +17,15 @@ const TITLE_LINES: Record<string, [string, string]> = {
 function ServiceSlide({
   service,
   index,
+  isActive,
+  onPrev,
+  onNext,
 }: {
   service: (typeof SERVICES)[number];
   index: number;
+  isActive: boolean;
+  onPrev: () => void;
+  onNext: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const needsToggle = service.body.length > PREVIEW_LENGTH;
@@ -29,22 +35,44 @@ function ServiceSlide({
 
   return (
     <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
-      <Link
-        to="/services/$slug"
-        params={{ slug: service.slug }}
-        aria-label={`Open ${service.title} service page`}
-        className="group block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        <img
-          src={service.image}
-          alt={service.alt}
-          width={1200}
-          height={900}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
-        />
-      </Link>
+      <div className="relative">
+        {isActive && (
+          <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Previous service"
+              className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 bg-ink/40 text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary-foreground hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <ChevronLeft className="size-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              aria-label="Next service"
+              className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 bg-ink/40 text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary-foreground hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <ChevronRight className="size-4" aria-hidden="true" />
+            </button>
+          </div>
+        )}
+        <Link
+          to="/services/$slug"
+          params={{ slug: service.slug }}
+          aria-label={`Open ${service.title} service page`}
+          className="group block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <img
+            src={service.image}
+            alt={service.alt}
+            width={1200}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+          />
+        </Link>
+      </div>
 
       <div>
         <p className="font-display text-sm font-bold tracking-[0.2em] text-primary-foreground/70">
@@ -119,38 +147,18 @@ export function Services() {
     <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <Reveal>
-          <div className="flex items-center justify-between gap-4">
-            <p className="eyebrow !text-primary-foreground">
-              <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
-              Services
-            </p>
-            <div className="flex shrink-0 items-center gap-2">
-              <button
-                type="button"
-                onClick={() => go(-1)}
-                aria-label="Previous service"
-                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronLeft className="size-4" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                onClick={() => go(1)}
-                aria-label="Next service"
-                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronRight className="size-4" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-          <div className="max-w-3xl">
-          <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Seven engineering disciplines. One accountable partner.
-          </h2>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-lg">
-            Every AutoDome service is built around measurable uptime, technical accuracy, and
-            long-term reliability for commercial vehicle operators.
+          <p className="eyebrow !text-primary-foreground">
+            <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
+            Services
           </p>
+          <div className="max-w-3xl">
+            <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              Seven engineering disciplines. One accountable partner.
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-lg">
+              Every AutoDome service is built around measurable uptime, technical accuracy, and
+              long-term reliability for commercial vehicle operators.
+            </p>
           </div>
         </Reveal>
 
@@ -176,7 +184,13 @@ export function Services() {
                     className="w-full shrink-0 px-0.5"
                     aria-hidden={index !== active}
                   >
-                    <ServiceSlide service={service} index={index} />
+                    <ServiceSlide
+                      service={service}
+                      index={index}
+                      isActive={index === active}
+                      onPrev={() => go(-1)}
+                      onNext={() => go(1)}
+                    />
                   </div>
                 ))}
               </div>

@@ -1,5 +1,6 @@
-import { Quote, Star, ArrowUpRight } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState } from "react";
+import { Quote, Star, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { Reveal } from "./Reveal";
 import { REVIEWS_URL } from "@/lib/site";
 
@@ -73,70 +74,85 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export function Testimonials() {
+  const [api, setApi] = useState<CarouselApi>();
+
   return (
     <section className="bg-surface py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
-        <Carousel opts={{ align: "start", loop: true }}>
-        <Reveal className="max-w-3xl">
-          <div className="flex items-center justify-between">
+        <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
+          <Reveal className="max-w-3xl">
             <p className="eyebrow">
               <span className="h-px w-8 bg-accent" aria-hidden="true" />
               Client Feedback
             </p>
+            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              Trusted by fleets, workshops, and industrial operators.
+            </h2>
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <Stars rating={5} />
+                <p className="text-sm font-semibold text-foreground">5.0 from {TOTAL_REVIEWS} Google reviews</p>
+                <a
+                  href={REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
+                >
+                  Read all {TOTAL_REVIEWS} reviews
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                </a>
+              </div>
 
-            {/* Compact Chevron Controls */}
-            <div className="flex items-center gap-2">
-              <CarouselPrevious className="static translate-y-0 size-8 text-foreground border-border/40 hover:bg-muted" />
-              <CarouselNext className="static translate-y-0 size-8 text-foreground border-border/40 hover:bg-muted" />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => api?.scrollPrev()}
+                  aria-label="Previous testimonial"
+                  className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <ChevronLeft className="size-4" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => api?.scrollNext()}
+                  aria-label="Next testimonial"
+                  className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <ChevronRight className="size-4" aria-hidden="true" />
+                </button>
+              </div>
             </div>
-          </div>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Trusted by fleets, workshops, and industrial operators.
-          </h2>
-          <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <Stars rating={5} />
-            <p className="text-sm font-semibold text-foreground">5.0 from {TOTAL_REVIEWS} Google reviews</p>
-            <a
-              href={REVIEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
-            >
-              Read all {TOTAL_REVIEWS} reviews
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={100}>
-          <div className="mt-14">
-            <CarouselContent className="-ml-5">
-              {TESTIMONIALS.map((item) => (
-                <CarouselItem key={item.name} className="pl-5 md:basis-1/2 lg:basis-1/3">
-                  <figure className="flex h-full flex-col rounded-3xl border border-border bg-card p-9 shadow-soft">
-                    <Quote className="size-9 text-accent" aria-hidden="true" />
-                    <blockquote className="mt-6 flex-1 text-base leading-relaxed text-foreground">
-                      {item.quote}
-                    </blockquote>
-                    <figcaption className="mt-8 border-t border-border pt-6">
-                      <Stars rating={item.rating} />
-                      <p className="mt-2 font-display text-sm font-bold text-foreground">{item.name}</p>
-                      <a
-                        href={REVIEWS_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        View review on Google
-                        <ArrowUpRight className="size-3" aria-hidden="true" />
-                      </a>
-                    </figcaption>
-                  </figure>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </div>
-        </Reveal>
+          <Reveal delay={100}>
+            <div className="mt-14">
+              <CarouselContent className="-ml-5">
+                {TESTIMONIALS.map((item) => (
+                  <CarouselItem key={item.name} className="pl-5 md:basis-1/2 lg:basis-1/3">
+                    <figure className="flex h-full flex-col rounded-3xl border border-border bg-card p-9 shadow-soft">
+                      <Quote className="size-9 text-accent" aria-hidden="true" />
+                      <blockquote className="mt-6 flex-1 text-base leading-relaxed text-foreground">
+                        {item.quote}
+                      </blockquote>
+                      <figcaption className="mt-8 border-t border-border pt-6">
+                        <Stars rating={item.rating} />
+                        <p className="mt-2 font-display text-sm font-bold text-foreground">{item.name}</p>
+                        <a
+                          href={REVIEWS_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                        >
+                          View review on Google
+                          <ArrowUpRight className="size-3" aria-hidden="true" />
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </div>
+          </Reveal>
         </Carousel>
       </div>
     </section>
