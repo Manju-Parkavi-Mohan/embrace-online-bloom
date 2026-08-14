@@ -1,11 +1,5 @@
 import { Quote, Star, ArrowUpRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Reveal } from "./Reveal";
 import { REVIEWS_URL } from "@/lib/site";
 
@@ -83,18 +77,24 @@ export function Testimonials() {
     <section className="bg-surface py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow">
-            <span className="h-px w-8 bg-accent" aria-hidden="true" />
-            Client Feedback
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="eyebrow">
+              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              Client Feedback
+            </p>
+
+            {/* Compact Chevron Controls */}
+            <div className="flex items-center gap-2">
+              <CarouselPrevious className="static translate-y-0 size-8 text-foreground border-border/40 hover:bg-muted" />
+              <CarouselNext className="static translate-y-0 size-8 text-foreground border-border/40 hover:bg-muted" />
+            </div>
+          </div>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Trusted by fleets, workshops, and industrial operators.
           </h2>
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
             <Stars rating={5} />
-            <p className="text-sm font-semibold text-foreground">
-              5.0 from {TOTAL_REVIEWS} Google reviews
-            </p>
+            <p className="text-sm font-semibold text-foreground">5.0 from {TOTAL_REVIEWS} Google reviews</p>
             <a
               href={REVIEWS_URL}
               target="_blank"
@@ -119,9 +119,7 @@ export function Testimonials() {
                     </blockquote>
                     <figcaption className="mt-8 border-t border-border pt-6">
                       <Stars rating={item.rating} />
-                      <p className="mt-2 font-display text-sm font-bold text-foreground">
-                        {item.name}
-                      </p>
+                      <p className="mt-2 font-display text-sm font-bold text-foreground">{item.name}</p>
                       <a
                         href={REVIEWS_URL}
                         target="_blank"
