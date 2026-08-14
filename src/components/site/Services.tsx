@@ -23,7 +23,12 @@ function ServiceSlide({
 
   return (
     <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
-      <div className="overflow-hidden rounded-3xl shadow-soft">
+      <Link
+        to="/services/$slug"
+        params={{ slug: service.slug }}
+        aria-label={`Open ${service.title} service page`}
+        className="group block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
         <img
           src={service.image}
           alt={service.alt}
@@ -31,16 +36,23 @@ function ServiceSlide({
           height={900}
           loading="lazy"
           decoding="async"
-          className="aspect-[4/3] w-full object-cover"
+          className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
         />
-      </div>
+      </Link>
 
       <div>
         <p className="font-display text-sm font-bold tracking-[0.2em] text-primary-foreground/70">
           {String(index + 1).padStart(2, "0")}
         </p>
         <h3 className="mt-3 font-display text-xl font-bold leading-snug sm:text-2xl lg:text-3xl">
-          {service.title}
+          <Link
+            to="/services/$slug"
+            params={{ slug: service.slug }}
+            className="inline-flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {service.title}
+            <ArrowRight className="size-5 shrink-0" aria-hidden="true" />
+          </Link>
         </h3>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           {expanded ? `${service.body} ` : preview}
@@ -63,14 +75,6 @@ function ServiceSlide({
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
           </Button>
-          <Link
-            to="/services/$slug"
-            params={{ slug: service.slug }}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground underline underline-offset-4 transition-opacity hover:opacity-80"
-          >
-            View service page
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
         </div>
       </div>
     </article>
