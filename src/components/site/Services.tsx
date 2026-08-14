@@ -119,10 +119,30 @@ export function Services() {
     <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow !text-primary-foreground">
-            <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
-            Services
-          </p>
+          <div className="flex items-center justify-between gap-4">
+            <p className="eyebrow !text-primary-foreground">
+              <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
+              Services
+            </p>
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                aria-label="Previous service"
+                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
+              >
+                <ChevronLeft className="size-4" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={() => go(1)}
+                aria-label="Next service"
+                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
+              >
+                <ChevronRight className="size-4" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
           <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Seven engineering disciplines. One accountable partner.
           </h2>
@@ -132,7 +152,7 @@ export function Services() {
           </p>
         </Reveal>
 
-        <Reveal className="mt-12 sm:mt-16">
+        <Reveal className="mt-8 sm:mt-10">
           <div
             className="relative"
             onMouseEnter={() => setPaused(true)}
@@ -160,16 +180,7 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <button
-                type="button"
-                onClick={() => go(-1)}
-                aria-label="Previous service"
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-primary-foreground/30 bg-transparent text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronLeft className="size-5" aria-hidden="true" />
-              </button>
-
+            <div className="mt-5 flex items-center justify-center">
               <div className="flex items-center gap-2">
                 {SERVICES.map((service, index) => (
                   <button
@@ -187,15 +198,6 @@ export function Services() {
                   />
                 ))}
               </div>
-
-              <button
-                type="button"
-                onClick={() => go(1)}
-                aria-label="Next service"
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-primary-foreground/30 bg-transparent text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronRight className="size-5" aria-hidden="true" />
-              </button>
             </div>
           </div>
         </Reveal>
