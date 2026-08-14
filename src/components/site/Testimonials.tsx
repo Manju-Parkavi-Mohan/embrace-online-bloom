@@ -76,6 +76,7 @@ export function Testimonials() {
   return (
     <section className="bg-surface py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
+        <Carousel opts={{ align: "start", loop: true }}>
         <Reveal className="max-w-3xl">
           <div className="flex items-center justify-between">
             <p className="eyebrow">
@@ -108,7 +109,7 @@ export function Testimonials() {
         </Reveal>
 
         <Reveal delay={100}>
-          <Carousel opts={{ align: "start", loop: true }} className="mt-14">
+          <div className="mt-14">
             <CarouselContent className="-ml-5">
               {TESTIMONIALS.map((item) => (
                 <CarouselItem key={item.name} className="pl-5 md:basis-1/2 lg:basis-1/3">
@@ -134,8 +135,9 @@ export function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </Carousel>
+          </div>
         </Reveal>
+        </Carousel>
       </div>
     </section>
   );
