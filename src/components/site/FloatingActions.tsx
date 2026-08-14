@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -24,7 +25,7 @@ export function FloatingActions() {
           aria-label="Chat with AutoDome on WhatsApp"
           className="grid size-13 place-items-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 hover:-translate-y-0.5"
         >
-          <MessageCircle className="size-5" aria-hidden="true" />
+          <WhatsAppIcon className="size-6" />
         </a>
         <a
           href={`tel:${SITE.phones[1].replace(/\s/g, "")}`}
