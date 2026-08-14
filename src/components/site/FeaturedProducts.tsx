@@ -63,7 +63,7 @@ export function FeaturedProducts() {
   return (
     <div className="mt-14 sm:mt-16">
       {/* Gradient banner header, cards overlap the band below it */}
-      <div className="relative overflow-hidden rounded-3xl bg-primary px-5 pb-28 pt-10 sm:px-9 sm:pb-32 sm:pt-12">
+      <div className="section-dark relative overflow-hidden rounded-3xl px-5 pb-28 pt-10 sm:px-9 sm:pb-32 sm:pt-12">
         <div className="flex flex-wrap items-center justify-between gap-5">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-primary-foreground/70">

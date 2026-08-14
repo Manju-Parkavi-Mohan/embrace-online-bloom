@@ -12,7 +12,7 @@ export function Stats() {
   const { ref, run } = useRollTrigger<HTMLDivElement>();
 
   return (
-    <section aria-label="Company statistics" className="bg-primary py-20 sm:py-28 lg:py-32">
+    <section aria-label="Company statistics" className="section-dark py-20 sm:py-28 lg:py-32">
       <div ref={ref} className="section-shell">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, index) => (
