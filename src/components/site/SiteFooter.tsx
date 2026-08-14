@@ -15,7 +15,7 @@ const SERVICES = [
 export function SiteFooter() {
   return (
     <footer className="bg-primary-deep text-primary-foreground">
-      <div className="section-shell py-20 lg:py-24">
+      <div className="section-shell py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">

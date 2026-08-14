@@ -90,7 +90,7 @@ function ServicePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="section-shell grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <Reveal>
               <p className="eyebrow">
@@ -132,7 +132,7 @@ function ServicePage() {
           </div>
         </section>
 
-        <section className="bg-surface py-16 sm:py-24">
+        <section className="bg-surface py-12 sm:py-16">
           <div className="section-shell">
             <h2 className="font-display text-2xl font-bold sm:text-3xl">Other AutoDome services</h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

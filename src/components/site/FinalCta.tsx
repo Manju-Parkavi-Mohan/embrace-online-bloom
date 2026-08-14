@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 
 export function FinalCta() {
   return (
-    <section className="relative isolate overflow-hidden py-28 sm:py-32 lg:py-40">
+    <section className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
       <img
         src={ctaImage}
         alt="Large commercial truck fleet parked at a logistics depot at sunrise"

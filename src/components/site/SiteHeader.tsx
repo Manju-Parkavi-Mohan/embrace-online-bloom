@@ -31,7 +31,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-border/70 bg-background/85 backdrop-blur-xl shadow-soft"
+          ? "border-b border-border bg-background shadow-soft"
           : "border-b border-transparent",
       )}
     >

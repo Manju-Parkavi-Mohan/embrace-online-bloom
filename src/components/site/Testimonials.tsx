@@ -80,7 +80,7 @@ function Stars({ rating }: { rating: number }) {
 
 export function Testimonials() {
   return (
-    <section className="bg-surface py-24 sm:py-32 lg:py-40">
+    <section className="bg-surface py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">

@@ -8,6 +8,12 @@ import { cn } from "@/lib/utils";
 
 const PREVIEW_LENGTH = 165;
 
+/* Short titles that should still read as two lines like the others */
+const TITLE_LINES: Record<string, [string, string]> = {
+  "ECU Repair & Reprogramming": ["ECU Repair", "& Reprogramming"],
+  "Advanced Training Programs": ["Advanced", "Training Programs"],
+};
+
 function ServiceSlide({
   service,
   index,
@@ -50,7 +56,14 @@ function ServiceSlide({
             params={{ slug: service.slug }}
             className="inline-flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            {service.title}
+            {TITLE_LINES[service.title] ? (
+              <span className="block">
+                <span className="block">{TITLE_LINES[service.title]![0]}</span>
+                <span className="block">{TITLE_LINES[service.title]![1]}</span>
+              </span>
+            ) : (
+              service.title
+            )}
             <ArrowRight className="size-5 shrink-0" aria-hidden="true" />
           </Link>
         </h3>
@@ -103,13 +116,34 @@ export function Services() {
   }, [paused, total]);
 
   return (
-    <section id="solutions" className="section-dark py-20 sm:py-28 lg:py-36">
+    <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
-        <Reveal className="max-w-3xl">
-          <p className="eyebrow !text-primary-foreground">
-            <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
-            Services
-          </p>
+        <Reveal>
+          <div className="flex items-center justify-between gap-4">
+            <p className="eyebrow !text-primary-foreground">
+              <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
+              Services
+            </p>
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => go(-1)}
+                aria-label="Previous service"
+                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
+              >
+                <ChevronLeft className="size-4" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={() => go(1)}
+                aria-label="Next service"
+                className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
+              >
+                <ChevronRight className="size-4" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+          <div className="max-w-3xl">
           <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Seven engineering disciplines. One accountable partner.
           </h2>
@@ -117,9 +151,10 @@ export function Services() {
             Every AutoDome service is built around measurable uptime, technical accuracy, and
             long-term reliability for commercial vehicle operators.
           </p>
+          </div>
         </Reveal>
 
-        <Reveal className="mt-12 sm:mt-16">
+        <Reveal className="mt-8 sm:mt-10">
           <div
             className="relative"
             onMouseEnter={() => setPaused(true)}
@@ -147,16 +182,7 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <button
-                type="button"
-                onClick={() => go(-1)}
-                aria-label="Previous service"
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-primary-foreground/30 bg-transparent text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronLeft className="size-5" aria-hidden="true" />
-              </button>
-
+            <div className="mt-5 flex items-center justify-center">
               <div className="flex items-center gap-2">
                 {SERVICES.map((service, index) => (
                   <button
@@ -174,15 +200,6 @@ export function Services() {
                   />
                 ))}
               </div>
-
-              <button
-                type="button"
-                onClick={() => go(1)}
-                aria-label="Next service"
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-primary-foreground/30 bg-transparent text-primary-foreground transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-ink"
-              >
-                <ChevronRight className="size-5" aria-hidden="true" />
-              </button>
             </div>
           </div>
         </Reveal>
