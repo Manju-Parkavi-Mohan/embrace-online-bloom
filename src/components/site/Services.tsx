@@ -118,7 +118,7 @@ export function Services() {
   return (
     <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
-        <Reveal className="max-w-3xl">
+        <Reveal>
           <div className="flex items-center justify-between gap-4">
             <p className="eyebrow !text-primary-foreground">
               <span className="h-px w-8 bg-primary-foreground" aria-hidden="true" />
@@ -143,6 +143,7 @@ export function Services() {
               </button>
             </div>
           </div>
+          <div className="max-w-3xl">
           <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Seven engineering disciplines. One accountable partner.
           </h2>
@@ -150,6 +151,7 @@ export function Services() {
             Every AutoDome service is built around measurable uptime, technical accuracy, and
             long-term reliability for commercial vehicle operators.
           </p>
+          </div>
         </Reveal>
 
         <Reveal className="mt-8 sm:mt-10">
