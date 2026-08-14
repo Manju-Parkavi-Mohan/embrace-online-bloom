@@ -17,9 +17,15 @@ const TITLE_LINES: Record<string, [string, string]> = {
 function ServiceSlide({
   service,
   index,
+  isActive,
+  onPrev,
+  onNext,
 }: {
   service: (typeof SERVICES)[number];
   index: number;
+  isActive: boolean;
+  onPrev: () => void;
+  onNext: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const needsToggle = service.body.length > PREVIEW_LENGTH;

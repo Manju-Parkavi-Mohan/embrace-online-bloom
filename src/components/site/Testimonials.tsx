@@ -1,5 +1,6 @@
-import { Quote, Star, ArrowUpRight } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState } from "react";
+import { Quote, Star, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { Reveal } from "./Reveal";
 import { REVIEWS_URL } from "@/lib/site";
 
