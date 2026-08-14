@@ -23,7 +23,7 @@ export function FloatingActions() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with AutoDome on WhatsApp"
-          className="grid size-13 place-items-center rounded-full bg-primary text-primary-foreground shadow-brand transition-transform duration-300 hover:-translate-y-0.5"
+          className="grid size-13 place-items-center rounded-full bg-[#25D366] text-white shadow-brand transition-transform duration-300 hover:-translate-y-0.5"
         >
           <WhatsAppIcon className="size-6" />
         </a>
