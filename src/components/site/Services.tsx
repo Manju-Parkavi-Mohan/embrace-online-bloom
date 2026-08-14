@@ -8,6 +8,12 @@ import { cn } from "@/lib/utils";
 
 const PREVIEW_LENGTH = 165;
 
+/* Short titles that should still read as two lines like the others */
+const TITLE_LINES: Record<string, [string, string]> = {
+  "ECU Repair & Reprogramming": ["ECU Repair", "& Reprogramming"],
+  "Advanced Training Programs": ["Advanced", "Training Programs"],
+};
+
 function ServiceSlide({
   service,
   index,
@@ -50,7 +56,14 @@ function ServiceSlide({
             params={{ slug: service.slug }}
             className="inline-flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            {service.title}
+            {TITLE_LINES[service.title] ? (
+              <span className="block">
+                <span className="block">{TITLE_LINES[service.title]![0]}</span>
+                <span className="block">{TITLE_LINES[service.title]![1]}</span>
+              </span>
+            ) : (
+              service.title
+            )}
             <ArrowRight className="size-5 shrink-0" aria-hidden="true" />
           </Link>
         </h3>
