@@ -73,7 +73,7 @@ export function Hero() {
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-foreground sm:text-base">
               Authorized Partners
             </p>
-            <ul className="mt-6 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
+            <ul className="mt-6 flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-12">
               {HERO_PARTNERS.map((partner) => (
                 <li key={partner.name} className="flex items-center justify-center">
                   <img
@@ -83,7 +83,7 @@ export function Hero() {
                     height={120}
                     loading="lazy"
                     decoding="async"
-                    className="h-24 w-auto max-w-[280px] rounded-2xl object-contain sm:h-28 sm:max-w-[320px]"
+                    className="h-16 w-auto max-w-[150px] rounded-2xl object-contain sm:h-28 sm:max-w-[320px]"
                   />
                 </li>
               ))}

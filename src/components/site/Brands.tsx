@@ -42,9 +42,9 @@ export function Brands() {
           {loop.map((brand, index) => (
             <li
               key={`${brand}-${index}`}
-              className="grid h-20 w-[170px] shrink-0 place-items-center rounded-2xl border border-border bg-card px-5 text-center sm:h-24 sm:w-[210px]"
+              className="chip-light grid h-20 w-[170px] shrink-0 place-items-center rounded-2xl border px-5 text-center sm:h-24 sm:w-[210px]"
             >
-              <span className="font-display text-sm font-bold tracking-tight text-foreground sm:text-base">
+              <span className="font-display text-sm font-bold tracking-tight sm:text-base">
                 {brand}
               </span>
             </li>
