@@ -13,11 +13,11 @@ const buttonVariants = cva(
           "bg-primary text-primary-foreground shadow-soft hover:bg-primary-deep hover:-translate-y-0.5 hover:shadow-brand",
         hero: "bg-primary text-primary-foreground shadow-brand hover:bg-primary-deep hover:-translate-y-0.5",
         light:
-          "bg-primary-foreground text-ink shadow-lifted hover:bg-primary-foreground/90 hover:-translate-y-0.5",
+          "bg-primary-foreground text-ink shadow-lifted hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-brand",
         outlineBrand:
           "border border-primary/40 bg-card text-primary hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 hover:shadow-brand",
         onImage:
-          "border border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground hover:text-primary hover:-translate-y-0.5",
+          "border border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground backdrop-blur-sm hover:bg-accent hover:text-accent-foreground hover:border-accent hover:-translate-y-0.5 hover:shadow-lifted",
         accent:
           "bg-accent text-accent-foreground shadow-soft hover:brightness-105 hover:-translate-y-0.5 hover:shadow-lifted",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",

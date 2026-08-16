@@ -5,6 +5,7 @@ import { SERVICES } from "@/lib/services";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import logo from "@/assets/autodome-logo.png";
+import darkLogoAsset from "@/assets/autodome-logo-dark.png.asset.json";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -37,9 +38,14 @@ export function SiteHeader() {
     >
       <div className="section-shell flex h-16 items-center justify-between gap-4 sm:h-18 sm:gap-6">
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
-          <span className="grid shrink-0 place-items-center rounded-xl bg-foreground px-2 py-1 shadow-soft">
+          <span
+            className={cn(
+              "grid shrink-0 place-items-center rounded-xl transition-all duration-300",
+              scrolled ? "" : "bg-foreground px-2 py-1 shadow-soft",
+            )}
+          >
             <img
-              src={logo}
+              src={scrolled ? darkLogoAsset.url : logo}
               alt="AutoDome logo"
               width={200}
               height={80}
@@ -169,9 +175,9 @@ export function SiteHeader() {
         >
           <div className="flex items-center justify-between gap-3">
             <span className="flex min-w-0 items-center gap-3">
-              <span className="grid shrink-0 place-items-center rounded-2xl bg-foreground px-3 py-2">
+              <span className="grid shrink-0 place-items-center rounded-2xl">
                 <img
-                  src={logo}
+                  src={darkLogoAsset.url}
                   alt="AutoDome logo"
                   width={180}
                   height={72}
