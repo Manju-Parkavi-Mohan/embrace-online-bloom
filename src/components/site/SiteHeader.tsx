@@ -38,12 +38,7 @@ export function SiteHeader() {
     >
       <div className="section-shell flex h-16 items-center justify-between gap-4 sm:h-18 sm:gap-6">
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
-          <span
-            className={cn(
-              "grid shrink-0 place-items-center rounded-xl transition-all duration-300",
-              scrolled ? "" : "bg-foreground px-2 py-1 shadow-soft",
-            )}
-          >
+          <span className="grid shrink-0 place-items-center transition-all duration-300">
             <img
               src={scrolled ? darkLogoAsset.url : logo}
               alt="AutoDome logo"
