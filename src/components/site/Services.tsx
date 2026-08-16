@@ -60,7 +60,7 @@ function ServiceSlide({
           to="/services/$slug"
           params={{ slug: service.slug }}
           aria-label={`Open ${service.title} service page`}
-          className="group block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group relative block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <img
             src={service.image}
