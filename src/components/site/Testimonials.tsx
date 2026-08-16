@@ -103,12 +103,12 @@ export function Testimonials() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="ml-auto flex w-full items-center justify-end gap-2 sm:w-auto">
                 <button
                   type="button"
                   onClick={() => api?.scrollPrev()}
                   aria-label="Previous testimonial"
-                  className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="grid size-8 place-items-center rounded-full border border-foreground/30 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <ChevronLeft className="size-4" aria-hidden="true" />
                 </button>
@@ -116,7 +116,7 @@ export function Testimonials() {
                   type="button"
                   onClick={() => api?.scrollNext()}
                   aria-label="Next testimonial"
-                  className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="grid size-8 place-items-center rounded-full border border-foreground/30 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <ChevronRight className="size-4" aria-hidden="true" />
                 </button>
@@ -125,7 +125,7 @@ export function Testimonials() {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="mt-14">
+            <div className="mt-6 sm:mt-8">
               <CarouselContent className="-ml-5">
                 {TESTIMONIALS.map((item) => (
                   <CarouselItem key={item.name} className="pl-5 md:basis-1/2 lg:basis-1/3">
