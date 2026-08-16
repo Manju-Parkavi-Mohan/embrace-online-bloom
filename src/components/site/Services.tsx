@@ -60,7 +60,7 @@ function ServiceSlide({
           to="/services/$slug"
           params={{ slug: service.slug }}
           aria-label={`Open ${service.title} service page`}
-          className="group block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group relative block overflow-hidden rounded-3xl shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           <img
             src={service.image}
@@ -71,6 +71,13 @@ function ServiceSlide({
             decoding="async"
             className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
           />
+          <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/45" />
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 p-5 text-sm font-semibold text-primary-foreground opacity-100 transition-all duration-500 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink/70 px-4 py-2 backdrop-blur-sm">
+              View service page
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </span>
+          </span>
         </Link>
       </div>
 
@@ -82,7 +89,7 @@ function ServiceSlide({
           <Link
             to="/services/$slug"
             params={{ slug: service.slug }}
-            className="inline-flex items-center gap-2 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex items-center gap-2 underline-offset-8 transition-opacity hover:underline hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {TITLE_LINES[service.title] ? (
               <span className="block">
@@ -92,7 +99,6 @@ function ServiceSlide({
             ) : (
               service.title
             )}
-            <ArrowRight className="size-5 shrink-0" aria-hidden="true" />
           </Link>
         </h3>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">

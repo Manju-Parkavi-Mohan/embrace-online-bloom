@@ -333,3 +333,10 @@
 .section-dark .eyebrow {
   color: var(--accent);
 }
+
+/* Always-light chip surface (stays white even inside .section-dark) */
+.chip-light {
+  background-color: oklch(1 0 0);
+  color: oklch(0.22 0.02 258);
+  border-color: oklch(0.9 0.005 258);
+}

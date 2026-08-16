@@ -171,15 +171,16 @@ export function Contact() {
                   </a>
                 </Button>
                 {[
-                  { Icon: Linkedin, label: "LinkedIn" },
-                  { Icon: Instagram, label: "Instagram" },
-                  { Icon: Facebook, label: "Facebook" },
-                ].map(({ Icon, label }) => (
+                  { Icon: Linkedin, label: "LinkedIn", brand: "#0A66C2" },
+                  { Icon: Instagram, label: "Instagram", brand: "#E1306C" },
+                  { Icon: Facebook, label: "Facebook", brand: "#1877F2" },
+                ].map(({ Icon, label, brand }) => (
                   <a
                     key={label}
                     href="#contact"
                     aria-label={`AutoDome on ${label}`}
-                    className="grid size-11 place-items-center rounded-full border border-border bg-card text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary"
+                    style={{ backgroundColor: brand, borderColor: brand }}
+                    className="grid size-11 place-items-center rounded-full border text-[oklch(1_0_0)] shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
                   >
                     <Icon className="size-4" aria-hidden="true" />
                   </a>

@@ -35,9 +35,9 @@ export function SiteHeader() {
           : "border-b border-transparent",
       )}
     >
-      <div className="section-shell flex h-20 items-center justify-between gap-4 sm:h-24 sm:gap-6">
+      <div className="section-shell flex h-16 items-center justify-between gap-4 sm:h-18 sm:gap-6">
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
-          <span className="grid shrink-0 place-items-center rounded-2xl bg-foreground px-3 py-2 shadow-soft">
+          <span className="grid shrink-0 place-items-center rounded-xl bg-foreground px-2 py-1 shadow-soft">
             <img
               src={logo}
               alt="AutoDome logo"
