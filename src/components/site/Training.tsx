@@ -40,7 +40,7 @@ export function Training() {
         <Reveal className="max-w-2xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
-            Services
+            Advanced training programs
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
             Technical training that raises the capability of your entire team.
