@@ -1,18 +1,28 @@
 import { Reveal } from "./Reveal";
 
-const BRANDS = [
-  "Mercedes-Benz",
-  "Volvo",
-  "Scania",
-  "MAN",
-  "DAF",
-  "IVECO",
-  "Renault Trucks",
-  "Cummins",
-  "Perkins",
-  "Caterpillar",
-  "John Deere",
+type Brand = { name: string; slug?: string };
+
+const BRANDS: Brand[] = [
+  { name: "Mercedes-Benz" },
+  { name: "Volvo", slug: "volvo" },
+  { name: "Scania", slug: "scania" },
+  { name: "MAN", slug: "man" },
+  { name: "DAF", slug: "daf" },
+  { name: "IVECO", slug: "iveco" },
+  { name: "Renault Trucks", slug: "renault" },
+  { name: "Cummins" },
+  { name: "Perkins" },
+  { name: "Caterpillar", slug: "caterpillar" },
+  { name: "John Deere", slug: "johndeere" },
 ];
+
+function initials(name: string) {
+  return name
+    .split(/[\s-]+/)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
+}
 
 export function Brands() {
   const loop = [...BRANDS, ...BRANDS];
@@ -41,11 +51,26 @@ export function Brands() {
         <ul className="marquee-track flex w-max gap-4 pr-4">
           {loop.map((brand, index) => (
             <li
-              key={`${brand}-${index}`}
-              className="chip-light grid h-20 w-[170px] shrink-0 place-items-center rounded-2xl border px-5 text-center sm:h-24 sm:w-[210px]"
+              key={`${brand.name}-${index}`}
+              className="chip-light flex h-20 w-[190px] shrink-0 items-center justify-center gap-3 rounded-2xl border px-5 text-center sm:h-24 sm:w-[230px]"
             >
-              <span className="font-display text-sm font-bold tracking-tight sm:text-base">
-                {brand}
+              {brand.slug ? (
+                <img
+                  src={`https://cdn.simpleicons.org/${brand.slug}`}
+                  alt=""
+                  width={28}
+                  height={28}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-7 shrink-0 object-contain"
+                />
+              ) : (
+                <span className="grid size-7 shrink-0 place-items-center rounded-full border border-current/20 font-display text-[0.65rem] font-bold">
+                  {initials(brand.name)}
+                </span>
+              )}
+              <span className="font-display text-sm font-bold leading-tight tracking-tight sm:text-base">
+                {brand.name}
               </span>
             </li>
           ))}
@@ -54,7 +79,7 @@ export function Brands() {
 
       <ul className="sr-only">
         {BRANDS.map((brand) => (
-          <li key={brand}>{brand}</li>
+          <li key={brand.name}>{brand.name}</li>
         ))}
       </ul>
     </section>
