@@ -4,9 +4,21 @@ import { Reveal } from "./Reveal";
 import trainingImage from "@/assets/service-training.jpg";
 
 const PILLARS = [
-  { Icon: GraduationCap, title: "Certification", body: "Structured programs with formal assessment and certificates of completion." },
-  { Icon: Users, title: "Hands-on workshops", body: "Live vehicle and bench sessions on real ECUs and diagnostic hardware." },
-  { Icon: ClipboardCheck, title: "Corporate learning", body: "Tailored fleet and workshop team training, delivered on-site or at our facility." },
+  {
+    Icon: GraduationCap,
+    title: "Certification",
+    body: "Structured programs with formal assessment and certificates of completion.",
+  },
+  {
+    Icon: Users,
+    title: "Hands-on workshops",
+    body: "Live vehicle and bench sessions on real ECUs and diagnostic hardware.",
+  },
+  {
+    Icon: ClipboardCheck,
+    title: "Corporate learning",
+    body: "Tailored fleet and workshop team training, delivered on-site or at our facility.",
+  },
 ];
 
 export function Training() {
@@ -26,17 +38,16 @@ export function Training() {
 
       <div className="section-shell">
         <Reveal className="max-w-2xl">
-          <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
+          <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
-            Advanced Training Programs
+            Services
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
             Technical training that raises the capability of your entire team.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-            Our professional programs are designed for technicians and engineers who need real
-            diagnostic depth — electronic systems, ECU work, fault tracing, and modern workshop
-            practice, taught by working engineers.
+            Our professional programs are designed for technicians and engineers who need real diagnostic depth —
+            electronic systems, ECU work, fault tracing, and modern workshop practice, taught by working engineers.
           </p>
         </Reveal>
 
@@ -45,12 +56,8 @@ export function Training() {
             <Reveal key={pillar.title} delay={index * 90}>
               <div className="h-full rounded-2xl border border-primary-foreground/25 bg-foreground/90 p-7 shadow-lifted backdrop-blur-md">
                 <pillar.Icon className="size-6 text-accent" aria-hidden="true" />
-                <h3 className="mt-5 font-display text-lg font-bold text-primary-foreground">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-primary-foreground">
-                  {pillar.body}
-                </p>
+                <h3 className="mt-5 font-display text-lg font-bold text-primary-foreground">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-primary-foreground">{pillar.body}</p>
               </div>
             </Reveal>
           ))}
