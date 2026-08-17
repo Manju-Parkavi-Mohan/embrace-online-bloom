@@ -38,8 +38,8 @@ export function Training() {
 
       <div className="section-shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow" style={{ color: "var(--foreground)" }}>
-            <span className="h-px w-8 var(--foreground)" aria-hidden="true" />
+          <p className="eyebrow" style={{ color: "var(--primary-foreground)" }}>
+            <span className="h-px w-8" aria-hidden="true" />
             Advanced training programs
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
