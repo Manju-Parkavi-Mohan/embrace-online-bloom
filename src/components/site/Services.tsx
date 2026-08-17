@@ -63,7 +63,7 @@ function ServiceSlide({
           <Link
             to="/services/$slug"
             params={{ slug: service.slug }}
-            className="inline-flex items-center gap-2 underline-offset-8 transition-opacity hover:underline hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex items-center gap-2 text-primary-foreground/85 transition-all duration-300 hover:font-extrabold hover:text-primary-foreground hover:brightness-125 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {TITLE_LINES[service.title] ? (
               <span className="block">
