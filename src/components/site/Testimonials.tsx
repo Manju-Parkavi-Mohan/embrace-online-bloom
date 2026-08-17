@@ -96,7 +96,7 @@ export function Testimonials() {
                   href={REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-deep"
                 >
                   Read all {TOTAL_REVIEWS} reviews
                   <ArrowUpRight className="size-4" aria-hidden="true" />

@@ -55,7 +55,7 @@ export function AdlStore() {
                 href={SITE.storefront.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
+                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-deep"
               >
                 {SITE.storefront.name}
               </a>{" "}

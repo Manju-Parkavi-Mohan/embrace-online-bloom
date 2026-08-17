@@ -119,7 +119,7 @@ export function SiteHeader() {
               "hidden items-center gap-2 whitespace-nowrap text-sm font-semibold transition-colors xl:flex",
               scrolled
                 ? "text-foreground hover:text-primary"
-                : "text-primary-foreground hover:text-accent",
+                : "text-primary-foreground hover:text-primary-foreground/70",
             )}
           >
             <Phone className="size-4" aria-hidden="true" />
