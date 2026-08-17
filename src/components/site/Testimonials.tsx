@@ -82,7 +82,7 @@ export function Testimonials() {
         <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
           <Reveal className="max-w-3xl">
             <p className="eyebrow">
-              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              <span className="h-px w-8" aria-hidden="true" />
               Client Feedback
             </p>
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">

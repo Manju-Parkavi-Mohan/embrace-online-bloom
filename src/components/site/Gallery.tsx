@@ -32,7 +32,7 @@ export function Gallery() {
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
           <Reveal className="min-w-0 max-w-3xl">
             <p className="eyebrow">
-              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              <span className="h-px w-8" aria-hidden="true" />
               Inside AutoDome
             </p>
             <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">

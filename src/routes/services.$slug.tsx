@@ -94,7 +94,7 @@ function ServicePage() {
           <div className="section-shell grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <Reveal>
               <p className="eyebrow">
-                <span className="h-px w-8 bg-accent" aria-hidden="true" />
+                <span className="h-px w-8" aria-hidden="true" />
                 Overview
               </p>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">

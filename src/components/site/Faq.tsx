@@ -43,7 +43,7 @@ export function Faq() {
       <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
         <Reveal direction="left">
           <p className="eyebrow">
-            <span className="h-px w-8 bg-accent" aria-hidden="true" />
+            <span className="h-px w-8" aria-hidden="true" />
             FAQ
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">

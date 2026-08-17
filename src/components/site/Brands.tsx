@@ -25,7 +25,7 @@ export function Brands() {
       <div className="section-shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">
-            <span className="h-px w-8 bg-accent" aria-hidden="true" />
+            <span className="h-px w-8" aria-hidden="true" />
             Supported Vehicle Brands
           </p>
           <h2 className="mt-5 font-display text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
