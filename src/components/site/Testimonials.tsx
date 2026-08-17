@@ -82,7 +82,7 @@ export function Testimonials() {
         <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
           <Reveal className="max-w-3xl">
             <p className="eyebrow">
-              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              <span className="h-px w-8" aria-hidden="true" />
               Client Feedback
             </p>
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
@@ -96,7 +96,7 @@ export function Testimonials() {
                   href={REVIEWS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-deep"
                 >
                   Read all {TOTAL_REVIEWS} reviews
                   <ArrowUpRight className="size-4" aria-hidden="true" />

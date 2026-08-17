@@ -27,7 +27,7 @@ export function Training() {
       <div className="section-shell">
         <Reveal className="max-w-2xl">
           <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-            <span className="h-px w-8 bg-accent" aria-hidden="true" />
+            <span className="h-px w-8" aria-hidden="true" />
             Advanced Training Programs
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">

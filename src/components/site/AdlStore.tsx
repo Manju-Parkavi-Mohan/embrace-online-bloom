@@ -44,7 +44,7 @@ export function AdlStore() {
 
           <Reveal direction="right">
             <p className="eyebrow">
-              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              <span className="h-px w-8" aria-hidden="true" />
               Online Store
             </p>
             <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
@@ -55,7 +55,7 @@ export function AdlStore() {
                 href={SITE.storefront.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-accent"
+                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-deep"
               >
                 {SITE.storefront.name}
               </a>{" "}

@@ -38,7 +38,7 @@ export function SiteFooter() {
                   key={label}
                   href="#contact"
                   aria-label={`AutoDome on ${label}`}
-                  className="grid size-10 place-items-center rounded-full border border-primary-foreground/25 text-primary-foreground/80 transition-colors hover:border-accent hover:text-accent"
+                  className="grid size-10 place-items-center rounded-full border border-primary-foreground/25 text-primary-foreground/80 transition-colors hover:border-primary-foreground hover:text-primary-foreground"
                 >
                   <Icon className="size-4" aria-hidden="true" />
                 </a>
@@ -119,7 +119,7 @@ export function SiteFooter() {
               href={SITE.storefront.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline"
+              className="text-primary-foreground hover:underline"
             >
               {SITE.storefront.name}
             </a>

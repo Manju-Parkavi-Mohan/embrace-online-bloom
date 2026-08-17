@@ -190,6 +190,15 @@
     background: var(--color-accent);
     color: var(--color-accent-foreground);
   }
+
+  a[href],
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  label[for],
+  summary,
+  select {
+    cursor: pointer;
+  }
 }
 
 @utility shadow-soft {
@@ -217,6 +226,10 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-primary);
+
+  & > span[aria-hidden="true"] {
+    background-color: currentColor;
+  }
 }
 
 @utility section-shell {
@@ -331,7 +344,7 @@
 }
 
 .section-dark .eyebrow {
-  color: var(--accent);
+  color: var(--foreground);
 }
 
 /* Always-light chip surface (stays white even inside .section-dark) */
