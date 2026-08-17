@@ -159,17 +159,17 @@ export function Contact() {
                 </li>
               </ul>
 
-              <div className="flex flex-wrap gap-3">
-                <Button asChild variant="outlineBrand">
-                  <a
-                    href={`https://wa.me/${SITE.whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WhatsAppIcon className="size-4" />
-                    WhatsApp
-                  </a>
-                </Button>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={`https://wa.me/${SITE.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ backgroundColor: "#25D366", borderColor: "#25D366" }}
+                  className="inline-flex h-11 items-center gap-2 rounded-full border px-6 text-sm font-semibold text-[oklch(1_0_0)] shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  WhatsApp
+                </a>
                 {[
                   { Icon: Linkedin, label: "LinkedIn", brand: "#0A66C2" },
                   { Icon: Instagram, label: "Instagram", brand: "#E1306C" },
