@@ -38,7 +38,7 @@ export function Training() {
 
       <div className="section-shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">
+          <p className="eyebrow" style={{ color: "var(--foreground)" }}>
             <span className="h-px w-8 var(--foreground)" aria-hidden="true" />
             Advanced training programs
           </p>
