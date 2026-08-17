@@ -19,24 +19,39 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { SITE } from "@/lib/site";
 
-const TITLE = "AutoDome | Commercial Vehicle Diagnostics & ECU Solutions UAE";
+const TITLE = "AutoDome | Dubai Truck Diagnostics & Heavy Vehicle Repair UAE";
 const DESCRIPTION =
-  "AutoDome delivers advanced commercial vehicle diagnostics, ECU repair and programming, genuine parts, technical training, and workshop equipment across the UAE.";
+  "AutoDome is a leading truck diagnostics and heavy vehicle repair specialist serving Dubai, Sharjah and Abu Dhabi — ECU repair, genuine parts, technical training and workshop equipment.";
+const CANONICAL = "https://autodome.ae";
+const OG_IMAGE = "https://autodome.ae/assets/autodome-dubai-truck-diagnostics.jpg";
+const KEYWORDS =
+  "truck repair Dubai, heavy truck repair, truck diagnostics Dubai, commercial vehicle diagnostics UAE, AutoDome, fleet maintenance Dubai, truck ECU programming Dubai, DPF regeneration Dubai, Volvo truck repair Dubai, Mercedes truck repair Dubai, Scania truck repair Dubai, MAN truck repair Dubai, truck parts Dubai, AutoDome Sharjah, تشخيص الشاحنات دبي, إصلاح المركبات التجارية الإمارات";
 
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
-  name: "AutoDome",
+  "@type": ["AutoRepair", "LocalBusiness", "AutomotiveBusiness"],
+  name: "AutoDome UAE",
+  alternateName: ["AutoDome", "Auto Dome", "AutoDome Dubai", "AutoDome Sharjah"],
   description: DESCRIPTION,
+  url: CANONICAL,
+  image: OG_IMAGE,
   email: SITE.email,
-  telephone: SITE.phones[0],
+  telephone: SITE.phones,
+  priceRange: "$$",
+  paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
+  currenciesAccepted: "AED",
+  foundingDate: "2008",
+  slogan: SITE.tagline,
+  sameAs: [`https://wa.me/${SITE.whatsapp}`, SITE.storefront.url],
   subOrganization: { "@type": "Organization", name: SITE.storefront.name, url: SITE.storefront.url },
   address: {
     "@type": "PostalAddress",
     streetAddress: "407A, Al Sajaa Industrial",
     addressLocality: "Sharjah",
+    addressRegion: "Sharjah",
     addressCountry: "AE",
   },
+  geo: { "@type": "GeoCoordinates", latitude: "25.3548", longitude: "55.4210" },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -51,7 +66,7 @@ const STRUCTURED_DATA = {
       closes: "18:00",
     },
   ],
-  areaServed: "United Arab Emirates",
+  areaServed: ["Dubai", "Sharjah", "Abu Dhabi", "Northern Emirates", "United Arab Emirates"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Commercial vehicle solutions",
@@ -72,13 +87,18 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { name: "keywords", content: KEYWORDS },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
       {
         type: "application/ld+json",
