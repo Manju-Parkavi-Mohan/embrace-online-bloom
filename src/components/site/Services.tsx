@@ -17,15 +17,9 @@ const TITLE_LINES: Record<string, [string, string]> = {
 function ServiceSlide({
   service,
   index,
-  isActive,
-  onPrev,
-  onNext,
 }: {
   service: (typeof SERVICES)[number];
   index: number;
-  isActive: boolean;
-  onPrev: () => void;
-  onNext: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const needsToggle = service.body.length > PREVIEW_LENGTH;
@@ -36,26 +30,6 @@ function ServiceSlide({
   return (
     <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
       <div className="relative">
-        {isActive && (
-          <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
-            <button
-              type="button"
-              onClick={onPrev}
-              aria-label="Previous service"
-              className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 bg-ink/40 text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary-foreground hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <ChevronLeft className="size-4" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={onNext}
-              aria-label="Next service"
-              className="grid size-8 place-items-center rounded-full border border-primary-foreground/30 bg-ink/40 text-primary-foreground backdrop-blur-sm transition-colors hover:bg-primary-foreground hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <ChevronRight className="size-4" aria-hidden="true" />
-            </button>
-          </div>
-        )}
         <Link
           to="/services/$slug"
           params={{ slug: service.slug }}
