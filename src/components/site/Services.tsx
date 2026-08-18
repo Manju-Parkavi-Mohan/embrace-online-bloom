@@ -158,7 +158,7 @@ export function Services() {
                 type="button"
                 onClick={() => go(-1)}
                 aria-label="Previous service"
-                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <ChevronLeft className="size-4" aria-hidden="true" />
               </button>
@@ -166,7 +166,7 @@ export function Services() {
                 type="button"
                 onClick={() => go(1)}
                 aria-label="Next service"
-                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <ChevronRight className="size-4" aria-hidden="true" />
               </button>
