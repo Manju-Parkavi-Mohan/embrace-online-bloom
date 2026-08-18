@@ -108,6 +108,8 @@ export function Services() {
   const total = SERVICES.length;
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
+  const axis = useRef<"h" | "v" | null>(null);
+  const [drag, setDrag] = useState(0);
 
   const go = useCallback(
     (dir: number) => setActive((i) => (i + dir + total) % total),
@@ -175,26 +177,45 @@ export function Services() {
             </div>
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${active * 100}%)` }}
+                className={cn("flex", drag === 0 && "transition-transform duration-700 ease-out")}
+                style={{
+                  transform: `translateX(calc(-${active * 100}% + ${drag}px))`,
+                  touchAction: "pan-y",
+                }}
                 onTouchStart={(e) => {
                   const t = e.touches[0];
                   if (!t) return;
                   touchStartX.current = t.clientX;
                   touchStartY.current = t.clientY;
+                  axis.current = null;
                   setPaused(true);
+                }}
+                onTouchMove={(e) => {
+                  const t = e.touches[0];
+                  const sx = touchStartX.current;
+                  const sy = touchStartY.current;
+                  if (!t || sx === null || sy === null) return;
+                  const dx = t.clientX - sx;
+                  const dy = t.clientY - sy;
+                  if (axis.current === null) {
+                    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+                    axis.current = Math.abs(dx) > Math.abs(dy) ? "h" : "v";
+                  }
+                  if (axis.current === "h") setDrag(dx * 0.6);
                 }}
                 onTouchEnd={(e) => {
                   const t = e.changedTouches[0];
                   const sx = touchStartX.current;
                   const sy = touchStartY.current;
+                  const dir = axis.current;
                   touchStartX.current = null;
                   touchStartY.current = null;
+                  axis.current = null;
+                  setDrag(0);
                   setPaused(false);
-                  if (!t || sx === null || sy === null) return;
+                  if (!t || sx === null || sy === null || dir !== "h") return;
                   const dx = t.clientX - sx;
-                  const dy = t.clientY - sy;
-                  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+                  if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
                 }}
               >
                 {SERVICES.map((service, index) => (
