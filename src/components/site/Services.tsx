@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
@@ -106,6 +106,8 @@ export function Services() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const total = SERVICES.length;
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const go = useCallback(
     (dir: number) => setActive((i) => (i + dir + total) % total),
@@ -158,7 +160,7 @@ export function Services() {
                 type="button"
                 onClick={() => go(-1)}
                 aria-label="Previous service"
-                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <ChevronLeft className="size-4" aria-hidden="true" />
               </button>
@@ -166,7 +168,7 @@ export function Services() {
                 type="button"
                 onClick={() => go(1)}
                 aria-label="Next service"
-                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="grid size-8 place-items-center rounded-full border border-border/40 text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <ChevronRight className="size-4" aria-hidden="true" />
               </button>
@@ -175,6 +177,25 @@ export function Services() {
               <div
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${active * 100}%)` }}
+                onTouchStart={(e) => {
+                  const t = e.touches[0];
+                  if (!t) return;
+                  touchStartX.current = t.clientX;
+                  touchStartY.current = t.clientY;
+                  setPaused(true);
+                }}
+                onTouchEnd={(e) => {
+                  const t = e.changedTouches[0];
+                  const sx = touchStartX.current;
+                  const sy = touchStartY.current;
+                  touchStartX.current = null;
+                  touchStartY.current = null;
+                  setPaused(false);
+                  if (!t || sx === null || sy === null) return;
+                  const dx = t.clientX - sx;
+                  const dy = t.clientY - sy;
+                  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+                }}
               >
                 {SERVICES.map((service, index) => (
                   <div

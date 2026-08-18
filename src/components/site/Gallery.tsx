@@ -45,7 +45,7 @@ export function Gallery() {
               type="button"
               onClick={() => scrollBy(-1)}
               aria-label="Scroll gallery left"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
             </button>
@@ -53,7 +53,7 @@ export function Gallery() {
               type="button"
               onClick={() => scrollBy(1)}
               aria-label="Scroll gallery right"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
             >
               <ChevronRight className="size-5" aria-hidden="true" />
             </button>
