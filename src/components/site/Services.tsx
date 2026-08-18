@@ -104,7 +104,6 @@ function ServiceSlide({
 
 export function Services() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const total = SERVICES.length;
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -116,17 +115,6 @@ export function Services() {
     [total],
   );
 
-  useEffect(() => {
-    if (paused) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-      return;
-    const id = window.setInterval(() => setActive((i) => (i + 1) % total), 7000);
-    return () => window.clearInterval(id);
-  }, [paused, total]);
-
   return (
     <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
@@ -135,24 +123,19 @@ export function Services() {
             <span className="h-px w-8" aria-hidden="true" />
             Services
           </p>
-          <div className="max-w-3xl">
-            <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Seven engineering disciplines. One accountable partner.
+          <div className="max-w-2xl">
+            <h2 className="mt-4 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              One partner. Seven disciplines.
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-lg">
-              Every AutoDome service is built around measurable uptime, technical accuracy, and
-              long-term reliability for commercial vehicle operators.
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-lg">
+              Engineered for uptime, accuracy, and long-term fleet reliability.
             </p>
           </div>
         </Reveal>
 
-        <Reveal className="mt-8 sm:mt-10">
+        <Reveal className="mt-6 sm:mt-10">
           <div
             className="relative"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onFocusCapture={() => setPaused(true)}
-            onBlurCapture={() => setPaused(false)}
             role="region"
             aria-roledescription="carousel"
             aria-label="AutoDome services"
@@ -188,7 +171,6 @@ export function Services() {
                   touchStartX.current = t.clientX;
                   touchStartY.current = t.clientY;
                   axis.current = null;
-                  setPaused(true);
                 }}
                 onTouchMove={(e) => {
                   const t = e.touches[0];
@@ -212,7 +194,6 @@ export function Services() {
                   touchStartY.current = null;
                   axis.current = null;
                   setDrag(0);
-                  setPaused(false);
                   if (!t || sx === null || sy === null || dir !== "h") return;
                   const dx = t.clientX - sx;
                   if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
@@ -230,7 +211,7 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-5 flex items-center justify-center">
+            <div className="mt-4 flex items-center justify-center">
               <div className="flex items-center gap-2">
                 {SERVICES.map((service, index) => (
                   <button
