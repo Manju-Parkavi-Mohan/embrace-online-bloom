@@ -28,7 +28,7 @@ function ServiceSlide({
     : service.body;
 
   return (
-    <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+    <article className="grid items-center gap-5 sm:gap-8 lg:grid-cols-2 lg:gap-20">
       <div className="relative">
         <Link
           to="/services/$slug"
@@ -43,7 +43,7 @@ function ServiceSlide({
             height={900}
             loading="lazy"
             decoding="async"
-            className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+            className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] sm:aspect-[4/3]"
           />
           <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/45" />
           <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 p-5 text-sm font-semibold text-primary-foreground opacity-100 transition-all duration-500 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
@@ -59,7 +59,7 @@ function ServiceSlide({
         <p className="font-display text-sm font-bold tracking-[0.2em] text-primary-foreground/70">
           {String(index + 1).padStart(2, "0")}
         </p>
-        <h3 className="mt-3 font-display text-xl font-bold leading-snug sm:text-2xl lg:text-3xl">
+        <h3 className="mt-2 font-display text-lg font-bold leading-snug sm:mt-3 sm:text-2xl lg:text-3xl">
           <Link
             to="/services/$slug"
             params={{ slug: service.slug }}
@@ -75,7 +75,7 @@ function ServiceSlide({
             )}
           </Link>
         </h3>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
           {expanded ? `${service.body} ` : preview}
           {needsToggle && (
             <button
@@ -89,7 +89,7 @@ function ServiceSlide({
           )}
         </p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-4 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center">
           <Button asChild variant="light" className="w-full sm:w-auto">
             <a href="/#contact">
               Request Consultation
