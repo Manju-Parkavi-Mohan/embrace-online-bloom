@@ -44,20 +44,20 @@ export function Hero() {
         <div className="absolute inset-0 bg-hero-veil" />
       </div>
 
-      <div className="section-shell pb-16 pt-24 sm:pt-28 lg:pb-20 lg:pt-28">
+      <div className="section-shell pb-8 pt-20 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <h1 className="font-display text-3xl font-bold leading-[1.1] text-primary-foreground sm:text-4xl lg:text-5xl">
             Powering Smarter Mobility Through{" "}
             <span className="text-accent">Advanced Vehicle Technology</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground sm:text-lg">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground sm:mt-6 sm:text-lg">
             AutoDome delivers advanced commercial vehicle diagnostics, ECU solutions, repairs,
             genuine parts, technical training, and workshop technology solutions for fleets,
             workshops, and industrial vehicle operators.
           </p>
 
-          <div className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+          <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-3">
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
               <a href="#contact">
                 Request Technical Consultation
@@ -69,11 +69,11 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 w-full border-t border-primary-foreground/20 pt-6">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-foreground sm:text-base">
+          <div className="mt-5 w-full border-t border-primary-foreground/20 pt-4 sm:mt-10 sm:pt-6">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-foreground sm:text-base">
               Authorized Partners
             </p>
-            <ul className="mt-6 grid w-full grid-cols-2 items-center gap-3 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-12">
+            <ul className="mt-3 grid w-full grid-cols-2 items-center gap-3 sm:mt-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-12">
               {HERO_PARTNERS.map((partner) => (
                 <li key={partner.name} className="flex min-w-0 items-center justify-center">
                   <img

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ function ServiceSlide({
     : service.body;
 
   return (
-    <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+    <article className="grid items-center gap-5 sm:gap-8 lg:grid-cols-2 lg:gap-20">
       <div className="relative">
         <Link
           to="/services/$slug"
@@ -43,7 +43,7 @@ function ServiceSlide({
             height={900}
             loading="lazy"
             decoding="async"
-            className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]"
+            className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] sm:aspect-[4/3]"
           />
           <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/45" />
           <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 p-5 text-sm font-semibold text-primary-foreground opacity-100 transition-all duration-500 sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
@@ -59,7 +59,7 @@ function ServiceSlide({
         <p className="font-display text-sm font-bold tracking-[0.2em] text-primary-foreground/70">
           {String(index + 1).padStart(2, "0")}
         </p>
-        <h3 className="mt-3 font-display text-xl font-bold leading-snug sm:text-2xl lg:text-3xl">
+        <h3 className="mt-2 font-display text-lg font-bold leading-snug sm:mt-3 sm:text-2xl lg:text-3xl">
           <Link
             to="/services/$slug"
             params={{ slug: service.slug }}
@@ -75,7 +75,7 @@ function ServiceSlide({
             )}
           </Link>
         </h3>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
           {expanded ? `${service.body} ` : preview}
           {needsToggle && (
             <button
@@ -89,7 +89,7 @@ function ServiceSlide({
           )}
         </p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mt-4 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center">
           <Button asChild variant="light" className="w-full sm:w-auto">
             <a href="/#contact">
               Request Consultation
@@ -104,7 +104,6 @@ function ServiceSlide({
 
 export function Services() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const total = SERVICES.length;
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -116,17 +115,6 @@ export function Services() {
     [total],
   );
 
-  useEffect(() => {
-    if (paused) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-      return;
-    const id = window.setInterval(() => setActive((i) => (i + 1) % total), 7000);
-    return () => window.clearInterval(id);
-  }, [paused, total]);
-
   return (
     <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
       <div className="section-shell">
@@ -135,24 +123,19 @@ export function Services() {
             <span className="h-px w-8" aria-hidden="true" />
             Services
           </p>
-          <div className="max-w-3xl">
-            <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Seven engineering disciplines. One accountable partner.
+          <div className="max-w-2xl">
+            <h2 className="mt-4 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+              One partner. Seven disciplines.
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-lg">
-              Every AutoDome service is built around measurable uptime, technical accuracy, and
-              long-term reliability for commercial vehicle operators.
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-lg">
+              Engineered for uptime, accuracy, and long-term fleet reliability.
             </p>
           </div>
         </Reveal>
 
-        <Reveal className="mt-8 sm:mt-10">
+        <Reveal className="mt-6 sm:mt-10">
           <div
             className="relative"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onFocusCapture={() => setPaused(true)}
-            onBlurCapture={() => setPaused(false)}
             role="region"
             aria-roledescription="carousel"
             aria-label="AutoDome services"
@@ -188,7 +171,6 @@ export function Services() {
                   touchStartX.current = t.clientX;
                   touchStartY.current = t.clientY;
                   axis.current = null;
-                  setPaused(true);
                 }}
                 onTouchMove={(e) => {
                   const t = e.touches[0];
@@ -212,7 +194,6 @@ export function Services() {
                   touchStartY.current = null;
                   axis.current = null;
                   setDrag(0);
-                  setPaused(false);
                   if (!t || sx === null || sy === null || dir !== "h") return;
                   const dx = t.clientX - sx;
                   if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
@@ -230,7 +211,7 @@ export function Services() {
               </div>
             </div>
 
-            <div className="mt-5 flex items-center justify-center">
+            <div className="mt-4 flex items-center justify-center">
               <div className="flex items-center gap-2">
                 {SERVICES.map((service, index) => (
                   <button
