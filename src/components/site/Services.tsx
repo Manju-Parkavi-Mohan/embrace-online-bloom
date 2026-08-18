@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
@@ -106,6 +106,8 @@ export function Services() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const total = SERVICES.length;
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   const go = useCallback(
     (dir: number) => setActive((i) => (i + dir + total) % total),
@@ -175,6 +177,25 @@ export function Services() {
               <div
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${active * 100}%)` }}
+                onTouchStart={(e) => {
+                  const t = e.touches[0];
+                  if (!t) return;
+                  touchStartX.current = t.clientX;
+                  touchStartY.current = t.clientY;
+                  setPaused(true);
+                }}
+                onTouchEnd={(e) => {
+                  const t = e.changedTouches[0];
+                  const sx = touchStartX.current;
+                  const sy = touchStartY.current;
+                  touchStartX.current = null;
+                  touchStartY.current = null;
+                  setPaused(false);
+                  if (!t || sx === null || sy === null) return;
+                  const dx = t.clientX - sx;
+                  const dy = t.clientY - sy;
+                  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+                }}
               >
                 {SERVICES.map((service, index) => (
                   <div
