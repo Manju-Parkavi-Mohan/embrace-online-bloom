@@ -27,7 +27,7 @@ export function Gallery() {
   };
 
   return (
-    <section className="py-14 sm:py-18 lg:py-22">
+    <section className="py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
           <Reveal className="min-w-0 max-w-3xl">
@@ -35,7 +35,7 @@ export function Gallery() {
               <span className="h-px w-8" aria-hidden="true" />
               Inside AutoDome
             </p>
-            <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               A look at the work behind the results.
             </h2>
           </Reveal>

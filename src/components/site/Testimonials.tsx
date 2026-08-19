@@ -77,7 +77,7 @@ export function Testimonials() {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <section className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
           <Reveal className="max-w-3xl">
@@ -85,11 +85,10 @@ export function Testimonials() {
               <span className="h-px w-8" aria-hidden="true" />
               Client Feedback
             </p>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               Trusted by fleets, workshops, and industrial operators.
             </h2>
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
                 <Stars rating={5} />
                 <p className="text-sm font-semibold text-foreground">5.0 from {TOTAL_REVIEWS} Google reviews</p>
                 <a
@@ -101,9 +100,11 @@ export function Testimonials() {
                   Read all {TOTAL_REVIEWS} reviews
                   <ArrowUpRight className="size-4" aria-hidden="true" />
                 </a>
-              </div>
+            </div>
+          </Reveal>
 
-              <div className="ml-auto flex w-full items-center justify-end gap-2 sm:w-auto">
+          <Reveal delay={100}>
+            <div className="mt-4 flex items-center justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => api?.scrollPrev()}
@@ -120,12 +121,11 @@ export function Testimonials() {
                 >
                   <ChevronRight className="size-4" aria-hidden="true" />
                 </button>
-              </div>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="mt-6 sm:mt-8">
+            <div className="mt-3">
               <CarouselContent className="-ml-5">
                 {TESTIMONIALS.map((item) => (
                   <CarouselItem key={item.name} className="pl-5 md:basis-1/2 lg:basis-1/3">

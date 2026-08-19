@@ -24,21 +24,25 @@ const CERTIFICATIONS = [
 
 export function Credentials() {
   return (
-    <section id="credentials" className="bg-background py-14 sm:py-18 lg:py-22">
+    <section id="credentials" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             Certifications
           </p>
-          <h2 className="mt-5 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Certified management systems.
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:gap-6 md:grid-cols-3">
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
           {CERTIFICATIONS.map((cert, index) => (
-            <Reveal key={cert.code} delay={index * 90}>
+            <Reveal
+              key={cert.code}
+              delay={index * 90}
+              className="w-[85vw] max-w-[420px] shrink-0 snap-start md:w-auto md:max-w-none"
+            >
               <article className="group h-full rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lifted sm:p-9">
                 <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary transition-colors duration-500 group-hover:bg-primary group-hover:text-primary-foreground">
                   <cert.Icon className="size-6" aria-hidden="true" />

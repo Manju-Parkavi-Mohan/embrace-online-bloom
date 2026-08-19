@@ -3,7 +3,7 @@ import ecuImg from "@/assets/service-ecu.jpg";
 import trainingImg from "@/assets/service-training.jpg";
 import partsImg from "@/assets/service-parts.jpg";
 import equipmentImg from "@/assets/service-equipment.jpg";
-import aboutImg from "@/assets/about-workshop.jpg";
+import diagnosisRepairImg from "@/assets/service-diagnosis-repair.jpg";
 import fleetImg from "@/assets/cta-fleet.jpg";
 
 export type Service = {
@@ -24,7 +24,7 @@ export const SERVICES: Service[] = [
     title: "Diagnosis, Troubleshooting & Repair",
     short: "Diagnosis, Troubleshooting & Repair",
     body: "We provide diagnosis, troubleshooting, and repair for heavy-duty commercial vehicles to keep your fleet running smoothly. Our skilled technicians use advanced tools to find and fix problems quickly and efficiently. From engines and transmissions to electrical and hydraulic systems, we take care of every part of your vehicle. With a focus on reliability, safety, and minimal downtime, we help businesses get the best performance and longer life from their commercial vehicles.",
-    image: aboutImg,
+    image: diagnosisRepairImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
     intro:
       "Fast, accurate fault-finding for trucks, buses, trailers and construction equipment — backed by dealer-level tooling and engineers who repair what they diagnose.",

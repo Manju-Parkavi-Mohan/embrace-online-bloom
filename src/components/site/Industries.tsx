@@ -19,14 +19,14 @@ const INDUSTRIES = [
 
 export function Industries() {
   return (
-    <section id="industries" className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section id="industries" className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             Industries We Serve
           </p>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Engineering support across every heavy-duty sector.
           </h2>
         </Reveal>

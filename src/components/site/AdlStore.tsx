@@ -25,7 +25,7 @@ const POINTS = [
 
 export function AdlStore() {
   return (
-    <section id="store" className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section id="store" className="section-dark py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal direction="left">
@@ -47,7 +47,7 @@ export function AdlStore() {
               <span className="h-px w-8" aria-hidden="true" />
               Online Store
             </p>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               ADL Automotive — our e-commerce storefront
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -55,7 +55,7 @@ export function AdlStore() {
                 href={SITE.storefront.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-deep"
+                className="font-semibold text-accent underline underline-offset-4 transition-colors hover:brightness-125"
               >
                 {SITE.storefront.name}
               </a>{" "}
@@ -67,7 +67,7 @@ export function AdlStore() {
             <ul className="mt-10 space-y-5">
               {POINTS.map((point) => (
                 <li key={point.title} className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary-soft text-primary">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary-foreground/10 text-accent">
                     <point.Icon className="size-5" aria-hidden="true" />
                   </span>
                   <div>

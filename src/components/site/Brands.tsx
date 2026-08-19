@@ -30,7 +30,7 @@ export function Brands() {
   return (
     <section
       aria-label="Supported vehicle brands"
-      className="section-dark border-y border-border py-12 sm:py-14 lg:py-16"
+      className="section-dark border-y border-border py-10 sm:py-12 lg:py-14"
     >
       <div className="section-shell">
         <Reveal className="max-w-2xl">
@@ -38,7 +38,7 @@ export function Brands() {
             <span className="h-px w-8" aria-hidden="true" />
             Supported Vehicle Brands
           </p>
-          <h2 className="mt-5 font-display text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
+          <h2 className="mt-3 font-display text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
             Multi-brand coverage for trucks, buses, and off-highway equipment.
           </h2>
         </Reveal>

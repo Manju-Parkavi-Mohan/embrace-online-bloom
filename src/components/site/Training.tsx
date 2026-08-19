@@ -23,7 +23,7 @@ const PILLARS = [
 
 export function Training() {
   return (
-    <section id="training" className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
+    <section id="training" className="relative isolate overflow-hidden py-10 sm:py-12 lg:py-14">
       <img
         src={trainingImage}
         alt="AutoDome instructor leading an advanced diagnostics training program"
@@ -42,7 +42,7 @@ export function Training() {
             <span className="h-px w-8" aria-hidden="true" />
             Advanced training programs
           </p>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
             Technical training that raises the capability of your entire team.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
@@ -51,9 +51,13 @@ export function Training() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-3">
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
           {PILLARS.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 90}>
+            <Reveal
+              key={pillar.title}
+              delay={index * 90}
+              className="w-[85vw] max-w-[420px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            >
               <div className="h-full rounded-2xl border border-primary-foreground/25 bg-foreground/90 p-7 shadow-lifted backdrop-blur-md">
                 <pillar.Icon className="size-6 text-accent" aria-hidden="true" />
                 <h3 className="mt-5 font-display text-lg font-bold text-primary-foreground">{pillar.title}</h3>

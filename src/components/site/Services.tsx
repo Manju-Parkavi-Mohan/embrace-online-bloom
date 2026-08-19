@@ -66,10 +66,13 @@ function ServiceSlide({
             className="inline-flex items-center gap-2 text-primary-foreground/85 transition-all duration-300 hover:font-extrabold hover:text-primary-foreground hover:brightness-125 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {TITLE_LINES[service.title] ? (
-              <span className="block">
-                <span className="block">{TITLE_LINES[service.title]![0]}</span>
-                <span className="block">{TITLE_LINES[service.title]![1]}</span>
-              </span>
+              <>
+                <span className="block lg:hidden">
+                  <span className="block">{TITLE_LINES[service.title]![0]}</span>
+                  <span className="block">{TITLE_LINES[service.title]![1]}</span>
+                </span>
+                <span className="hidden lg:inline">{service.title}</span>
+              </>
             ) : (
               service.title
             )}
@@ -116,7 +119,7 @@ export function Services() {
   );
 
   return (
-    <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
+    <section id="solutions" className="section-dark py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Reveal>
           <p className="eyebrow">
@@ -124,7 +127,7 @@ export function Services() {
             Services
           </p>
           <div className="max-w-2xl">
-            <h2 className="mt-4 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               One partner. Seven disciplines.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-lg">
