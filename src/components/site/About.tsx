@@ -39,7 +39,7 @@ export function About() {
               href={SITE.storefront.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white underline-offset-4 transition-colors hover:text-accent"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-accent underline-offset-4 transition-colors hover:text-accent/75 hover:underline"
             >
               Visit the {SITE.storefront.name} store
               <ArrowRight className="size-4" aria-hidden="true" />

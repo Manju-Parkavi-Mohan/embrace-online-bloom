@@ -1,4 +1,5 @@
-import { BadgeCheck, Leaf, ShieldCheck } from "lucide-react";
+import { useRef } from "react";
+import { BadgeCheck, ChevronLeft, ChevronRight, Leaf, ShieldCheck } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const CERTIFICATIONS = [
@@ -23,10 +24,19 @@ const CERTIFICATIONS = [
 ];
 
 export function Credentials() {
+  const scroller = useRef<HTMLDivElement | null>(null);
+
+  const scrollBy = (dir: 1 | -1) => {
+    const node = scroller.current;
+    if (!node) return;
+    node.scrollBy({ left: dir * Math.min(node.clientWidth * 0.85, 460), behavior: "smooth" });
+  };
+
   return (
     <section id="credentials" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
-        <Reveal className="max-w-3xl">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+          <Reveal className="min-w-0 max-w-3xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             Certifications
@@ -34,9 +44,32 @@ export function Credentials() {
           <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Certified management systems.
           </h2>
-        </Reveal>
+          </Reveal>
 
-        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
+          <div className="flex shrink-0 gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={() => scrollBy(-1)}
+              aria-label="Scroll certifications left"
+              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
+            >
+              <ChevronLeft className="size-5" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollBy(1)}
+              aria-label="Scroll certifications right"
+              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
+            >
+              <ChevronRight className="size-5" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={scroller}
+          className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0"
+        >
           {CERTIFICATIONS.map((cert, index) => (
             <Reveal
               key={cert.code}
