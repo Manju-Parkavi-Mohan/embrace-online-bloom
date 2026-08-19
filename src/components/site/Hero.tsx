@@ -47,7 +47,8 @@ export function Hero() {
       <div className="section-shell pb-8 pt-20 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <h1 className="font-display text-3xl font-bold leading-[1.1] text-primary-foreground sm:text-4xl lg:text-5xl">
-            Advanced Truck Repair & <span className="text-accent">Heavy Vehicle Diagnostics in UAE </span>
+            Advanced Truck Repair & <br />
+            <span className="text-accent">Heavy Vehicle Diagnostics in UAE </span>
           </h1>
 
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground sm:mt-6 sm:text-lg">
