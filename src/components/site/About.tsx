@@ -5,10 +5,22 @@ import aboutImage from "@/assets/about-workshop.jpg";
 import { SITE } from "@/lib/site";
 
 const FACTS = [
-  { value: "Dealer-level", label: "Diagnostic capability" },
-  { value: "End-to-end", label: "Vehicle lifecycle support" },
-  { value: "Sharjah, UAE", label: "Engineering headquarters" },
-  { value: "Fleet-first", label: "Uptime driven approach" },
+  {
+    value: "Commercial Vehicle Diagnostics",
+    label: "Advanced diagnostics for trucks, buses, commercial vehicles & heavy machinery",
+  },
+  {
+    value: "ECU Programming & Repair",
+    label: "ECU coding, programming, calibration and electronic control unit repair",
+  },
+  {
+    value: "Heavy-Duty Vehicle Solutions",
+    label: "Dealer-level diagnostics for engines, transmissions, ABS, EBS, DPF, SCR & more",
+  },
+  {
+    value: "Fleet & Workshop Support",
+    label: "Reliable diagnostic solutions to reduce vehicle downtime and improve fleet uptime",
+  },
 ];
 
 export function About() {
@@ -32,8 +44,8 @@ export function About() {
               Shop online at {SITE.storefront.name}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and
-              workshop equipment behind every AutoDome service.
+              {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop equipment
+              behind every AutoDome service.
             </p>
             <a
               href={SITE.storefront.url}
@@ -54,27 +66,30 @@ export function About() {
               About AutoDome
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              A technology-driven automotive solutions provider for commercial vehicles and
-              equipment.
+              Truck Diagnostics & Professional Diagnostic Tools for Commercial Vehicles.
             </h2>
           </Reveal>
 
           <Reveal delay={100}>
             <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
-                AutoDome specialises in commercial vehicles and equipment, providing complete
-                solutions including advanced diagnostics, expert repairs, ECU solutions, genuine
-                parts supply, and professional technical training.
+                AutoDome is a specialist truck and heavy vehicle diagnostic center in the UAE, providing professional
+                diagnostics and technical solutions for commercial vehicles across the UAE and GCC. We help truck
+                owners, fleet operators, workshops, and technicians accurately diagnose and resolve complex vehicle
+                faults using advanced truck diagnostic tools and hands-on technical expertise.
               </p>
               <p>
-                Our mission is straightforward: keep commercial fleets, workshops, and industrial
-                operators moving. We combine dealer-level tooling with experienced engineers so
-                complex faults are resolved accurately the first time — reducing downtime, cost, and
-                operational risk.
+                Our services cover heavy-duty truck diagnostics, ECU programming, ECU repair, chip tuning software,
+                diagnostic tool sales, and technical support for modern commercial vehicles. We work with workshops and
+                fleet operators to identify faults faster, reduce vehicle downtime, and improve the efficiency and
+                reliability of their operations.
               </p>
               <p>
-                From a single ECU repair to equipping an entire workshop, every engagement is
-                delivered with the same engineering discipline and quality assurance.
+                In addition to our diagnostic services, AutoDome supplies professional truck diagnostic equipment, ECU
+                programming tools, and workshop software for businesses looking to expand their diagnostic capabilities.
+                From individual truck diagnostics to fleet support and workshop solutions, AutoDome delivers the
+                diagnostic equipment, software, and technical expertise businesses need to keep commercial vehicles
+                running efficiently.
               </p>
             </div>
           </Reveal>
@@ -83,9 +98,7 @@ export function About() {
             <dl className="mt-12 hidden grid-cols-2 gap-8 border-t border-border pt-10 sm:grid">
               {FACTS.map((fact) => (
                 <div key={fact.label}>
-                  <dt className="font-display text-xl font-bold text-foreground sm:text-2xl">
-                    {fact.value}
-                  </dt>
+                  <dt className="font-display text-xl font-bold text-foreground sm:text-2xl">{fact.value}</dt>
                   <dd className="mt-1 text-sm text-muted-foreground">{fact.label}</dd>
                 </div>
               ))}
