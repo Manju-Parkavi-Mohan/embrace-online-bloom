@@ -1,4 +1,12 @@
-import { ArrowRight, GraduationCap, Users, ClipboardCheck } from "lucide-react";
+import { useRef } from "react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  Users,
+  ClipboardCheck,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import trainingImage from "@/assets/service-training.jpg";
@@ -22,6 +30,14 @@ const PILLARS = [
 ];
 
 export function Training() {
+  const scroller = useRef<HTMLDivElement | null>(null);
+
+  const scrollBy = (dir: 1 | -1) => {
+    const node = scroller.current;
+    if (!node) return;
+    node.scrollBy({ left: dir * Math.min(node.clientWidth * 0.85, 460), behavior: "smooth" });
+  };
+
   return (
     <section id="training" className="relative isolate overflow-hidden py-10 sm:py-12 lg:py-14">
       <img
@@ -37,7 +53,8 @@ export function Training() {
       <span className="absolute inset-0 -z-10 bg-foreground/55" aria-hidden="true" />
 
       <div className="section-shell">
-        <Reveal className="max-w-2xl">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+          <Reveal className="min-w-0 max-w-2xl">
           <p className="eyebrow" style={{ color: "var(--primary-foreground)" }}>
             <span className="h-px w-8" aria-hidden="true" />
             Advanced training programs
@@ -49,9 +66,32 @@ export function Training() {
             Our professional programs are designed for technicians and engineers who need real diagnostic depth —
             electronic systems, ECU work, fault tracing, and modern workshop practice, taught by working engineers.
           </p>
-        </Reveal>
+          </Reveal>
 
-        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+          <div className="flex shrink-0 gap-2 sm:hidden">
+            <button
+              type="button"
+              onClick={() => scrollBy(-1)}
+              aria-label="Scroll training programs left"
+              className="grid size-11 place-items-center rounded-full border border-primary-foreground/40 bg-foreground/70 text-primary-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground active:border-accent active:bg-accent active:text-accent-foreground"
+            >
+              <ChevronLeft className="size-5" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollBy(1)}
+              aria-label="Scroll training programs right"
+              className="grid size-11 place-items-center rounded-full border border-primary-foreground/40 bg-foreground/70 text-primary-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground active:border-accent active:bg-accent active:text-accent-foreground"
+            >
+              <ChevronRight className="size-5" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={scroller}
+          className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0"
+        >
           {PILLARS.map((pillar, index) => (
             <Reveal
               key={pillar.title}
