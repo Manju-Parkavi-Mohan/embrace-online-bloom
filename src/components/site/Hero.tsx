@@ -47,14 +47,13 @@ export function Hero() {
       <div className="section-shell pb-8 pt-20 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <h1 className="font-display text-3xl font-bold leading-[1.1] text-primary-foreground sm:text-4xl lg:text-5xl">
-            Powering Smarter Mobility Through{" "}
-            <span className="text-accent">Advanced Vehicle Technology</span>
+            Advanced Truck Repair & <span className="text-accent">Heavy Vehicle Diagnostics in UAE </span>
           </h1>
 
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground sm:mt-6 sm:text-lg">
-            AutoDome delivers advanced commercial vehicle diagnostics, ECU solutions, repairs,
-            genuine parts, technical training, and workshop technology solutions for fleets,
-            workshops, and industrial vehicle operators.
+            AutoDome provides professional truck repair, heavy vehicle diagnostics, ECU repair and programming, genuine
+            parts, and advanced workshop solutions for fleets, workshops, and commercial vehicle operators across the
+            UAE.
           </p>
 
           <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-3">
@@ -91,7 +90,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
 
       <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-primary-foreground/70 lg:block">
         <ChevronDown className="size-6 animate-bounce" aria-hidden="true" />
