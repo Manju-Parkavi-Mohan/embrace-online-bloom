@@ -116,7 +116,7 @@ export function Services() {
   );
 
   return (
-    <section id="solutions" className="section-dark py-14 sm:py-18 lg:py-22">
+    <section id="solutions" className="section-dark py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Reveal>
           <p className="eyebrow">
@@ -124,7 +124,7 @@ export function Services() {
             Services
           </p>
           <div className="max-w-2xl">
-            <h2 className="mt-4 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               One partner. Seven disciplines.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-lg">

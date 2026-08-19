@@ -25,7 +25,7 @@ const POINTS = [
 
 export function AdlStore() {
   return (
-    <section id="store" className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section id="store" className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal direction="left">
@@ -47,7 +47,7 @@ export function AdlStore() {
               <span className="h-px w-8" aria-hidden="true" />
               Online Store
             </p>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               ADL Automotive — our e-commerce storefront
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">

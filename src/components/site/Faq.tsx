@@ -39,14 +39,14 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
         <Reveal direction="left">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             FAQ
           </p>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Answers before you enquire.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">

@@ -77,7 +77,7 @@ export function Testimonials() {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
-    <section className="bg-surface py-14 sm:py-18 lg:py-22">
+    <section className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
           <Reveal className="max-w-3xl">
@@ -85,7 +85,7 @@ export function Testimonials() {
               <span className="h-px w-8" aria-hidden="true" />
               Client Feedback
             </p>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               Trusted by fleets, workshops, and industrial operators.
             </h2>
             <div className="mt-6 flex flex-wrap items-center justify-between gap-4">

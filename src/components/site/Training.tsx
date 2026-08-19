@@ -23,7 +23,7 @@ const PILLARS = [
 
 export function Training() {
   return (
-    <section id="training" className="relative isolate overflow-hidden py-12 sm:py-14 lg:py-16">
+    <section id="training" className="relative isolate overflow-hidden py-10 sm:py-12 lg:py-14">
       <img
         src={trainingImage}
         alt="AutoDome instructor leading an advanced diagnostics training program"
@@ -42,7 +42,7 @@ export function Training() {
             <span className="h-px w-8" aria-hidden="true" />
             Advanced training programs
           </p>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
             Technical training that raises the capability of your entire team.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-primary-foreground/85 sm:text-lg">

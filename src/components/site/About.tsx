@@ -13,7 +13,7 @@ const FACTS = [
 
 export function About() {
   return (
-    <section id="about" className="bg-background py-14 sm:py-18 lg:py-22">
+    <section id="about" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <Reveal direction="left" className="relative">
           <div className="overflow-hidden rounded-3xl shadow-lifted">
@@ -53,7 +53,7 @@ export function About() {
               <span className="h-px w-8" aria-hidden="true" />
               About AutoDome
             </p>
-            <h2 className="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
               A technology-driven automotive solutions provider for commercial vehicles and
               equipment.
             </h2>
