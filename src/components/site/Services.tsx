@@ -14,18 +14,10 @@ const TITLE_LINES: Record<string, [string, string]> = {
   "Advanced Training Programs": ["Advanced", "Training Programs"],
 };
 
-function ServiceSlide({
-  service,
-  index,
-}: {
-  service: (typeof SERVICES)[number];
-  index: number;
-}) {
+function ServiceSlide({ service, index }: { service: (typeof SERVICES)[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const needsToggle = service.body.length > PREVIEW_LENGTH;
-  const preview = needsToggle
-    ? `${service.body.slice(0, PREVIEW_LENGTH).trimEnd()}… `
-    : service.body;
+  const preview = needsToggle ? `${service.body.slice(0, PREVIEW_LENGTH).trimEnd()}… ` : service.body;
 
   return (
     <article className="grid items-center gap-5 sm:gap-8 lg:grid-cols-2 lg:gap-20">
@@ -113,10 +105,7 @@ export function Services() {
   const axis = useRef<"h" | "v" | null>(null);
   const [drag, setDrag] = useState(0);
 
-  const go = useCallback(
-    (dir: number) => setActive((i) => (i + dir + total) % total),
-    [total],
-  );
+  const go = useCallback((dir: number) => setActive((i) => (i + dir + total) % total), [total]);
 
   return (
     <section id="solutions" className="section-dark py-10 sm:py-14 lg:py-16">
@@ -128,7 +117,7 @@ export function Services() {
           </p>
           <div className="max-w-2xl">
             <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              One partner. Seven disciplines.
+              Complete Truck Repair & Diagnostics Solutions.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-lg">
               Engineered for uptime, accuracy, and long-term fleet reliability.
@@ -137,12 +126,7 @@ export function Services() {
         </Reveal>
 
         <Reveal className="mt-6 sm:mt-10">
-          <div
-            className="relative"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="AutoDome services"
-          >
+          <div className="relative" role="region" aria-roledescription="carousel" aria-label="AutoDome services">
             <div className="mb-3 flex items-center justify-end gap-2">
               <button
                 type="button"
@@ -203,11 +187,7 @@ export function Services() {
                 }}
               >
                 {SERVICES.map((service, index) => (
-                  <div
-                    key={service.title}
-                    className="w-full shrink-0 px-0.5"
-                    aria-hidden={index !== active}
-                  >
+                  <div key={service.title} className="w-full shrink-0 px-0.5" aria-hidden={index !== active}>
                     <ServiceSlide service={service} index={index} />
                   </div>
                 ))}
