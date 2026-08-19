@@ -25,7 +25,7 @@ const POINTS = [
 
 export function AdlStore() {
   return (
-    <section id="store" className="section-dark py-10 sm:py-14 lg:py-16">
+    <section id="store" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal direction="left">
