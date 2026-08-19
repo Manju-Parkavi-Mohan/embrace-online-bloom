@@ -51,9 +51,13 @@ export function Training() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-3">
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
           {PILLARS.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 90}>
+            <Reveal
+              key={pillar.title}
+              delay={index * 90}
+              className="w-[85vw] max-w-[420px] shrink-0 snap-start sm:w-auto sm:max-w-none"
+            >
               <div className="h-full rounded-2xl border border-primary-foreground/25 bg-foreground/90 p-7 shadow-lifted backdrop-blur-md">
                 <pillar.Icon className="size-6 text-accent" aria-hidden="true" />
                 <h3 className="mt-5 font-display text-lg font-bold text-primary-foreground">{pillar.title}</h3>

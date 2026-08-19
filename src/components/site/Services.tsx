@@ -66,10 +66,13 @@ function ServiceSlide({
             className="inline-flex items-center gap-2 text-primary-foreground/85 transition-all duration-300 hover:font-extrabold hover:text-primary-foreground hover:brightness-125 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {TITLE_LINES[service.title] ? (
-              <span className="block">
-                <span className="block">{TITLE_LINES[service.title]![0]}</span>
-                <span className="block">{TITLE_LINES[service.title]![1]}</span>
-              </span>
+              <>
+                <span className="block lg:hidden">
+                  <span className="block">{TITLE_LINES[service.title]![0]}</span>
+                  <span className="block">{TITLE_LINES[service.title]![1]}</span>
+                </span>
+                <span className="hidden lg:inline">{service.title}</span>
+              </>
             ) : (
               service.title
             )}
