@@ -20,10 +20,10 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    slug: "diagnosis-troubleshooting-repair",
-    title: "Diagnosis, Troubleshooting & Repair",
-    short: "Diagnosis, Troubleshooting & Repair",
-    body: "We provide diagnosis, troubleshooting, and repair for heavy-duty commercial vehicles to keep your fleet running smoothly. Our skilled technicians use advanced tools to find and fix problems quickly and efficiently. From engines and transmissions to electrical and hydraulic systems, we take care of every part of your vehicle. With a focus on reliability, safety, and minimal downtime, we help businesses get the best performance and longer life from their commercial vehicles.",
+    slug: "commercial-heavy-vehicle-diagnostics",
+    title: "Commercial Heavy Vehicle Diagnostics",
+    short: "Commercial Heavy Vehicle Diagnostics",
+    body: "We investigate warning lights, diagnostic trouble codes, communication faults, electronic problems, and performance-related issues.",
     image: diagnosisRepairImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
     intro:
@@ -51,10 +51,10 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "dealer-level-diagnostic-tools",
-    title: "Dealer-Level Diagnostic Tools & Support",
-    short: "Dealer-Level Diagnostic Tools & Support",
-    body: "We offer dealer-level diagnostic tools along with full technical support, helping automotive professionals accurately diagnose and repair vehicles. Our range of advanced tools is designed for precision, efficiency, and reliability, ensuring technicians can quickly identify and resolve issues. With expert guidance and ongoing support, we empower workshops and service centers to maintain high standards of vehicle performance and customer satisfaction.",
+    slug: "truck-repair-maintenance",
+    title: "Truck Repair & Maintenance",
+    short: "Truck Repair & Maintenance",
+    body: "Our diagnostic specialists can identify electronic and control-system problems affecting engines, automated manual transmissions, automatic transmissions, and related vehicle systems.",
     image: diagnosticsImg,
     alt: "Dealer-level diagnostic equipment connected to a commercial truck",
     intro:
@@ -82,9 +82,9 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "ecu-remapping-file-tuning",
-    title: "ECU Remapping Tools & File Tuning",
-    short: "ECU Remapping Tools & File Tuning",
+    slug: "ecu-remapping-calibration",
+    title: "ECU Remapping & Calibration",
+    short: "ECU Remapping & Calibration",
     body: "We provide ECU remapping tools and file tuning services to enhance the performance, efficiency, and drivability of vehicles. Our advanced tools allow precise adjustments to engine control parameters, while our expert team offers professional file tuning tailored to each vehicle's needs. Whether it's for improved power, fuel efficiency, or smoother performance, our solutions ensure optimal results while maintaining reliability and safety.",
     image: fleetImg,
     alt: "Commercial truck fleet optimised for efficiency and performance",
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
     slug: "ecu-repair-reprogramming",
     title: "ECU Repair & Reprogramming",
     short: "ECU Repair & Reprogramming",
-    body: "Our highly skilled technicians specialize in ECU repairs and reprogramming for all types of engines and gearboxes. We ensure accurate diagnostics, reliable solutions, and professional service to get your vehicles back on the road with optimal performance.",
+    body: "Our highly skilled technicians specialize in ECU repairs and reprogramming for all types of engines and gearboxes. We ensure accurate diagnostics, reliable solutions.",
     image: ecuImg,
     alt: "Engineer repairing a vehicle electronic control unit circuit board",
     intro:
@@ -144,41 +144,10 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "advanced-training-programs",
-    title: "Advanced Training Programs",
-    short: "Advanced Training Programs",
-    body: "We deliver advanced training programs for engineers and technicians, designed to enhance skills and keep professionals up-to-date with the latest automotive technologies. Our hands-on courses cover diagnostics, repair techniques, ECU tuning, and the use of modern tools, providing practical knowledge that can be applied directly in the workshop. With expert instructors and real-world training scenarios, we empower technicians to improve efficiency, accuracy, and overall performance in their work.",
-    image: trainingImg,
-    alt: "Automotive technicians attending an AutoDome technical training session",
-    intro:
-      "Hands-on technical training for workshop teams and fleet engineers, taught on live commercial vehicles and real diagnostic equipment.",
-    highlights: [
-      {
-        title: "Practical, not theoretical",
-        body: "Every module is delivered on real vehicles, real faults and the tools your team uses daily.",
-      },
-      {
-        title: "Structured levels",
-        body: "From electrical fundamentals through advanced ECU tuning and network diagnostics.",
-      },
-      {
-        title: "On-site or in our centre",
-        body: "Courses delivered at our Sharjah facility or at your own workshop.",
-      },
-    ],
-    deliverables: [
-      "Electrical and CAN network diagnostics",
-      "Diagnostic tool mastery workshops",
-      "ECU tuning and file handling",
-      "Aftertreatment and emissions systems",
-      "Certificates of completion for participants",
-    ],
-  },
-  {
-    slug: "heavy-duty-parts-supply",
-    title: "Heavy Duty Vehicle Parts Supply",
-    short: "Heavy Duty Vehicle Parts Supply",
-    body: "We maintain a large inventory of electronic control units, electronic components, and mechanical parts for all major commercial vehicle brands. In addition, our experienced team can source special or hard-to-find parts for any brand of commercial vehicles and construction equipment, ensuring timely delivery and reliable support.",
+    slug: "ecu-tuning-softwares",
+    title: "ECU Tuning Softwares",
+    short: "ECU Tuning Softwares",
+    body: "Get Tuning softwares for all trucks, we also provide support for Chinese trucks with customized softwres",
     image: partsImg,
     alt: "Warehouse shelving stocked with genuine heavy-duty vehicle parts",
     intro:
@@ -206,10 +175,10 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    slug: "workshop-tools-equipment",
-    title: "Workshop Tools & Equipment Trading",
-    short: "Workshop Tools & Equipment Trading",
-    body: "We specialize in trading workshop tools and equipment, offering a wide range of high-quality products for automotive and industrial workshops. From hand tools and power tools to diagnostic equipment and specialized machinery, we provide reliable solutions to meet every workshop's needs. Our focus is on quality, durability, and affordability, ensuring that professionals have the right tools to work efficiently and maintain high standards of service.",
+    slug: "truck-diagnostic-tools-trading",
+    title: "Professional Truck Diagnostic Tools trading",
+    short: "Professional Truck Diagnostic Tools trading",
+    body: "Choose suitable diagnostic equipment for heavy-duty vehicles and commercial vehicle applications. Our team can help identify the right solution for your workshop.",
     image: equipmentImg,
     alt: "Professional workshop tools and equipment supplied by AutoDome",
     intro:
