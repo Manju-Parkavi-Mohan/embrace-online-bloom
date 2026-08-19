@@ -3,7 +3,6 @@ import ecuImg from "@/assets/service-ecu.jpg";
 import trainingImg from "@/assets/service-training.jpg";
 import partsImg from "@/assets/service-parts.jpg";
 import equipmentImg from "@/assets/service-equipment.jpg";
-import aboutImg from "@/assets/about-workshop.jpg";
 import diagnosisRepairImg from "@/assets/service-diagnosis-repair.jpg";
 import fleetImg from "@/assets/cta-fleet.jpg";
 
