@@ -27,11 +27,11 @@ export function About() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="mt-6 rounded-2xl border border-border bg-card p-6 shadow-soft sm:absolute sm:-bottom-10 sm:-right-6 sm:mt-0 sm:max-w-xs lg:-right-10">
-            <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-primary">
+          <div className="mt-6 rounded-2xl border border-white/10 bg-ink p-6 shadow-soft sm:absolute sm:-bottom-10 sm:-right-6 sm:mt-0 sm:max-w-xs lg:-right-10">
+            <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">
               Shop online at {SITE.storefront.name}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
               {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and
               workshop equipment behind every AutoDome service.
             </p>
@@ -39,7 +39,7 @@ export function About() {
               href={SITE.storefront.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary underline-offset-4 hover:underline"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-white underline-offset-4 transition-colors hover:text-accent"
             >
               Visit the {SITE.storefront.name} store
               <ArrowRight className="size-4" aria-hidden="true" />
