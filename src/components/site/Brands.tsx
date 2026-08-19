@@ -39,7 +39,7 @@ export function Brands() {
             Supported Vehicle Brands
           </p>
           <h2 className="mt-3 font-display text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
-            Multi-brand coverage for trucks, buses, and off-highway equipment.
+            Diagnostics for Leading Truck, buses, construction eqiupments & Engine Brands
           </h2>
         </Reveal>
       </div>
