@@ -45,17 +45,17 @@ export function Gallery() {
               type="button"
               onClick={() => scrollBy(-1)}
               aria-label="Scroll gallery left"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
+              className="grid size-8 place-items-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <ChevronLeft className="size-5" aria-hidden="true" />
+              <ChevronLeft className="size-4" aria-hidden="true" />
             </button>
             <button
               type="button"
               onClick={() => scrollBy(1)}
               aria-label="Scroll gallery right"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
+              className="grid size-8 place-items-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <ChevronRight className="size-5" aria-hidden="true" />
+              <ChevronRight className="size-4" aria-hidden="true" />
             </button>
           </div>
         </div>

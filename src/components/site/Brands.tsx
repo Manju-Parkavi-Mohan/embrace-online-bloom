@@ -14,6 +14,11 @@ const BRANDS: Brand[] = [
   { name: "Perkins" },
   { name: "Caterpillar", slug: "caterpillar" },
   { name: "John Deere", slug: "johndeere" },
+  { name: "Autovei" },
+  { name: "ECUlite" },
+  { name: "Engine Dance" },
+  { name: "JALTEST" },
+  { name: "Magic Motor Sports" },
 ];
 
 function initials(name: string) {

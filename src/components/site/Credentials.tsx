@@ -23,6 +23,9 @@ const CERTIFICATIONS = [
   },
 ];
 
+const chevronClass =
+  "grid size-8 place-items-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground hover:text-background active:bg-foreground active:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 export function Credentials() {
   const scroller = useRef<HTMLDivElement | null>(null);
 
@@ -35,8 +38,7 @@ export function Credentials() {
   return (
     <section id="credentials" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
-          <Reveal className="min-w-0 max-w-3xl">
+        <Reveal className="max-w-3xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             Certifications
@@ -44,40 +46,28 @@ export function Credentials() {
           <h2 className="mt-3 font-display text-2xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Certified management systems.
           </h2>
-          </Reveal>
+        </Reveal>
 
-          <div className="flex shrink-0 gap-2 md:hidden">
-            <button
-              type="button"
-              onClick={() => scrollBy(-1)}
-              aria-label="Scroll certifications left"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
-            >
-              <ChevronLeft className="size-5" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollBy(1)}
-              aria-label="Scroll certifications right"
-              className="grid size-11 place-items-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground active:border-primary active:bg-primary active:text-primary-foreground"
-            >
-              <ChevronRight className="size-5" aria-hidden="true" />
-            </button>
-          </div>
+        <div className="mt-5 flex justify-end gap-2 md:hidden">
+          <button type="button" onClick={() => scrollBy(-1)} aria-label="Scroll certifications left" className={chevronClass}>
+            <ChevronLeft className="size-4" aria-hidden="true" />
+          </button>
+          <button type="button" onClick={() => scrollBy(1)} aria-label="Scroll certifications right" className={chevronClass}>
+            <ChevronRight className="size-4" aria-hidden="true" />
+          </button>
         </div>
 
         <div
           ref={scroller}
-          className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0"
+          className="no-scrollbar -mx-5 mt-4 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 md:mx-0 md:mt-8 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0"
         >
-          {CERTIFICATIONS.map((cert, index) => (
-            <Reveal
+          {CERTIFICATIONS.map((cert) => (
+            <div
               key={cert.code}
-              delay={index * 90}
               className="w-[85vw] max-w-[420px] shrink-0 snap-start md:w-auto md:max-w-none"
             >
-              <article className="group h-full rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lifted sm:p-9">
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary transition-colors duration-500 group-hover:bg-primary group-hover:text-primary-foreground">
+              <article className="h-full rounded-3xl border border-border bg-card p-7 shadow-soft sm:p-9">
+                <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary">
                   <cert.Icon className="size-6" aria-hidden="true" />
                 </span>
                 <p className="mt-7 font-display text-lg font-bold text-foreground">{cert.code}</p>
@@ -86,7 +76,7 @@ export function Credentials() {
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{cert.body}</p>
               </article>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>

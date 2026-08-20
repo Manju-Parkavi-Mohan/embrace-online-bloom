@@ -34,6 +34,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-deep: var(--primary-deep);
   --color-primary-soft: var(--primary-soft);
+  --color-primary-light: oklch(0.74 0.13 262);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -309,7 +310,7 @@
 }
 
 .marquee-track {
-  animation: marquee-scroll 38s linear infinite;
+  animation: marquee-scroll 26s linear infinite;
 }
 
 .marquee-mask:hover .marquee-track {

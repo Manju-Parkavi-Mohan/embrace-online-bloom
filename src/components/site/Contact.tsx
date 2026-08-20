@@ -48,7 +48,7 @@ const FLEET_SIZES = ["1 – 5 vehicles", "6 – 20 vehicles", "21 – 100 vehicl
 const selectClass =
   "flex h-11 w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
-const CONTACT_INBOX = "office@autodome.ae";
+const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.com";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);

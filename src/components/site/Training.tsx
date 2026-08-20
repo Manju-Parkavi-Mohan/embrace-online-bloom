@@ -29,6 +29,9 @@ const PILLARS = [
   },
 ];
 
+const chevronClass =
+  "grid size-8 place-items-center rounded-full border border-primary-foreground/40 text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-foreground active:bg-primary-foreground active:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
 export function Training() {
   const scroller = useRef<HTMLDivElement | null>(null);
 
@@ -53,8 +56,7 @@ export function Training() {
       <span className="absolute inset-0 -z-10 bg-foreground/55" aria-hidden="true" />
 
       <div className="section-shell">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
-          <Reveal className="min-w-0 max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="eyebrow" style={{ color: "var(--primary-foreground)" }}>
             <span className="h-px w-8" aria-hidden="true" />
             Advanced training programs
@@ -66,36 +68,24 @@ export function Training() {
             Our professional programs are designed for technicians and engineers who need real diagnostic depth —
             electronic systems, ECU work, fault tracing, and modern workshop practice, taught by working engineers.
           </p>
-          </Reveal>
+        </Reveal>
 
-          <div className="flex shrink-0 gap-2 sm:hidden">
-            <button
-              type="button"
-              onClick={() => scrollBy(-1)}
-              aria-label="Scroll training programs left"
-              className="grid size-11 place-items-center rounded-full border border-primary-foreground/40 bg-foreground/70 text-primary-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground active:border-accent active:bg-accent active:text-accent-foreground"
-            >
-              <ChevronLeft className="size-5" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollBy(1)}
-              aria-label="Scroll training programs right"
-              className="grid size-11 place-items-center rounded-full border border-primary-foreground/40 bg-foreground/70 text-primary-foreground transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground active:border-accent active:bg-accent active:text-accent-foreground"
-            >
-              <ChevronRight className="size-5" aria-hidden="true" />
-            </button>
-          </div>
+        <div className="mt-6 flex justify-end gap-2 sm:hidden">
+          <button type="button" onClick={() => scrollBy(-1)} aria-label="Scroll training programs left" className={chevronClass}>
+            <ChevronLeft className="size-4" aria-hidden="true" />
+          </button>
+          <button type="button" onClick={() => scrollBy(1)} aria-label="Scroll training programs right" className={chevronClass}>
+            <ChevronRight className="size-4" aria-hidden="true" />
+          </button>
         </div>
 
         <div
           ref={scroller}
-          className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0"
+          className="no-scrollbar -mx-5 mt-4 flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0"
         >
-          {PILLARS.map((pillar, index) => (
-            <Reveal
+          {PILLARS.map((pillar) => (
+            <div
               key={pillar.title}
-              delay={index * 90}
               className="w-[85vw] max-w-[420px] shrink-0 snap-start sm:w-auto sm:max-w-none"
             >
               <div className="h-full rounded-2xl border border-primary-foreground/25 bg-foreground/90 p-7 shadow-lifted backdrop-blur-md">
@@ -103,12 +93,12 @@ export function Training() {
                 <h3 className="mt-5 font-display text-lg font-bold text-primary-foreground">{pillar.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-primary-foreground">{pillar.body}</p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
 
         <Reveal delay={150}>
-          <Button asChild variant="light" size="xl" className="mt-12 w-full sm:w-auto">
+          <Button asChild variant="light" size="xl" className="mt-10 w-full sm:w-auto">
             <a href="#contact">
               View Programs
               <ArrowRight className="size-4" aria-hidden="true" />

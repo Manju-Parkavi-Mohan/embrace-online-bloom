@@ -1,10 +1,9 @@
-import diagnosticsImg from "@/assets/service-diagnostics.jpg";
-import ecuImg from "@/assets/service-ecu.jpg";
-import trainingImg from "@/assets/service-training.jpg";
-import partsImg from "@/assets/service-parts.jpg";
-import equipmentImg from "@/assets/service-equipment.jpg";
-import diagnosisRepairImg from "@/assets/service-diagnosis-repair.jpg";
-import fleetImg from "@/assets/cta-fleet.jpg";
+import diagnosticsImg from "@/assets/svc-1-diagnostics.jpg";
+import truckRepairImg from "@/assets/svc-2-truck-repair.jpg";
+import remappingImg from "@/assets/svc-3-remapping.jpg";
+import ecuImg from "@/assets/svc-4-ecu-repair.jpg";
+import tuningSoftwareImg from "@/assets/svc-5-tuning-software.jpg";
+import toolsTradingImg from "@/assets/svc-6-tools-trading.jpg";
 
 export type Service = {
   slug: string;
@@ -24,7 +23,7 @@ export const SERVICES: Service[] = [
     title: "Commercial Heavy Vehicle Diagnostics",
     short: "Commercial Heavy Vehicle Diagnostics",
     body: "We investigate warning lights, diagnostic trouble codes, communication faults, electronic problems, and performance-related issues.",
-    image: diagnosisRepairImg,
+    image: diagnosticsImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
     intro:
       "Fast, accurate fault-finding for trucks, buses, trailers and construction equipment — backed by dealer-level tooling and engineers who repair what they diagnose.",
@@ -55,8 +54,8 @@ export const SERVICES: Service[] = [
     title: "Truck Repair & Maintenance",
     short: "Truck Repair & Maintenance",
     body: "Our diagnostic specialists can identify electronic and control-system problems affecting engines, automated manual transmissions, automatic transmissions, and related vehicle systems.",
-    image: diagnosticsImg,
-    alt: "Dealer-level diagnostic equipment connected to a commercial truck",
+    image: truckRepairImg,
+    alt: "Technicians repairing a commercial truck engine in a workshop bay",
     intro:
       "Genuine dealer diagnostic platforms supplied, licensed, configured and supported — so independent workshops work at manufacturer level.",
     highlights: [
@@ -85,9 +84,9 @@ export const SERVICES: Service[] = [
     slug: "ecu-remapping-calibration",
     title: "ECU Remapping & Calibration",
     short: "ECU Remapping & Calibration",
-    body: "We provide ECU remapping tools and file tuning services to enhance the performance, efficiency, and drivability of vehicles. Our advanced tools allow precise adjustments to engine control parameters, while our expert team offers professional file tuning tailored to each vehicle's needs. Whether it's for improved power, fuel efficiency, or smoother performance, our solutions ensure optimal results while maintaining reliability and safety.",
-    image: fleetImg,
-    alt: "Commercial truck fleet optimised for efficiency and performance",
+    body: "Precision remapping tools and expert file tuning that improve power, fuel efficiency and drivability — calibrated per vehicle while keeping reliability and safety margins intact.",
+    image: remappingImg,
+    alt: "Engineer running ECU remapping and calibration software on a workstation",
     intro:
       "Professional remapping hardware and calibrated file work for measurable gains in power, drivability and fuel efficiency — without compromising engine reliability.",
     highlights: [
@@ -148,8 +147,8 @@ export const SERVICES: Service[] = [
     title: "ECU Tuning Softwares",
     short: "ECU Tuning Softwares",
     body: "Get Tuning softwares for all trucks, we also provide support for Chinese trucks with customized softwres",
-    image: partsImg,
-    alt: "Warehouse shelving stocked with genuine heavy-duty vehicle parts",
+    image: tuningSoftwareImg,
+    alt: "Truck ECU tuning software running on a laptop with interface hardware",
     intro:
       "Genuine and OE-quality parts for commercial vehicles and construction equipment, plus a sourcing team for the hard-to-find items.",
     highlights: [
@@ -179,8 +178,8 @@ export const SERVICES: Service[] = [
     title: "Professional Truck Diagnostic Tools trading",
     short: "Professional Truck Diagnostic Tools trading",
     body: "Choose suitable diagnostic equipment for heavy-duty vehicles and commercial vehicle applications. Our team can help identify the right solution for your workshop.",
-    image: equipmentImg,
-    alt: "Professional workshop tools and equipment supplied by AutoDome",
+    image: toolsTradingImg,
+    alt: "Professional heavy-duty truck diagnostic tools and interfaces for sale",
     intro:
       "Equip or upgrade a complete commercial vehicle workshop — from hand tools to specialised machinery — with advice from engineers who use them.",
     highlights: [

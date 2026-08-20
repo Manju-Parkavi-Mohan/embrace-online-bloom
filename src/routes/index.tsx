@@ -8,7 +8,6 @@ import { Credentials } from "@/components/site/Credentials";
 import { Industries } from "@/components/site/Industries";
 import { AdlStore } from "@/components/site/AdlStore";
 import { Brands } from "@/components/site/Brands";
-import { Stats } from "@/components/site/Stats";
 import { Gallery } from "@/components/site/Gallery";
 import { Training } from "@/components/site/Training";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -123,7 +122,6 @@ function Index() {
         <Credentials />
         <Industries />
         <AdlStore />
-        <Stats />
         <Gallery />
         <Training />
         <Faq />
