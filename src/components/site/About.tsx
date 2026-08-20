@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import aboutImage from "@/assets/about-workshop.jpg";
+import { FeaturedProducts } from "./FeaturedProducts";
 import { SITE } from "@/lib/site";
 
 const FACTS = [
