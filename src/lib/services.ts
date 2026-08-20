@@ -1,10 +1,9 @@
-import diagnosticsImg from "@/assets/service-diagnostics.jpg";
-import ecuImg from "@/assets/service-ecu.jpg";
-import trainingImg from "@/assets/service-training.jpg";
-import partsImg from "@/assets/service-parts.jpg";
-import equipmentImg from "@/assets/service-equipment.jpg";
-import diagnosisRepairImg from "@/assets/service-diagnosis-repair.jpg";
-import fleetImg from "@/assets/cta-fleet.jpg";
+import diagnosticsImg from "@/assets/svc-1-diagnostics.jpg";
+import truckRepairImg from "@/assets/svc-2-truck-repair.jpg";
+import remappingImg from "@/assets/svc-3-remapping.jpg";
+import ecuImg from "@/assets/svc-4-ecu-repair.jpg";
+import tuningSoftwareImg from "@/assets/svc-5-tuning-software.jpg";
+import toolsTradingImg from "@/assets/svc-6-tools-trading.jpg";
 
 export type Service = {
   slug: string;
