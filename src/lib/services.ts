@@ -55,7 +55,7 @@ export const SERVICES: Service[] = [
     short: "Truck Repair & Maintenance",
     body: "Our diagnostic specialists can identify electronic and control-system problems affecting engines, automated manual transmissions, automatic transmissions, and related vehicle systems.",
     image: truckRepairImg,
-    alt: "Dealer-level diagnostic equipment connected to a commercial truck",
+    alt: "Technicians repairing a commercial truck engine in a workshop bay",
     intro:
       "Genuine dealer diagnostic platforms supplied, licensed, configured and supported — so independent workshops work at manufacturer level.",
     highlights: [
@@ -86,7 +86,7 @@ export const SERVICES: Service[] = [
     short: "ECU Remapping & Calibration",
     body: "Precision remapping tools and expert file tuning that improve power, fuel efficiency and drivability — calibrated per vehicle while keeping reliability and safety margins intact.",
     image: remappingImg,
-    alt: "Commercial truck fleet optimised for efficiency and performance",
+    alt: "Engineer running ECU remapping and calibration software on a workstation",
     intro:
       "Professional remapping hardware and calibrated file work for measurable gains in power, drivability and fuel efficiency — without compromising engine reliability.",
     highlights: [
@@ -148,7 +148,7 @@ export const SERVICES: Service[] = [
     short: "ECU Tuning Softwares",
     body: "Get Tuning softwares for all trucks, we also provide support for Chinese trucks with customized softwres",
     image: tuningSoftwareImg,
-    alt: "Warehouse shelving stocked with genuine heavy-duty vehicle parts",
+    alt: "Truck ECU tuning software running on a laptop with interface hardware",
     intro:
       "Genuine and OE-quality parts for commercial vehicles and construction equipment, plus a sourcing team for the hard-to-find items.",
     highlights: [
@@ -179,7 +179,7 @@ export const SERVICES: Service[] = [
     short: "Professional Truck Diagnostic Tools trading",
     body: "Choose suitable diagnostic equipment for heavy-duty vehicles and commercial vehicle applications. Our team can help identify the right solution for your workshop.",
     image: toolsTradingImg,
-    alt: "Professional workshop tools and equipment supplied by AutoDome",
+    alt: "Professional heavy-duty truck diagnostic tools and interfaces for sale",
     intro:
       "Equip or upgrade a complete commercial vehicle workshop — from hand tools to specialised machinery — with advice from engineers who use them.",
     highlights: [
