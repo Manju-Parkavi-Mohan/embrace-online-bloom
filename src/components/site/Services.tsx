@@ -50,13 +50,13 @@ export function Services() {
                 </span>
 
                 <div className="relative p-6">
-                  <h3 className="font-display text-xl font-bold leading-snug text-primary-foreground transition-colors duration-300 group-hover:text-primary-light">
+                  <h3 className="font-display text-xl font-bold leading-snug text-primary-foreground transition-colors duration-300 group-hover:text-primary-soft">
                     {service.title}
                   </h3>
                   <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-primary-foreground/75">
                     {service.body}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground transition-colors duration-300 group-hover:text-primary-light">
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground transition-colors duration-300 group-hover:text-primary-soft">
                     Request Consultation
                     <ArrowRight
                       className="size-4 transition-transform duration-300 group-hover:translate-x-1"
