@@ -53,12 +53,35 @@ const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.c
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
     const value = (key: string) => String(data.get(key) ?? "").trim() || "—";
+
+    const rawName = String(data.get("fullName") ?? "").trim();
+    const rawPhone = String(data.get("phone") ?? "").trim();
+    const rawEmail = String(data.get("email") ?? "").trim();
+
+    const nextErrors: Record<string, string> = {};
+    if (!rawName) nextErrors.fullName = "Please enter your full name.";
+    else if (rawName.length < 2) nextErrors.fullName = "Name must be at least 2 characters.";
+
+    if (!rawPhone) nextErrors.phone = "Please enter your phone number.";
+    else if (!/^\+?[0-9\s()-]{7,20}$/.test(rawPhone))
+      nextErrors.phone = "Enter a valid phone number (7–20 digits, e.g. +971 50 123 4567).";
+
+    if (rawEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(rawEmail))
+      nextErrors.email = "Enter a valid email address, e.g. name@company.com.";
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      form.querySelector<HTMLInputElement>(`[name="${Object.keys(nextErrors)[0]}"]`)?.focus();
+      return;
+    }
+
 
     const subject = `Website enquiry — ${value("service")} — ${value("fullName")}`;
     const body = [
