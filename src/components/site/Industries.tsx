@@ -11,13 +11,13 @@ import transport from "@/assets/ind-transport.jpg";
 import equipment from "@/assets/service-equipment.jpg";
 
 const INDUSTRIES = [
-  { name: "Logistics", body: "Long-haul and distribution fleets", image: logistics, Icon: Truck },
-  { name: "Construction", body: "Site machinery and tipper fleets", image: construction, Icon: HardHat },
-  { name: "Mining", body: "Haulage and heavy earthmoving", image: mining, Icon: Mountain },
-  { name: "Agriculture", body: "Tractors and harvesting equipment", image: agriculture, Icon: Tractor },
-  { name: "Marine", body: "Auxiliary and propulsion engines", image: marine, Icon: Anchor },
-  { name: "Public Transport", body: "Bus and passenger fleets", image: transport, Icon: Bus },
-  { name: "Industrial Equipment", body: "Generators and plant machinery", image: equipment, Icon: Factory },
+  { name: "Logistics", body: "Long-haul and distribution fleets", image: logistics },
+  { name: "Construction", body: "Site machinery and tipper fleets", image: construction },
+  { name: "Mining", body: "Haulage and heavy earthmoving", image: mining },
+  { name: "Agriculture", body: "Tractors and harvesting equipment", image: agriculture },
+  { name: "Marine", body: "Auxiliary and propulsion engines", image: marine },
+  { name: "Public Transport", body: "Bus and passenger fleets", image: transport },
+  { name: "Industrial Equipment", body: "Generators and plant machinery", image: equipment },
 ];
 
 export function Industries() {
