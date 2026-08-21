@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { FeaturedProducts } from "./FeaturedProducts";
 import { SITE } from "@/lib/site";
+
 
 const FACTS = [
   {
