@@ -223,30 +223,76 @@ export function Contact() {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                  <p className="text-xs text-muted-foreground">
+                    Fields marked <span className="text-destructive">*</span> are required. All other fields are
+                    optional.
+                  </p>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="fullName">Full Name</Label>
-                      <Input id="fullName" name="fullName" required autoComplete="name" className="h-11" />
+                      <Label htmlFor="fullName">
+                        Full Name <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="fullName"
+                        name="fullName"
+                        autoComplete="name"
+                        aria-invalid={!!errors.fullName}
+                        aria-describedby={errors.fullName ? "fullName-error" : undefined}
+                        className="h-11"
+                      />
+                      {errors.fullName ? (
+                        <p id="fullName-error" className="text-xs font-medium text-destructive">
+                          {errors.fullName}
+                        </p>
+                      ) : null}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
+                      <Label htmlFor="phone">
+                        Phone <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        autoComplete="tel"
+                        aria-invalid={!!errors.phone}
+                        aria-describedby={errors.phone ? "phone-error" : undefined}
+                        className="h-11"
+                      />
+                      {errors.phone ? (
+                        <p id="phone-error" className="text-xs font-medium text-destructive">
+                          {errors.phone}
+                        </p>
+                      ) : null}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email (optional)</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? "email-error" : undefined}
+                        className="h-11"
+                      />
+                      {errors.email ? (
+                        <p id="email-error" className="text-xs font-medium text-destructive">
+                          {errors.email}
+                        </p>
+                      ) : null}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="company">Company Name (optional)</Label>
                       <Input id="company" name="company" autoComplete="organization" className="h-11" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="country">Country</Label>
+                      <Label htmlFor="country">Country (optional)</Label>
                       <Input id="country" name="country" defaultValue="" autoComplete="country-name" className="h-11" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" required autoComplete="email" className="h-11" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" name="phone" type="tel" required autoComplete="tel" className="h-11" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="brand">Vehicle Brand</Label>
+                      <Label htmlFor="brand">Vehicle Brand (optional)</Label>
                       <select id="brand" name="brand" className={selectClass} defaultValue="">
                         <option value="" disabled>
                           Select a brand
@@ -259,7 +305,7 @@ export function Contact() {
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Required</Label>
+                      <Label htmlFor="service">Service Required (optional)</Label>
                       <select id="service" name="service" className={selectClass} defaultValue="">
                         <option value="" disabled>
                           Select a service
@@ -272,7 +318,7 @@ export function Contact() {
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="fleetSize">Fleet Size</Label>
+                      <Label htmlFor="fleetSize">Fleet Size (optional)</Label>
                       <select id="fleetSize" name="fleetSize" className={selectClass} defaultValue="">
                         <option value="" disabled>
                           Select fleet size
@@ -287,7 +333,7 @@ export function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">Message (optional)</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -295,6 +341,7 @@ export function Contact() {
                       placeholder="Tell us about the vehicles, fault symptoms, or equipment requirement."
                     />
                   </div>
+
 
                   <div className="space-y-2">
                     <Label htmlFor="attachment">Upload File (optional)</Label>
