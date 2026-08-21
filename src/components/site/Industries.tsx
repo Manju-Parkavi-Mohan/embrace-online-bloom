@@ -1,5 +1,7 @@
-import { Anchor, Bus, Factory, HardHat, Mountain, Truck, Tractor } from "lucide-react";
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+
 import logistics from "@/assets/ind-logistics.jpg";
 import construction from "@/assets/ind-construction.jpg";
 import mining from "@/assets/ind-mining.jpg";
