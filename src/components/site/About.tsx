@@ -82,29 +82,34 @@ export function About() {
         </div>
 
         <Reveal delay={120}>
-          <div className="mt-12 grid items-center gap-6 rounded-3xl border border-white/10 bg-ink p-7 shadow-lifted sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto]">
-            <div className="min-w-0">
-              <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-white">
-                Shop online at {SITE.storefront.name}
-              </p>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-                {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop equipment
-                behind every AutoDome service.
-              </p>
+          <div className="mt-12 rounded-3xl border border-white/10 bg-ink p-6 shadow-lifted sm:p-10">
+            <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+              <div className="min-w-0">
+                <p className="font-display text-lg font-bold text-white sm:text-2xl">
+                  Shop online at {SITE.storefront.name}
+                </p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+                  {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop
+                  equipment behind every AutoDome service.
+                </p>
+              </div>
+              <a
+                href={SITE.storefront.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${buttonVariants({ variant: "light", size: "lg" })} shrink-0`}
+              >
+                Visit the {SITE.storefront.name} store
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </a>
             </div>
-            <a
-              href={SITE.storefront.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-accent underline-offset-4 transition-all hover:brightness-125 hover:underline"
-            >
-              Visit the {SITE.storefront.name} store
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </a>
+
+            <div className="mt-8 border-t border-white/10 pt-8">
+              <FeaturedProducts />
+            </div>
           </div>
         </Reveal>
 
-        <FeaturedProducts />
       </div>
     </section>
   );
