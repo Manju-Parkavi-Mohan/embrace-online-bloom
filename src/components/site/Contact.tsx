@@ -53,7 +53,7 @@ const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.c
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<{ fullName?: string; phone?: string; email?: string }>({});
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -65,7 +65,7 @@ export function Contact() {
     const rawPhone = String(data.get("phone") ?? "").trim();
     const rawEmail = String(data.get("email") ?? "").trim();
 
-    const nextErrors: Record<string, string> = {};
+    const nextErrors: { fullName?: string; phone?: string; email?: string } = {};
     if (!rawName) nextErrors.fullName = "Please enter your full name.";
     else if (rawName.length < 2) nextErrors.fullName = "Name must be at least 2 characters.";
 
