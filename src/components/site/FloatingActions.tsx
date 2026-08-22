@@ -28,12 +28,16 @@ export function FloatingActions() {
           rel="noopener noreferrer"
           aria-label={`Shop at ${SITE.storefront.name}`}
           className={cn(
-            "flex items-center gap-2 overflow-hidden rounded-full bg-accent px-4 py-2.5 text-sm font-bold text-accent-foreground shadow-lifted transition-all duration-500 hover:-translate-y-0.5",
+            "group flex h-13 items-center overflow-hidden rounded-full bg-accent text-accent-foreground shadow-lifted transition-all duration-500 hover:-translate-y-0.5",
             showShop ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none",
           )}
         >
-          <ShoppingCart className="size-4 shrink-0" aria-hidden="true" />
-          <span className="whitespace-nowrap">Shop {SITE.storefront.name}</span>
+          <span className="grid size-13 shrink-0 place-items-center">
+            <ShoppingCart className="size-5" aria-hidden="true" />
+          </span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold transition-all duration-500 group-hover:max-w-[12rem] group-hover:pr-4">
+            Shop Online
+          </span>
         </a>
         <a
           href={`https://wa.me/${SITE.whatsapp}`}
