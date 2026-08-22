@@ -110,7 +110,7 @@ export function About() {
                   </a>
                 </div>
 
-                <div className="mt-8 border-t border-white/10 pt-8">
+                <div className="mt-8 rounded-2xl bg-card p-5 sm:p-6">
                   <FeaturedProducts />
                 </div>
               </div>
