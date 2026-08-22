@@ -88,29 +88,31 @@ export function About() {
               Shop Online
             </span>
             <div className="rounded-3xl bg-gradient-to-br from-accent via-accent to-accent-foreground p-[2px] shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
-              <div className="rounded-3xl bg-ink p-6 sm:p-10">
-                <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
-                  <div className="min-w-0">
-                    <p className="font-display text-lg font-bold text-white sm:text-2xl">
-                      Shop online at {SITE.storefront.name}
-                    </p>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-                      {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop
-                      equipment behind every AutoDome service.
-                    </p>
+              <div className="overflow-hidden rounded-3xl bg-ink">
+                <div className="p-6 sm:p-10">
+                  <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+                    <div className="min-w-0">
+                      <p className="font-display text-lg font-bold text-white sm:text-2xl">
+                        Shop online at {SITE.storefront.name}
+                      </p>
+                      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+                        {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop
+                        equipment behind every AutoDome service.
+                      </p>
+                    </div>
+                    <a
+                      href={SITE.storefront.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${buttonVariants({ variant: "light", size: "lg" })} shrink-0`}
+                    >
+                      Visit the {SITE.storefront.name} store
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </a>
                   </div>
-                  <a
-                    href={SITE.storefront.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${buttonVariants({ variant: "light", size: "lg" })} shrink-0`}
-                  >
-                    Visit the {SITE.storefront.name} store
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </a>
                 </div>
 
-                <div className="mt-8 rounded-2xl bg-card p-5 sm:p-6">
+                <div className="bg-card p-5 sm:p-6">
                   <FeaturedProducts />
                 </div>
               </div>
