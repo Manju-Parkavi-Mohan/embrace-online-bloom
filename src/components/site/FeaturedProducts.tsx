@@ -73,9 +73,9 @@ export function FeaturedProducts() {
               href={productHref(product.url)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-full flex-col p-4"
+              className="flex h-full flex-col"
             >
-              <div className="aspect-square overflow-hidden rounded-xl bg-surface">
+              <div className="aspect-square w-full overflow-hidden bg-white">
                 {product.image ? (
                   <img
                     src={product.image}
@@ -87,41 +87,43 @@ export function FeaturedProducts() {
                 ) : null}
               </div>
 
-              <p className="mt-4 line-clamp-2 font-display text-base font-bold uppercase leading-snug text-white">
-                {product.name}
-              </p>
+              <div className="flex h-full flex-col p-4">
+                <p className="line-clamp-2 font-display text-base font-bold uppercase leading-snug text-white">
+                  {product.name}
+                </p>
 
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {product.brand ? (
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
-                    {product.brand}
-                  </span>
-                ) : null}
-                <span
-                  className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${
-                    product.in_stock
-                      ? "bg-primary-soft text-primary"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  {product.in_stock ? "In Stock" : "Out of Stock"}
-                </span>
-              </div>
-
-              <div className="mt-auto flex items-end justify-between gap-3 pt-4">
-                <div>
-                  <span className="font-display text-xl font-bold text-white">
-                    {money(product.price)}
-                  </span>
-                  {product.on_sale && product.regular_price ? (
-                    <span className="ml-2 text-xs text-white/50 line-through">
-                      {money(product.regular_price)}
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  {product.brand ? (
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
+                      {product.brand}
                     </span>
                   ) : null}
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${
+                      product.in_stock
+                        ? "bg-primary-soft text-primary"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {product.in_stock ? "In Stock" : "Out of Stock"}
+                  </span>
                 </div>
-                <span className={buttonVariants({ variant: "light", size: "sm" })}>
-                  View Details
-                </span>
+
+                <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+                  <div>
+                    <span className="font-display text-xl font-bold text-white">
+                      {money(product.price)}
+                    </span>
+                    {product.on_sale && product.regular_price ? (
+                      <span className="ml-2 text-xs text-white/50 line-through">
+                        {money(product.regular_price)}
+                      </span>
+                    ) : null}
+                  </div>
+                  <span className={buttonVariants({ variant: "light", size: "sm" })}>
+                    View Details
+                  </span>
+                </div>
               </div>
             </a>
           </li>
