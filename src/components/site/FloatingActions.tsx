@@ -7,9 +7,13 @@ import { cn } from "@/lib/utils";
 
 export function FloatingActions() {
   const [show, setShow] = useState(false);
+  const [showShop, setShowShop] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 700);
+    const onScroll = () => {
+      setShow(window.scrollY > 700);
+      setShowShop(window.scrollY > 500);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -17,7 +21,20 @@ export function FloatingActions() {
 
   return (
     <>
-      <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3 sm:bottom-8 sm:right-8">
+      <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
+        <a
+          href={SITE.storefront.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Shop at ${SITE.storefront.name}`}
+          className={cn(
+            "flex items-center gap-2 overflow-hidden rounded-full bg-accent px-4 py-2.5 text-sm font-bold text-accent-foreground shadow-lifted transition-all duration-500 hover:-translate-y-0.5",
+            showShop ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none",
+          )}
+        >
+          <ShoppingCart className="size-4 shrink-0" aria-hidden="true" />
+          <span className="whitespace-nowrap">Shop {SITE.storefront.name}</span>
+        </a>
         <a
           href={`https://wa.me/${SITE.whatsapp}`}
           target="_blank"
