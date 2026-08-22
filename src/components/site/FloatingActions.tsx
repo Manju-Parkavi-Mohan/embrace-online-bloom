@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Phone } from "lucide-react";
+import { Phone, ShoppingCart } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
