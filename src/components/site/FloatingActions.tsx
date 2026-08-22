@@ -43,17 +43,27 @@ export function FloatingActions() {
           href={`https://wa.me/${SITE.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with AutoDome on WhatsApp"
-          className="grid size-13 place-items-center rounded-full bg-[#25D366] text-white shadow-brand transition-transform duration-300 hover:-translate-y-0.5"
+          aria-label="Message AutoDome on WhatsApp"
+          className="group flex h-13 items-center overflow-hidden rounded-full bg-[#25D366] text-white shadow-brand transition-all duration-500 hover:-translate-y-0.5"
         >
-          <WhatsAppIcon className="size-6" />
+          <span className="grid size-13 shrink-0 place-items-center">
+            <WhatsAppIcon className="size-6" />
+          </span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold transition-all duration-500 group-hover:max-w-[12rem] group-hover:pr-4">
+            Message us
+          </span>
         </a>
         <a
           href={`tel:${SITE.phones[1].replace(/\s/g, "")}`}
           aria-label="Call AutoDome"
-          className="grid size-13 place-items-center rounded-full border border-border bg-card text-primary shadow-soft transition-transform duration-300 hover:-translate-y-0.5"
+          className="group flex h-13 items-center overflow-hidden rounded-full border border-border bg-card text-primary shadow-soft transition-all duration-500 hover:-translate-y-0.5"
         >
-          <Phone className="size-5" aria-hidden="true" />
+          <span className="grid size-13 shrink-0 place-items-center">
+            <Phone className="size-5" aria-hidden="true" />
+          </span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold transition-all duration-500 group-hover:max-w-[12rem] group-hover:pr-4">
+            Call us
+          </span>
         </a>
       </div>
 
