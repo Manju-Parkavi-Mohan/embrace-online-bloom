@@ -6,37 +6,33 @@ The "Shop online at ADL Automotive" card lives inside the About section, merged 
 ## Goal
 Make the ADL Automotive storefront element unmistakably eye-catching so visitors notice it as a distinct action, while keeping it a reversible trial.
 
-## Proposed options (pick one)
+## Selected approach
+Combine **Option B** (accent-framed featured card) + **Option C** (sticky corner CTA).
 
-### Option A — Breakout banner card
-- Convert the dark container into a full-width banner that breaks out of the `section-shell` max-width on desktop.
-- Add a subtle top/bottom border using the amber accent (`--accent`) to separate it from the light About section.
-- Keep the merged product grid inside, but give the top banner area more vertical padding and a stronger `shadow-brand`.
-- Best for: immediate visual dominance without changing colors.
-
-### Option B — Accent-framed floating card
-- Keep the card inside the section shell but wrap it in a rounded-3xl container with a 2px amber accent gradient border (or `ring-2 ring-accent`).
+### Part 1 — Accent-framed featured card (About section)
+- Keep the dark ADL + FeaturedProducts card inside the section shell.
+- Wrap it in a `rounded-3xl` container with a 2px amber accent gradient border (`ring-2 ring-accent` or gradient border).
 - Add a small floating "Shop Online" badge/pill at the top-right corner using the accent color.
-- Slightly increase the card's shadow and give it a gentle `hover:scale-[1.01]` transition.
-- Best for: a premium "featured" look that stays contained.
+- Increase the shadow (`shadow-lifted` or `shadow-brand`) and add a gentle `hover:scale-[1.01]` transition on the container.
 
-### Option C — Sticky corner CTA (separate from card)
-- Extract the storefront CTA into a compact sticky pill button that appears after scrolling past the About section.
-- The pill sits fixed at the bottom-right of the viewport on mobile and desktop, reading "Shop ADL Automotive" with a cart icon.
-- The existing card remains but the primary conversion path is the sticky CTA.
-- Best for: maximum visibility, but more intrusive.
-
-## Recommended first trial
-**Option A** is the safest high-impact change: it makes the existing element pop by giving it more room and a colored border, without adding new floating UI or sticky elements.
+### Part 2 — Sticky corner CTA
+- Add a compact sticky pill button that appears after scrolling past the About section.
+- Position it fixed at the bottom-right of the viewport on mobile and desktop.
+- Label: "Shop ADL Automotive" with a cart/shopping-bag icon.
+- Link to `SITE.storefront.url`.
+- Make sure it does not overlap the existing WhatsApp/phone floating actions.
 
 ## Implementation steps
 1. Update `src/components/site/About.tsx`:
-   - Wrap the dark ADL + FeaturedProducts container in a full-width breakout wrapper.
-   - Add an amber top border and stronger shadow.
-   - Increase internal vertical padding for the header row.
-2. Keep `FeaturedProducts.tsx` unchanged except for any spacing adjustments needed by the new container.
-3. Verify responsive behavior on mobile (no horizontal overflow) and desktop (breakout aligns with viewport edges).
-4. Preview and measure visual impact before deciding to keep, refine, or revert.
+   - Wrap the dark ADL + FeaturedProducts container in the accent-framed card.
+   - Add the floating "Shop Online" badge.
+   - Apply hover scale and stronger shadow.
+2. Update `src/components/site/FloatingActions.tsx`:
+   - Add a new sticky shop pill that shows after scrolling past the About section.
+   - Position it above or beside the existing WhatsApp/phone buttons so nothing overlaps.
+   - Use `ShoppingCart` or `ShoppingBag` icon with the ADL Automotive link.
+3. Verify responsive behavior and z-index stacking on mobile and desktop.
+4. Preview and decide whether to keep, refine, or revert.
 
 ## Reversibility
-All changes are CSS/className only inside `About.tsx`; reverting is a single file rollback.
+Changes are confined to `About.tsx` and `FloatingActions.tsx`; reverting is a simple rollback of those two files.
