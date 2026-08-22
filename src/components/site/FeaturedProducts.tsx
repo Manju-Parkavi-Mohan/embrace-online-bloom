@@ -65,7 +65,7 @@ export function FeaturedProducts() {
           <li
             key={product.id}
             style={{ transitionDelay: `${index * 80}ms` }}
-            className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-lifted transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 ${
+            className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink shadow-lifted transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 ${
               visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
             }`}
           >
@@ -87,13 +87,13 @@ export function FeaturedProducts() {
                 ) : null}
               </div>
 
-              <p className="mt-4 line-clamp-2 font-display text-base font-bold uppercase leading-snug text-foreground">
+              <p className="mt-4 line-clamp-2 font-display text-base font-bold uppercase leading-snug text-white">
                 {product.name}
               </p>
 
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 {product.brand ? (
-                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
                     {product.brand}
                   </span>
                 ) : null}
@@ -110,16 +110,16 @@ export function FeaturedProducts() {
 
               <div className="mt-auto flex items-end justify-between gap-3 pt-4">
                 <div>
-                  <span className="font-display text-xl font-bold text-foreground">
+                  <span className="font-display text-xl font-bold text-white">
                     {money(product.price)}
                   </span>
                   {product.on_sale && product.regular_price ? (
-                    <span className="ml-2 text-xs text-muted-foreground line-through">
+                    <span className="ml-2 text-xs text-white/50 line-through">
                       {money(product.regular_price)}
                     </span>
                   ) : null}
                 </div>
-                <span className={buttonVariants({ variant: "hero", size: "sm" })}>
+                <span className={buttonVariants({ variant: "light", size: "sm" })}>
                   View Details
                 </span>
               </div>
@@ -128,7 +128,7 @@ export function FeaturedProducts() {
         ) : (
           <li
             key={`skeleton-${index}`}
-            className="h-80 animate-pulse rounded-2xl border border-border bg-card"
+            className="h-80 animate-pulse rounded-2xl border border-white/10 bg-surface"
           />
         ),
       )}
