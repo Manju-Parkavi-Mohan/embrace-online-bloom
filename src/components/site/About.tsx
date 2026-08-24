@@ -115,7 +115,6 @@ export function About() {
                   <FeaturedProducts />
                 </div>
               </div>
-            </div>
           </div>
         </Reveal>
 
