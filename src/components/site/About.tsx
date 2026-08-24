@@ -84,7 +84,7 @@ export function About() {
 
         <Reveal delay={120}>
           <div className="group relative mt-12 transition-transform duration-500 hover:scale-[1.01]">
-            <span className="absolute -top-3 right-6 z-[60] glow-badge rounded-full px-5 py-2 text-base font-bold uppercase tracking-wider text-accent-foreground sm:right-10">
+            <span className="absolute -top-1 right-6 z-10 glow-badge rounded-full px-5 py-2 text-base font-bold uppercase tracking-wider text-accent-foreground sm:right-10">
               Shop Online
             </span>
             <div className="overflow-hidden rounded-3xl bg-ink shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
