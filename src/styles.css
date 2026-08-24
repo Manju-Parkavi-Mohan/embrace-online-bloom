@@ -241,6 +241,28 @@
   }
 }
 
+@utility glow-badge {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    oklch(0.93 0.17 66),
+    var(--color-accent)
+  );
+  background-size: 200% 100%;
+  animation: glow-shift 2.4s ease-in-out infinite;
+  box-shadow: 0 0 18px oklch(0.756 0.156 66 / 0.55);
+}
+
+@keyframes glow-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @utility bg-hero-veil {
   background-image: var(--gradient-hero);
 }
