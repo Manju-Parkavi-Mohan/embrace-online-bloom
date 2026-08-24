@@ -84,11 +84,10 @@ export function About() {
 
         <Reveal delay={120}>
           <div className="group relative mt-12 transition-transform duration-500 hover:scale-[1.01]">
-            <span className="absolute -top-3 right-6 z-10 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-lifted sm:right-10">
+            <span className="absolute -top-1 right-6 z-10 glow-badge rounded-full px-5 py-2 text-base font-bold uppercase tracking-wider text-accent-foreground sm:right-10">
               Shop Online
             </span>
-            <div className="laser-border shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
-              <div className="overflow-hidden rounded-3xl bg-ink">
+            <div className="overflow-hidden rounded-3xl bg-ink shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
                 <div className="p-6 sm:p-10">
                   <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
                     <div className="min-w-0">
@@ -116,7 +115,6 @@ export function About() {
                   <FeaturedProducts />
                 </div>
               </div>
-            </div>
           </div>
         </Reveal>
 
