@@ -38,7 +38,7 @@ export function FinalCta() {
               </a>
             </Button>
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
-              <a href="#contact">
+              <a href="#contact-form">
                 Request Consultation
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>

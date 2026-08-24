@@ -99,7 +99,7 @@ export function Training() {
 
         <Reveal delay={150}>
           <Button asChild variant="light" size="xl" className="mt-10 w-full sm:w-auto">
-            <a href="#contact">
+            <a href="#contact-form">
               View Programs
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>

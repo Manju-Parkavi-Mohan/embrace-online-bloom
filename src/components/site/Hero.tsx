@@ -65,7 +65,7 @@ export function Hero() {
 
           <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-3">
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
-              <a href="#contact">
+              <a href="#contact-form">
                 Book a Diagnostic Service
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>
