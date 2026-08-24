@@ -214,6 +214,33 @@
   box-shadow: var(--shadow-brand);
 }
 
+@property --laser-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@utility laser-border {
+  position: relative;
+  border-radius: calc(var(--radius) + 12px);
+  padding: 2px;
+  background: conic-gradient(
+    from var(--laser-angle),
+    transparent 0%,
+    var(--color-accent) 6%,
+    oklch(0.92 0.18 66) 14%,
+    var(--color-accent) 22%,
+    transparent 36%
+  );
+  animation: laser-spin 3.2s linear infinite;
+}
+
+@keyframes laser-spin {
+  to {
+    --laser-angle: 360deg;
+  }
+}
+
 @utility bg-hero-veil {
   background-image: var(--gradient-hero);
 }
