@@ -75,7 +75,7 @@ function ServicePage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
-                <a href="/#contact">
+                <a href="/#contact-form">
                   Request Consultation
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
@@ -125,7 +125,7 @@ function ServicePage() {
                   ))}
                 </ul>
                 <Button asChild variant="hero" className="mt-8 w-full">
-                  <a href="/#contact">Request Consultation</a>
+                  <a href="/#contact-form">Request Consultation</a>
                 </Button>
               </div>
             </Reveal>

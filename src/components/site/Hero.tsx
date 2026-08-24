@@ -4,10 +4,16 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-workshop.jpg";
 import magicLogo from "@/assets/magic-motorsport.jpg";
 import jaltestLogo from "@/assets/jaltest.jpg";
+import engineDanceLogo from "@/assets/enginedance.png";
+import eculiteLogo from "@/assets/eculite.png";
+import autoveiLogo from "@/assets/autovei.png";
 
 const HERO_PARTNERS = [
   { name: "Magic Motorsport", logo: magicLogo },
   { name: "Jaltest Diagnostics", logo: jaltestLogo },
+  { name: "Engine Dance", logo: engineDanceLogo },
+  { name: "ECULite", logo: eculiteLogo },
+  { name: "Autovei", logo: autoveiLogo },
 ];
 
 export function Hero() {
@@ -59,7 +65,7 @@ export function Hero() {
 
           <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-3">
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
-              <a href="#contact">
+              <a href="#contact-form">
                 Book a Diagnostic Service
                 <ArrowRight className="size-4" aria-hidden="true" />
               </a>

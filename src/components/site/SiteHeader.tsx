@@ -126,7 +126,7 @@ export function SiteHeader() {
             {SITE.phones[0]}
           </a>
           <Button asChild variant="hero" className="whitespace-nowrap">
-            <a href="/#contact">Request Consultation</a>
+            <a href="/#contact-form">Request Consultation</a>
           </Button>
         </div>
 
@@ -245,7 +245,7 @@ export function SiteHeader() {
 
           <div className="mt-auto space-y-3 pt-10">
             <Button asChild variant="hero" size="lg" className="w-full">
-              <a href="/#contact" onClick={() => setOpen(false)}>
+              <a href="/#contact-form" onClick={() => setOpen(false)}>
                 Request Consultation
               </a>
             </Button>

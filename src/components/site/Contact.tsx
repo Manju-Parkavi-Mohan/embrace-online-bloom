@@ -200,7 +200,7 @@ export function Contact() {
                 ].map(({ Icon, label, brand }) => (
                   <a
                     key={label}
-                    href="#contact"
+                    href="#contact-form"
                     aria-label={`AutoDome on ${label}`}
                     style={{ backgroundColor: brand, borderColor: brand }}
                     className="grid size-11 place-items-center rounded-full border text-[oklch(1_0_0)] shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
@@ -223,7 +223,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal direction="right">
-            <div className="rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
+            <div id="contact-form" className="scroll-mt-24 rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
               {submitted ? (
                 <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
                   <span className="grid size-16 place-items-center rounded-full bg-primary-soft text-primary">

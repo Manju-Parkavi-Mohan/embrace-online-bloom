@@ -36,7 +36,7 @@ export function SiteFooter() {
               ].map(({ Icon, label }) => (
                 <a
                   key={label}
-                  href="#contact"
+                  href="#contact-form"
                   aria-label={`AutoDome on ${label}`}
                   className="grid size-10 place-items-center rounded-full border border-primary-foreground/25 text-primary-foreground/80 transition-colors hover:border-primary-foreground hover:text-primary-foreground"
                 >
