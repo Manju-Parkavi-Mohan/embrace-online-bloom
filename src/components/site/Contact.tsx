@@ -223,7 +223,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal direction="right">
-            <div className="rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
+            <div id="contact-form" className="scroll-mt-24 rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
               {submitted ? (
                 <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
                   <span className="grid size-16 place-items-center rounded-full bg-primary-soft text-primary">
