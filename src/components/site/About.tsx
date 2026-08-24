@@ -87,7 +87,7 @@ export function About() {
             <span className="absolute -top-3 right-6 z-10 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-lifted sm:right-10">
               Shop Online
             </span>
-            <div className="rounded-3xl bg-gradient-to-br from-accent via-accent to-accent-foreground p-[2px] shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
+            <div className="laser-border shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
               <div className="overflow-hidden rounded-3xl bg-ink">
                 <div className="p-6 sm:p-10">
                   <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
