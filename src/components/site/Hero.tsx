@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-workshop.jpg";
 import magicLogo from "@/assets/magic-motorsport.jpg";
 import jaltestLogo from "@/assets/jaltest.jpg";
@@ -9,8 +10,8 @@ import eculiteLogo from "@/assets/eculite.png";
 import autoveiLogo from "@/assets/autovei.png";
 
 const HERO_PARTNERS = [
-  { name: "Magic Motorsport", logo: magicLogo },
-  { name: "Jaltest Diagnostics", logo: jaltestLogo },
+  { name: "Magic Motorsport", logo: magicLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
+  { name: "Jaltest Diagnostics", logo: jaltestLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
   { name: "Engine Dance", logo: engineDanceLogo },
   { name: "ECULite", logo: eculiteLogo },
   { name: "Autovei", logo: autoveiLogo },
@@ -85,7 +86,12 @@ export function Hero() {
                   key={partner.name}
                   className="flex w-full min-w-0 items-center justify-center last:col-span-2 last:w-1/2 sm:w-auto sm:last:col-span-1 sm:last:w-auto"
                 >
-                  <span className="flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3">
+                  <span
+                    className={cn(
+                      "flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3",
+                      partner.sizeClass
+                    )}
+                  >
                     <img
                       src={partner.logo}
                       alt={`${partner.name} authorized partner logo`}
