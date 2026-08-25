@@ -138,6 +138,17 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  // On a fresh page load, always start at the top of the page (never jump to a
+  // leftover in-page anchor such as #contact-form).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
@@ -145,3 +156,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+

@@ -79,21 +79,27 @@ export function Hero() {
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-foreground sm:text-base">
               Authorized Partners
             </p>
-            <ul className="mt-3 grid w-full grid-cols-2 items-center gap-3 sm:mt-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-12">
+            <ul className="mt-3 grid w-full grid-cols-2 items-center justify-items-center gap-3 sm:mt-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
               {HERO_PARTNERS.map((partner) => (
-                <li key={partner.name} className="flex min-w-0 items-center justify-center">
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} authorized partner logo`}
-                    width={320}
-                    height={120}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-auto w-full max-w-full rounded-2xl object-contain sm:h-28 sm:w-auto sm:max-w-[320px]"
-                  />
+                <li
+                  key={partner.name}
+                  className="flex w-full min-w-0 items-center justify-center last:col-span-2 last:w-1/2 sm:w-auto sm:last:col-span-1 sm:last:w-auto"
+                >
+                  <span className="flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3">
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} authorized partner logo`}
+                      width={320}
+                      height={120}
+                      loading="lazy"
+                      decoding="async"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </span>
                 </li>
               ))}
             </ul>
+
           </div>
         </div>
       </div>
