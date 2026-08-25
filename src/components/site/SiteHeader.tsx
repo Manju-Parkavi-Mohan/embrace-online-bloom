@@ -5,7 +5,7 @@ import { SERVICES } from "@/lib/services";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import logo from "@/assets/autodome-logo.png";
-import darkLogoAsset from "@/assets/autodome-logo-dark.png.asset.json";
+import darkLogo from "@/assets/autodome-logo-dark.png";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
