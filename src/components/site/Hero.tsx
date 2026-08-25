@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-workshop.jpg";
 import magicLogo from "@/assets/magic-motorsport.jpg";
 import jaltestLogo from "@/assets/jaltest.jpg";
