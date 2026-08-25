@@ -86,7 +86,12 @@ export function Hero() {
                   key={partner.name}
                   className="flex w-full min-w-0 items-center justify-center last:col-span-2 last:w-1/2 sm:w-auto sm:last:col-span-1 sm:last:w-auto"
                 >
-                  <span className="flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3">
+                  <span
+                    className={cn(
+                      "flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3",
+                      partner.sizeClass
+                    )}
+                  >
                     <img
                       src={partner.logo}
                       alt={`${partner.name} authorized partner logo`}
