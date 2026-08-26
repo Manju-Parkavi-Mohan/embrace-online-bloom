@@ -35,7 +35,7 @@ export function Brands() {
   return (
     <section
       aria-label="Supported vehicle brands"
-      className="section-dark border-y border-border py-10 sm:py-12 lg:py-14"
+      className="border-y border-border bg-background py-10 sm:py-12 lg:py-14"
     >
       <div className="section-shell">
         <Reveal className="max-w-2xl">
@@ -43,7 +43,7 @@ export function Brands() {
             <span className="h-px w-8" aria-hidden="true" />
             Supported Vehicle Brands
           </p>
-          <h2 className="mt-3 font-display text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
+          <h2 className="mt-3 font-display text-xl font-bold leading-tight text-foreground sm:text-2xl lg:text-3xl">
             Diagnostics for Leading Truck, buses, construction eqiupments & Engine Brands
           </h2>
         </Reveal>
@@ -57,7 +57,7 @@ export function Brands() {
           {loop.map((brand, index) => (
             <li
               key={`${brand.name}-${index}`}
-              className="chip-light flex h-20 w-[190px] shrink-0 items-center justify-center gap-3 rounded-2xl border px-5 text-center sm:h-24 sm:w-[230px]"
+              className="flex h-20 w-[190px] shrink-0 items-center justify-center gap-3 rounded-2xl border border-border/60 bg-ink px-5 text-center text-background shadow-soft sm:h-24 sm:w-[230px]"
             >
               {brand.slug ? (
                 <img
