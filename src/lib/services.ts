@@ -13,6 +13,12 @@ export type Service = {
   image: string;
   alt: string;
   intro: string;
+  externalUrl?: string;
+  sections?: {
+    heading: string;
+    level?: 2 | 3;
+    paragraphs: string[];
+  }[];
   highlights: { title: string; body: string }[];
   deliverables: string[];
 };
@@ -20,75 +26,140 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     slug: "commercial-heavy-vehicle-diagnostics",
-    title: "Commercial Heavy Vehicle Diagnostics",
-    short: "Commercial Heavy Vehicle Diagnostics",
-    body: "We investigate warning lights, diagnostic trouble codes, communication faults, electronic problems, and performance-related issues.",
+    title: "Truck Diagnostics & Troubleshooting Services in the UAE",
+    short: "Truck Diagnostics & Troubleshooting",
+    body: "Professional truck diagnostics and troubleshooting for complex electrical, electronic, engine, transmission, and communication faults.",
     image: diagnosticsImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
-    intro:
-      "Fast, accurate fault-finding for trucks, buses, trailers and construction equipment — backed by dealer-level tooling and engineers who repair what they diagnose.",
+    intro: "AutoDome provides professional truck diagnostics and troubleshooting services in the UAE, helping workshops, fleet operators, and heavy vehicle professionals identify complex electrical, electronic, engine, transmission, and communication faults.",
+    sections: [
+      {
+        heading: "Advanced Truck Diagnostic Services",
+        paragraphs: [
+          "Our heavy duty truck diagnostics service covers fault code reading and analysis, live data monitoring, system diagnostics, ECU communication, actuator testing, and advanced fault finding. We do not simply provide oil services and basic repair work but support truck and heavy-vehicle systems to identify issues that may not be detected through basic diagnostic scanning.",
+          "By dealing with warning lights, electronic faults, performance issues, and sensor problems, our diagnostic activities are based on proper fault detection and the method of diagnosis.",
+        ],
+      },
+      {
+        heading: "Heavy Vehicle Troubleshooting & Technical Support",
+        paragraphs: [
+          "AutoDome supports trucks, heavy vehicles, commercial vehicles, and heavy-duty equipment with specialist diagnostic experts and advanced diagnostic tools in the market. Our diagnostics service covers trucks of any brand, especially those produced in China with the Engine Dance system, as well as trucks from other countries, using the latest diagnostic equipment. Our team can assist workshops, fleet operators, logistics and transportation companies with difficult diagnostic cases, electronic troubleshooting, and ECU-related faults.",
+        ],
+      },
+      {
+        heading: "Why AutoDome for Truck Diagnosis?",
+        paragraphs: [
+          "Accurate analysis of fault codes and live vehicle parameters is essential for identifying problems in modern trucks and heavy vehicles. AutoDome uses advanced diagnostic equipment to read and interpret diagnostic trouble codes (DTCs), monitor live parameters, and analyze data from different vehicle control systems.",
+          "By combining fault-code analysis with real-time parameter monitoring, our technicians can better understand the root cause of an issue rather than relying only on error codes. This helps improve diagnostic accuracy, reduce unnecessary component replacement, and minimise vehicle downtime. With professional diagnostic tools and technical knowledge, we help automotive professionals diagnose problems more efficiently and make informed repair decisions, making us the best truck diagnostic experts in Dubai.",
+        ],
+      },
+    ],
     highlights: [
       {
-        title: "Full-vehicle coverage",
-        body: "Engines, transmissions, aftertreatment, electrical, pneumatic and hydraulic systems on all major commercial brands.",
+        title: "Advanced fault finding",
+        body: "Fault-code analysis, live parameters, actuator testing, system diagnostics, and ECU communication.",
       },
       {
-        title: "Evidence-based diagnosis",
-        body: "Live data, actuator tests and component-level measurement instead of parts-swapping guesswork.",
+        title: "Multi-brand coverage",
+        body: "Specialist support for trucks of every brand, including Chinese vehicles using the Engine Dance system.",
       },
       {
-        title: "Downtime first",
-        body: "Clear findings, a repair plan and realistic timelines so your operations team can plan around the vehicle.",
+        title: "Root-cause analysis",
+        body: "Real-time data and technical knowledge reduce unnecessary component replacement and vehicle downtime.",
       },
     ],
     deliverables: [
       "Fault-code reading and interpretation with live data logging",
       "Component-level electrical and sensor testing",
       "Engine, gearbox and driveline troubleshooting",
-      "Repair execution with genuine or OE-quality parts",
-      "Post-repair verification and road testing",
+      "ECU communication and actuator testing",
+      "Electronic, sensor and performance troubleshooting",
     ],
   },
   {
     slug: "truck-repair-maintenance",
-    title: "Truck Repair & Maintenance",
-    short: "Truck Repair & Maintenance",
-    body: "Our diagnostic specialists can identify electronic and control-system problems affecting engines, automated manual transmissions, automatic transmissions, and related vehicle systems.",
+    title: "Truck Diagnostics & Advanced Repair Support for Fleets in the UAE",
+    short: "Fleet Diagnostics & Repair Support",
+    body: "Advanced truck diagnostics and electronic repair support for fleet operators and heavy-vehicle businesses across the UAE.",
     image: truckRepairImg,
     alt: "Technicians repairing a commercial truck engine in a workshop bay",
-    intro:
-      "Genuine dealer diagnostic platforms supplied, licensed, configured and supported — so independent workshops work at manufacturer level.",
+    intro: "AutoDome provides advanced truck diagnostics and electronic repair support for fleet operators and heavy-vehicle businesses across the UAE, with a focus on complex control-system problems affecting reliability and uptime.",
+    sections: [
+      {
+        heading: "Advanced Diagnostics for Truck Fleets",
+        paragraphs: [
+          "For companies operating large truck fleets, an unexpected electronic fault can quickly lead to vehicle downtime and operational delays. Accurate diagnostics can help fleet teams identify problems earlier, reduce unnecessary parts replacement, and make informed decisions about repairs and maintenance.",
+          "AutoDome uses advanced diagnostic tools to read and analyse fault codes, live vehicle parameters, ECU data, system communications, and control-module information. This allows our specialists to investigate complex faults that may not be identified through conventional workshop diagnostics.",
+        ],
+      },
+      {
+        heading: "ECU Programming & Electronic Troubleshooting",
+        paragraphs: [
+          "Modern trucks depend heavily on electronic control units and software to manage engine, transmission, emissions, and other vehicle functions. When an ECU requires programming, reprogramming, coding, calibration, or specialised troubleshooting, the correct diagnostic equipment and technical expertise are essential.",
+          "Our services are particularly valuable for fleet operators and workshops dealing with difficult electronic faults, ECU-related issues, communication errors, performance problems, and control-system failures.",
+        ],
+      },
+      {
+        heading: "Reduce Truck Downtime with Specialist Support",
+        paragraphs: [
+          "Our goal is to help fleet operators keep their vehicles diagnosed accurately, operating efficiently, and on the road for longer. By identifying the root cause of electronic and ECU-related problems, we help reduce unnecessary downtime and avoid replacing components without proper diagnosis.",
+          "AutoDome is a specialist partner for truck fleets, commercial vehicle operators, and heavy-vehicle workshops in the UAE looking for advanced diagnostic and ECU solutions beyond conventional workshop services.",
+        ],
+      },
+    ],
     highlights: [
       {
-        title: "Genuine platforms",
-        body: "Authorised multi-brand and OEM diagnostic solutions, including Jaltest, with valid licensing and updates.",
+        title: "Fleet-focused diagnostics",
+        body: "Advanced investigation of electronic and control-system faults that affect fleet reliability and uptime.",
       },
       {
-        title: "Setup & configuration",
-        body: "Installation, interface pairing and workshop network setup handled by our engineers.",
+        title: "Electronic expertise",
+        body: "Support for engines, transmissions, ECUs, sensors, communications, emissions, and control modules.",
       },
       {
-        title: "Ongoing support",
-        body: "Remote and on-site assistance when a job needs a second technical opinion.",
+        title: "Reduced downtime",
+        body: "Root-cause diagnosis helps avoid unnecessary parts replacement and operational delays.",
       },
     ],
     deliverables: [
-      "Tool selection advice matched to your vehicle mix",
-      "Supply, licensing and activation",
-      "On-site installation and technician onboarding",
-      "Software updates and renewals",
-      "Technical helpdesk support",
+      "Fault-code and live-parameter analysis",
+      "ECU data and control-module diagnostics",
+      "AMT and automatic transmission troubleshooting",
+      "ECU programming, coding and calibration support",
+      "Specialist fleet and workshop technical support",
     ],
   },
   {
     slug: "ecu-remapping-calibration",
-    title: "ECU Remapping & Calibration",
-    short: "ECU Remapping & Calibration",
-    body: "Precision remapping tools and expert file tuning that improve power, fuel efficiency and drivability — calibrated per vehicle while keeping reliability and safety margins intact.",
+    title: "Truck ECU Remapping & ECU Tuning in the UAE",
+    short: "Truck ECU Remapping & Tuning",
+    body: "Expert ECU remapping and tuning for trucks and commercial heavy vehicles, tailored to each application, vehicle, and engine.",
     image: remappingImg,
     alt: "Engineer running ECU remapping and calibration software on a workstation",
-    intro:
-      "Professional remapping hardware and calibrated file work for measurable gains in power, drivability and fuel efficiency — without compromising engine reliability.",
+    intro: "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE, adjusting engine control parameters for the intended application, vehicle, and engine.",
+    sections: [
+      {
+        heading: "Professional Truck ECU Remapping",
+        paragraphs: [
+          "Truck ECU remapping is important for fine-tuning engine parameters such as torque delivery, throttle response, fuel management, and many more functionalities by changing certain calibration factors. It is important to run diagnostics before remapping so you will be able to find and deal with any available mechanical or electronic issues that can affect the outcome of remapping.",
+          "We focus on application-specific ECU solutions rather than generic software modifications, helping ensure that the calibration is appropriate for the vehicle and its operating requirements.",
+        ],
+      },
+      {
+        heading: "Enhance Your Truck’s Performance",
+        paragraphs: [
+          "Improving truck performance begins with precise diagnostics and proper ECU calibration. Recognizing problems before carrying out tuning can improve truck performance, fuel consumption, and reduce downtime.",
+          "Trucks and commercial vehicles travel on differing loads, roads, terrains, and environments, making it essential to ensure that the ECU calibration remains within appropriate limits for optimal performance.",
+        ],
+      },
+      {
+        heading: "Why AutoDome for ECU Tuning?",
+        paragraphs: [
+          "AutoDome offers ECU tuning and remapping assistance for trucks, heavy vehicles, commercial vehicles, and applications involving heavy-duty vehicles. With the advanced technology of professional ECU programming, we can ensure that our calibration services are performed accurately and precisely.",
+          "We can assist you in finding the right remapping solution for your vehicle, such as performance improvement, driving quality, or an application-specific ECU. We also help workshops and fleet management operators to get the best possible performance and efficiency from their heavy vehicles.",
+        ],
+      },
+    ],
     highlights: [
       {
         title: "Authorised hardware",
@@ -113,13 +184,28 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "ecu-repair-reprogramming",
-    title: "ECU Repair & Reprogramming",
-    short: "ECU Repair & Reprogramming",
-    body: "Our highly skilled technicians specialize in ECU repairs and reprogramming for all types of engines and gearboxes. We ensure accurate diagnostics, reliable solutions.",
+    title: "What is an ECU in a Truck?",
+    short: "Truck ECU Reprogramming",
+    body: "Professional ECU programming and reprogramming solutions for trucks and heavy vehicles using advanced diagnostic tools and software.",
     image: ecuImg,
     alt: "Engineer repairing a vehicle electronic control unit circuit board",
-    intro:
-      "Component-level electronics repair and reprogramming for engine, gearbox and body control units — a fraction of the cost and lead time of replacement.",
+    intro: "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In trucks and heavy automobiles, it gathers sensor data and controls the engine, fuel pump, exhaust, transmission, and other electronic functions.",
+    sections: [
+      {
+        heading: "Reasons to Reprogram an ECU in a Truck",
+        paragraphs: [
+          "An ECU reprogramming may be necessary when a control unit is replaced, a software update is needed, a configuration is modified, or specific vehicle parameters need calibration. Professional ECU reprogramming ensures that the ECU communicates properly with the vehicle's systems and functions according to the necessary requirements.",
+        ],
+      },
+      {
+        heading: "ECU Reprogramming at AutoDome",
+        level: 3,
+        paragraphs: [
+          "At AutoDome, we provide professional ECU programming and reprogramming solutions for trucks and heavy vehicles. Using advanced diagnostic tools and software, our specialists can support ECU coding, programming, calibration, and related electronic solutions for supported and specific vehicle applications.",
+          "We focus on accurate diagnosis and the correct programming procedure to help workshops and heavy-vehicle professionals resolve ECU-related issues efficiently.",
+        ],
+      },
+    ],
     highlights: [
       {
         title: "Board-level repair",
@@ -151,6 +237,7 @@ export const SERVICES: Service[] = [
     alt: "Truck ECU tuning software running on a laptop with interface hardware",
     intro:
       "Genuine and OE-quality parts for commercial vehicles and construction equipment, plus a sourcing team for the hard-to-find items.",
+    externalUrl: "https://adl.apaarr.com/products?category=%2222%22",
     highlights: [
       {
         title: "Deep electronics stock",
@@ -182,6 +269,7 @@ export const SERVICES: Service[] = [
     alt: "Professional heavy-duty truck diagnostic tools and interfaces for sale",
     intro:
       "Equip or upgrade a complete commercial vehicle workshop — from hand tools to specialised machinery — with advice from engineers who use them.",
+    externalUrl: "https://adl.apaarr.com/products?category=%2217%22",
     highlights: [
       {
         title: "Complete fit-outs",
