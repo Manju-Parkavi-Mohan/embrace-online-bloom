@@ -97,9 +97,27 @@ function ServicePage() {
                 <span className="h-px w-8" aria-hidden="true" />
                 Overview
               </p>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {service.body}
-              </p>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
+
+              {service.sections ? (
+                <div className="mt-10 space-y-10">
+                  {service.sections.map((section) => {
+                    const Heading = section.level === 3 ? "h3" : "h2";
+                    return (
+                      <section key={section.heading}>
+                        <Heading className={section.level === 3 ? "font-display text-xl font-bold text-foreground sm:text-2xl" : "font-display text-2xl font-bold text-foreground sm:text-3xl"}>
+                          {section.heading}
+                        </Heading>
+                        <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                          {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        </div>
+                      </section>
+                    );
+                  })}
+                </div>
+              ) : null}
 
               <div className="mt-10 grid gap-5 sm:grid-cols-3">
                 {service.highlights.map((item) => (
@@ -136,16 +154,19 @@ function ServicePage() {
           <div className="section-shell">
             <h2 className="font-display text-2xl font-bold sm:text-3xl">Other AutoDome services</h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {others.map((item) => (
+               {others.map((item) => (
                 <li key={item.slug}>
-                  <Link
-                    to="/services/$slug"
-                    params={{ slug: item.slug }}
-                    className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40"
-                  >
-                    <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
-                    <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                  </Link>
+                   {item.externalUrl ? (
+                     <a href={item.externalUrl} target="_blank" rel="noopener noreferrer" className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40">
+                       <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
+                       <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                     </a>
+                   ) : (
+                     <Link to="/services/$slug" params={{ slug: item.slug }} className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40">
+                       <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
+                       <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                     </Link>
+                   )}
                 </li>
               ))}
             </ul>

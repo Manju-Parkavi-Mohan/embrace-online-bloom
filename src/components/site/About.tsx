@@ -1,8 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
-import { FeaturedProducts } from "./FeaturedProducts";
-import { SITE } from "@/lib/site";
 
 const FACTS = [
   {
@@ -81,41 +79,6 @@ export function About() {
           </Reveal>
         </div>
 
-        <Reveal delay={120}>
-          <div className="group relative mt-12 transition-transform duration-500 hover:scale-[1.01]">
-            <span className="absolute top-0 right-6 z-10 -translate-y-1/2 glow-badge rounded-full px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-accent-foreground sm:right-10 sm:px-5 sm:py-2 sm:text-base">
-              Shop Online
-            </span>
-            <div className="overflow-hidden rounded-3xl bg-ink shadow-brand transition-shadow duration-500 group-hover:shadow-lifted">
-              <div className="p-6 sm:p-10">
-                <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
-                  <div className="min-w-0">
-                    <p className="font-display text-lg font-bold text-white sm:text-2xl">
-                      Buy Truck Diagnostic Tools & Softwares at {SITE.storefront.name}
-                    </p>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-                      {SITE.storefront.name} is our e-commerce storefront, delivering the tools, parts, and workshop
-                      equipment behind every AutoDome service.
-                    </p>
-                  </div>
-                  <a
-                    href={SITE.storefront.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${buttonVariants({ variant: "light", size: "lg" })} shrink-0`}
-                  >
-                    Visit the {SITE.storefront.name} store
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
-
-              <div className="bg-card p-5 sm:p-6">
-                <FeaturedProducts />
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

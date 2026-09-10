@@ -13,13 +13,8 @@ export function Services() {
     node.scrollBy({ left: dir * node.clientWidth * 0.85, behavior: "smooth" });
   };
 
-  const card = (service: (typeof SERVICES)[number], index: number) => (
-    <Link
-      to="/services/$slug"
-      params={{ slug: service.slug }}
-      aria-label={`Open ${service.title} service page`}
-      className="group relative flex h-[380px] flex-col justify-end overflow-hidden rounded-3xl border border-primary-foreground/15 shadow-soft transition-colors duration-500 hover:border-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-[420px]"
-    >
+  const cardContent = (service: (typeof SERVICES)[number], index: number) => (
+    <>
       <img
         src={service.image}
         alt={service.alt}
@@ -46,15 +41,31 @@ export function Services() {
           {service.body}
         </p>
         <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground transition-colors duration-300 group-hover:text-primary-light">
-          Request Consultation
+          {service.externalUrl ? "Shop Online" : "Request Consultation"}
           <ArrowRight
             className="size-4 transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
           />
         </span>
       </div>
-    </Link>
+    </>
   );
+
+  const card = (service: (typeof SERVICES)[number], index: number) => {
+    const className = "group relative flex h-[380px] flex-col justify-end overflow-hidden rounded-3xl border border-primary-foreground/15 shadow-soft transition-colors duration-500 hover:border-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-[420px]";
+    if (service.externalUrl) {
+      return (
+        <a href={service.externalUrl} target="_blank" rel="noopener noreferrer" aria-label={`Shop ${service.title}`} className={className}>
+          {cardContent(service, index)}
+        </a>
+      );
+    }
+    return (
+      <Link to="/services/$slug" params={{ slug: service.slug }} aria-label={`Open ${service.title} service page`} className={className}>
+        {cardContent(service, index)}
+      </Link>
+    );
+  };
 
   return (
     <section id="solutions" className="section-dark py-10 sm:py-14 lg:py-16">
