@@ -97,9 +97,9 @@ function ServicePage() {
                 <span className="h-px w-8" aria-hidden="true" />
                 Overview
               </p>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {service.body}
-              </p>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
 
               {service.sections ? (
                 <div className="mt-10 space-y-10">

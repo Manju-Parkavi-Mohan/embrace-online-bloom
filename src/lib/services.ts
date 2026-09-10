@@ -13,6 +13,7 @@ export type Service = {
   image: string;
   alt: string;
   intro: string;
+  overview?: string[];
   externalUrl?: string;
   sections?: {
     heading: string;
@@ -32,6 +33,9 @@ export const SERVICES: Service[] = [
     image: diagnosticsImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
     intro: "AutoDome provides professional truck diagnostics and troubleshooting services in the UAE, helping workshops, fleet operators, and heavy vehicle professionals identify complex electrical, electronic, engine, transmission, and communication faults.",
+    overview: [
+      "AutoDome provides professional truck diagnostics and troubleshooting services in the UAE, helping workshops, fleet operators, and heavy vehicle professionals identify complex electrical, electronic, engine, transmission, and communication faults. Our diagnostic technology allows us to define the nature of the problem, offer efficient technical solutions, and minimize vehicle downtime. We help transport and logistics companies maintain their fleets in the UAE.",
+    ],
     sections: [
       {
         heading: "Advanced Truck Diagnostic Services",
@@ -84,6 +88,10 @@ export const SERVICES: Service[] = [
     image: truckRepairImg,
     alt: "Technicians repairing a commercial truck engine in a workshop bay",
     intro: "AutoDome provides advanced truck diagnostics and electronic repair support for fleet operators and heavy-vehicle businesses across the UAE, with a focus on complex control-system problems affecting reliability and uptime.",
+    overview: [
+      "AutoDome provides advanced truck diagnostics and electronic repair support for fleet operators and heavy-vehicle businesses across the UAE. Our focus is on diagnosing complex electronic and control-system problems that can affect truck performance, reliability, and uptime.",
+      "Our diagnostic specialists work with engine control systems, automated manual transmissions (AMT), automatic transmissions, ECUs, sensors, communication systems, and other electronic vehicle systems. Using professional diagnostic equipment and ECU programming technology, we help identify the actual cause of faults and provide the appropriate technical solution.",
+    ],
     sections: [
       {
         heading: "Advanced Diagnostics for Truck Fleets",
@@ -137,6 +145,10 @@ export const SERVICES: Service[] = [
     image: remappingImg,
     alt: "Engineer running ECU remapping and calibration software on a workstation",
     intro: "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE, adjusting engine control parameters for the intended application, vehicle, and engine.",
+    overview: [
+      "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE. ECU remapping involves adjusting certain engine control parameters in order to maximize vehicle performance and drivability based on the intended application, vehicle, and engine.",
+      "For commercial and heavy vehicles, ECU calibration adopts a technical perspective that blends engine performance, vehicle load, reliability, and operating conditions. As a result, every ECU solution is specifically crafted to cater to particular vehicles and applications, utilizing proper programming and calibration techniques.",
+    ],
     sections: [
       {
         heading: "Professional Truck ECU Remapping",
@@ -190,6 +202,9 @@ export const SERVICES: Service[] = [
     image: ecuImg,
     alt: "Engineer repairing a vehicle electronic control unit circuit board",
     intro: "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In trucks and heavy automobiles, it gathers sensor data and controls the engine, fuel pump, exhaust, transmission, and other electronic functions.",
+    overview: [
+      "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In the case of trucks and heavy automobiles, the ECU gathers data from various sensors and controls systems for functions such as engine operation, fuel pump, exhaust, transmission, and other electronic functions.",
+    ],
     sections: [
       {
         heading: "Reasons to Reprogram an ECU in a Truck",
