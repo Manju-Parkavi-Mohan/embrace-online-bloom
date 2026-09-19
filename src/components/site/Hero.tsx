@@ -88,7 +88,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-hero-veil" />
       </div>
 
-      <div className="section-shell pb-10 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
+      <div className="section-shell pb-28 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <h1 className="font-display text-4xl font-bold leading-[1.08] text-primary-foreground text-hero-shadow sm:text-5xl lg:text-6xl">
             Advanced Truck Repair & <br />
