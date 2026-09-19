@@ -1,6 +1,7 @@
 import { ArrowUpRight, PackageCheck, ShoppingCart, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
+import { FeaturedProducts } from "./FeaturedProducts";
 import { SITE } from "@/lib/site";
 import partsImg from "@/assets/service-parts.jpg";
 
@@ -24,7 +25,9 @@ const POINTS = [
 
 export function AdlStore() {
   return (
-    <section id="store" className="bg-background py-10 sm:py-14 lg:py-16">
+    <>
+      <div id="store-mobile-trigger" className="h-px md:hidden" aria-hidden="true" />
+      <section id="store" className="hidden bg-background py-10 md:block sm:py-14 lg:py-16">
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal direction="left">
@@ -94,7 +97,12 @@ export function AdlStore() {
             </div>
           </Reveal>
         </div>
+
+        <div className="mt-12 rounded-3xl bg-card p-5 shadow-soft lg:p-7">
+          <FeaturedProducts />
+        </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-workshop.jpg";
+import craneHeroAsset from "@/assets/autodome-crane-hero.jpg.asset.json";
 import magicLogo from "@/assets/magic-motorsport.jpg";
 import jaltestLogo from "@/assets/jaltest.jpg";
 import engineDanceLogo from "@/assets/enginedance.png";
@@ -17,8 +18,20 @@ const HERO_PARTNERS = [
   { name: "Autovei", logo: autoveiLogo },
 ];
 
+const HERO_SLIDES = [
+  {
+    src: craneHeroAsset.url,
+    alt: "AutoDome technician servicing a Liebherr mobile crane under a clear blue sky",
+  },
+  {
+    src: heroImage,
+    alt: "Heavy-duty commercial trucks raised on lifts inside AutoDome's modern diagnostics workshop",
+  },
+];
+
 export function Hero() {
   const [offset, setOffset] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -35,19 +48,34 @@ export function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(
+      () => setActiveSlide((current) => (current + 1) % HERO_SLIDES.length),
+      5500,
+    );
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section id="top" className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Heavy-duty commercial trucks raised on lifts inside AutoDome's modern diagnostics workshop"
-          width={1920}
-          height={1088}
-          fetchPriority="high"
-          decoding="async"
-          className="h-[115%] w-full object-cover"
-          style={{ transform: `translate3d(0, -${offset}px, 0)` }}
-        />
+        {HERO_SLIDES.map((slide, index) => (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            width={1920}
+            height={1088}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            decoding="async"
+            className={cn(
+              "absolute inset-0 h-[115%] w-full object-cover transition-opacity duration-1000",
+              index === activeSlide ? "opacity-100" : "opacity-0",
+            )}
+            style={{ transform: `translate3d(0, -${offset}px, 0)` }}
+          />
+        ))}
         <div className="absolute inset-0 bg-hero-veil" />
       </div>
 

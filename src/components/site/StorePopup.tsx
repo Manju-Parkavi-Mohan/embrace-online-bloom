@@ -4,13 +4,16 @@ import { FeaturedProducts } from "./FeaturedProducts";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SITE } from "@/lib/site";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function StorePopup() {
+  const isMobile = useIsMobile();
   const [open, setOpen] = useState(false);
   const shown = useRef(false);
 
   useEffect(() => {
-    const storeSection = document.getElementById("store");
+    if (!isMobile) return;
+    const storeSection = document.getElementById("store-mobile-trigger");
     if (!storeSection) return;
 
     const observer = new IntersectionObserver(
@@ -25,7 +28,9 @@ export function StorePopup() {
     );
     observer.observe(storeSection);
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
+
+  if (!isMobile) return null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
