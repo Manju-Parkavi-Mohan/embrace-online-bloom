@@ -16,6 +16,7 @@ import { Contact } from "@/components/site/Contact";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { StorePopup } from "@/components/site/StorePopup";
+import { ContactLeadPopup } from "@/components/site/ContactLeadPopup";
 import { SITE } from "@/lib/site";
 
 const TITLE = "AutoDome | Dubai Truck Diagnostics & Heavy Vehicle Repair UAE";
@@ -131,6 +132,7 @@ function Index() {
       <SiteFooter />
       <FloatingActions />
       <StorePopup />
+      <ContactLeadPopup />
     </div>
   );
 }
