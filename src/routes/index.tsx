@@ -15,7 +15,6 @@ import { FinalCta } from "@/components/site/FinalCta";
 import { Contact } from "@/components/site/Contact";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { StorePopup } from "@/components/site/StorePopup";
 import { ContactLeadPopup } from "@/components/site/ContactLeadPopup";
 import { SITE } from "@/lib/site";
 
@@ -131,7 +130,6 @@ function Index() {
 
       <SiteFooter />
       <FloatingActions />
-      <StorePopup />
       <ContactLeadPopup />
     </div>
   );

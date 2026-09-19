@@ -8,3 +8,5 @@
 - [x] Open a reusable contact form popup when visitors reach the footer.
 - [x] Add the supplied image as the first frame of the hero slideshow.
 - [x] Verify the updated desktop and mobile experiences.
+- [x] Restore the dark Shop Online showcase inline on desktop and mobile without a store popup.
+- [x] Make popup contact-field focus outlines even on every side.

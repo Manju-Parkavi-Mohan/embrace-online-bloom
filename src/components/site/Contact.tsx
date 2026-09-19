@@ -109,7 +109,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   };
 
   return (
-    <div className={compact ? "max-h-[68vh] overflow-y-auto pr-1" : undefined}>
+    <div className={compact ? "max-h-[68vh] overflow-y-auto px-1 py-1" : undefined}>
       {submitted ? (
         <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
           <span className="grid size-16 place-items-center rounded-full bg-primary-soft text-primary">
