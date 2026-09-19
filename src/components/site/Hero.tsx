@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import heroImage from "@/assets/hero-workshop.jpg";
 import craneHeroAsset from "@/assets/autodome-crane-hero.jpg.asset.json";
+import hero8073 from "@/assets/hero-IMG_8073.jpg.asset.json";
+import hero8135 from "@/assets/hero-IMG_8135.jpg.asset.json";
+import hero8158 from "@/assets/hero-IMG_8158.jpg.asset.json";
+import hero8183 from "@/assets/hero-IMG_8183.jpg.asset.json";
 
 const HERO_SLIDES = [
   {
@@ -11,8 +14,20 @@ const HERO_SLIDES = [
     alt: "AutoDome technician servicing a Liebherr mobile crane under a clear blue sky",
   },
   {
-    src: heroImage,
-    alt: "Heavy-duty commercial trucks raised on lifts inside AutoDome's modern diagnostics workshop",
+    src: hero8073.url,
+    alt: "AutoDome technician with diagnostic laptop beside a Liebherr crane truck on site",
+  },
+  {
+    src: hero8135.url,
+    alt: "AutoDome mechanic repairing a truck engine with the cab tilted open",
+  },
+  {
+    src: hero8158.url,
+    alt: "AutoDome technician running diagnostics on a refrigerated truck with its hood open",
+  },
+  {
+    src: hero8183.url,
+    alt: "AutoDome engineer performing diagnostics on a mobile crane carrier",
   },
 ];
 
