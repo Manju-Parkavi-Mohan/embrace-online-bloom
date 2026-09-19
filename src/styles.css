@@ -267,6 +267,10 @@
   background-image: var(--gradient-hero);
 }
 
+@utility text-hero-shadow {
+  text-shadow: 0 1px 2px oklch(0.235 0.021 258 / 0.55), 0 4px 16px oklch(0.235 0.021 258 / 0.45);
+}
+
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
