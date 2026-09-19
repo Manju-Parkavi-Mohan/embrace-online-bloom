@@ -15,14 +15,14 @@ const HERO_PARTNERS = [
   { name: "Engine Dance", logo: engineDanceLogo },
   { name: "ECULite", logo: eculiteLogo },
   { name: "Autovei", logo: autoveiLogo },
-  { name: "Volvo", logo: volvoLogo },
+  { name: "Volvo", logo: volvoLogo, sizeClass: "h-16 w-16 sm:h-20 sm:w-20" },
 ];
 
 export function AuthorizedPartners() {
   return (
     <section
       aria-label="Authorized partners"
-      className="section-dark border-b border-border py-10 sm:py-12 lg:py-14"
+      className="section-dark border-y border-border py-10 sm:py-12 lg:py-14"
 
     >
       <div className="section-shell">
@@ -39,7 +39,7 @@ export function AuthorizedPartners() {
               >
                 <span
                   className={cn(
-                    "chip-light flex h-16 w-full items-center justify-center rounded-2xl border p-2.5 sm:h-20 sm:w-44 sm:p-3",
+                    "chip-light shadow-lifted flex h-16 w-full items-center justify-center rounded-2xl border p-2.5 sm:h-20 sm:w-44 sm:p-3",
 
                     partner.sizeClass,
                   )}
