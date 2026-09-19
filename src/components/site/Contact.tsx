@@ -151,7 +151,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
                 className="h-11"
               />
               {errors.fullName ? (
-                <p id="fullName-error" className="text-xs font-medium text-destructive">
+                <p id={`${idPrefix}fullName-error`} className="text-xs font-medium text-destructive">
                   {errors.fullName}
                 </p>
               ) : null}
@@ -170,7 +170,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
                 className="h-11"
               />
               {errors.phone ? (
-                <p id="phone-error" className="text-xs font-medium text-destructive">
+                <p id={`${idPrefix}phone-error`} className="text-xs font-medium text-destructive">
                   {errors.phone}
                 </p>
               ) : null}
@@ -187,7 +187,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
                 className="h-11"
               />
               {errors.email ? (
-                <p id="email-error" className="text-xs font-medium text-destructive">
+                <p id={`${idPrefix}email-error`} className="text-xs font-medium text-destructive">
                   {errors.email}
                 </p>
               ) : null}
