@@ -52,6 +52,7 @@ const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.c
 
 
 export function ContactForm({ compact = false }: { compact?: boolean }) {
+  const idPrefix = compact ? "lead-" : "";
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string; email?: string }>({});
@@ -138,15 +139,15 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           </p>
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="fullName">
+              <Label htmlFor={`${idPrefix}fullName`}>
                 Full Name <span className="text-destructive">*</span>
               </Label>
               <Input
-                id="fullName"
+                id={`${idPrefix}fullName`}
                 name="fullName"
                 autoComplete="name"
                 aria-invalid={!!errors.fullName}
-                aria-describedby={errors.fullName ? "fullName-error" : undefined}
+                aria-describedby={errors.fullName ? `${idPrefix}fullName-error` : undefined}
                 className="h-11"
               />
               {errors.fullName ? (
@@ -156,16 +157,16 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               ) : null}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">
+              <Label htmlFor={`${idPrefix}phone`}>
                 Phone <span className="text-destructive">*</span>
               </Label>
               <Input
-                id="phone"
+                id={`${idPrefix}phone`}
                 name="phone"
                 type="tel"
                 autoComplete="tel"
                 aria-invalid={!!errors.phone}
-                aria-describedby={errors.phone ? "phone-error" : undefined}
+                aria-describedby={errors.phone ? `${idPrefix}phone-error` : undefined}
                 className="h-11"
               />
               {errors.phone ? (
@@ -175,14 +176,14 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               ) : null}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email (optional)</Label>
+              <Label htmlFor={`${idPrefix}email`}>Email (optional)</Label>
               <Input
-                id="email"
+                id={`${idPrefix}email`}
                 name="email"
                 type="email"
                 autoComplete="email"
                 aria-invalid={!!errors.email}
-                aria-describedby={errors.email ? "email-error" : undefined}
+                aria-describedby={errors.email ? `${idPrefix}email-error` : undefined}
                 className="h-11"
               />
               {errors.email ? (
@@ -192,16 +193,16 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               ) : null}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="company">Company Name (optional)</Label>
-              <Input id="company" name="company" autoComplete="organization" className="h-11" />
+              <Label htmlFor={`${idPrefix}company`}>Company Name (optional)</Label>
+              <Input id={`${idPrefix}company`} name="company" autoComplete="organization" className="h-11" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="country">Country (optional)</Label>
-              <Input id="country" name="country" defaultValue="" autoComplete="country-name" className="h-11" />
+              <Label htmlFor={`${idPrefix}country`}>Country (optional)</Label>
+              <Input id={`${idPrefix}country`} name="country" defaultValue="" autoComplete="country-name" className="h-11" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="brand">Vehicle Brand (optional)</Label>
-              <select id="brand" name="brand" className={selectClass} defaultValue="">
+              <Label htmlFor={`${idPrefix}brand`}>Vehicle Brand (optional)</Label>
+              <select id={`${idPrefix}brand`} name="brand" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   Select a brand
                 </option>
@@ -213,8 +214,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="service">Service Required (optional)</Label>
-              <select id="service" name="service" className={selectClass} defaultValue="">
+              <Label htmlFor={`${idPrefix}service`}>Service Required (optional)</Label>
+              <select id={`${idPrefix}service`} name="service" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   Select a service
                 </option>
@@ -226,8 +227,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               </select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="fleetSize">Fleet Size (optional)</Label>
-              <select id="fleetSize" name="fleetSize" className={selectClass} defaultValue="">
+              <Label htmlFor={`${idPrefix}fleetSize`}>Fleet Size (optional)</Label>
+              <select id={`${idPrefix}fleetSize`} name="fleetSize" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   Select fleet size
                 </option>
@@ -241,9 +242,9 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           </div>
       
           <div className="space-y-2">
-            <Label htmlFor="message">Message (optional)</Label>
+            <Label htmlFor={`${idPrefix}message`}>Message (optional)</Label>
             <Textarea
-              id="message"
+              id={`${idPrefix}message`}
               name="message"
               rows={5}
               placeholder="Tell us about the vehicles, fault symptoms, or equipment requirement."
@@ -252,9 +253,9 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       
       
           <div className="space-y-2">
-            <Label htmlFor="attachment">Upload File (optional)</Label>
+            <Label htmlFor={`${idPrefix}attachment`}>Upload File (optional)</Label>
             <Input
-              id="attachment"
+              id={`${idPrefix}attachment`}
               name="attachment"
               type="file"
               className="h-11 cursor-pointer py-2.5 file:mr-3 file:cursor-pointer file:rounded-full file:border-0 file:bg-secondary file:px-3 file:py-1 file:text-xs file:font-semibold file:text-secondary-foreground"
@@ -266,13 +267,13 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       
           <div className="flex items-start gap-3 pt-1">
             <Checkbox
-              id="consent"
+              id={`${idPrefix}consent`}
               checked={consent}
               onCheckedChange={(value) => setConsent(value === true)}
               required
               className="mt-1"
             />
-            <Label htmlFor="consent" className="text-sm font-normal leading-relaxed text-muted-foreground">
+            <Label htmlFor={`${idPrefix}consent`} className="text-sm font-normal leading-relaxed text-muted-foreground">
               I consent to AutoDome storing and using the details above to respond to my
               enquiry.
             </Label>
