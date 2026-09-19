@@ -4,19 +4,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-workshop.jpg";
 import craneHeroAsset from "@/assets/autodome-crane-hero.jpg.asset.json";
-import magicLogo from "@/assets/magic-motorsport.jpg";
-import jaltestLogo from "@/assets/jaltest.jpg";
-import engineDanceLogo from "@/assets/enginedance.png";
-import eculiteLogo from "@/assets/eculite.png";
-import autoveiLogo from "@/assets/autovei.png";
-
-const HERO_PARTNERS = [
-  { name: "Magic Motorsport", logo: magicLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
-  { name: "Jaltest Diagnostics", logo: jaltestLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
-  { name: "Engine Dance", logo: engineDanceLogo },
-  { name: "ECULite", logo: eculiteLogo },
-  { name: "Autovei", logo: autoveiLogo },
-];
 
 const HERO_SLIDES = [
   {
