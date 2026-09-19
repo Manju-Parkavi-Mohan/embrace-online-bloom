@@ -12,22 +12,27 @@ const HERO_SLIDES = [
   {
     src: craneHeroAsset.url,
     alt: "AutoDome technician servicing a Liebherr mobile crane under a clear blue sky",
+    position: "object-center",
   },
   {
     src: hero8073.url,
     alt: "AutoDome technician with diagnostic laptop beside a Liebherr crane truck on site",
+    position: "object-[50%_30%]",
   },
   {
     src: hero8135.url,
     alt: "AutoDome mechanic repairing a truck engine with the cab tilted open",
+    position: "object-[50%_35%]",
   },
   {
     src: hero8158.url,
     alt: "AutoDome technician running diagnostics on a refrigerated truck with its hood open",
+    position: "object-[50%_30%]",
   },
   {
     src: hero8183.url,
     alt: "AutoDome engineer performing diagnostics on a mobile crane carrier",
+    position: "object-[50%_35%]",
   },
 ];
 
@@ -72,7 +77,8 @@ export function Hero() {
             fetchPriority={index === 0 ? "high" : "auto"}
             decoding="async"
             className={cn(
-              "absolute inset-0 h-[115%] w-full object-cover transition-opacity duration-1000",
+              "absolute inset-0 h-[112%] w-full object-cover transition-opacity duration-1000",
+              slide.position,
               index === activeSlide ? "opacity-100" : "opacity-0",
             )}
             style={{ transform: `translate3d(0, -${offset}px, 0)` }}
@@ -88,7 +94,7 @@ export function Hero() {
             <span className="text-accent">Heavy Vehicle Diagnostics in UAE </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground text-hero-shadow sm:mt-6 sm:text-lg">
+          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-primary-foreground text-hero-shadow-strong sm:mt-6 sm:text-lg">
             AutoDome provides professional truck repair, heavy vehicle diagnostics, ECU repair and programming, genuine
             parts, and advanced workshop solutions for fleets, workshops, and commercial vehicle operators across the
             UAE.

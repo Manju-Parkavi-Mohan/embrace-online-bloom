@@ -17,7 +17,7 @@ const buttonVariants = cva(
         outlineBrand:
           "border border-primary/40 bg-card text-primary hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 hover:shadow-brand",
         onImage:
-          "border border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground backdrop-blur-sm hover:bg-accent hover:text-accent-foreground hover:border-accent hover:-translate-y-0.5 hover:shadow-lifted",
+          "border border-primary-foreground/60 bg-primary-foreground/20 text-primary-foreground backdrop-blur-md hover:bg-accent hover:text-accent-foreground hover:border-accent hover:-translate-y-0.5 hover:shadow-lifted",
         accent:
           "bg-accent text-accent-foreground shadow-soft hover:brightness-105 hover:-translate-y-0.5 hover:shadow-lifted",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
