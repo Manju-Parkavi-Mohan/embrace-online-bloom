@@ -22,7 +22,8 @@ export function AuthorizedPartners() {
   return (
     <section
       aria-label="Authorized partners"
-      className="border-b border-border bg-ink py-10 sm:py-12 lg:py-14"
+      className="section-dark border-b border-border py-10 sm:py-12 lg:py-14"
+
     >
       <div className="section-shell">
         <Reveal className="flex flex-col items-center text-center">
@@ -38,7 +39,8 @@ export function AuthorizedPartners() {
               >
                 <span
                   className={cn(
-                    "flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3",
+                    "chip-light flex h-16 w-full items-center justify-center rounded-2xl border p-2.5 sm:h-20 sm:w-44 sm:p-3",
+
                     partner.sizeClass,
                   )}
                 >
