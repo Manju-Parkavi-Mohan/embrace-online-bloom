@@ -4,19 +4,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import heroImage from "@/assets/hero-workshop.jpg";
 import craneHeroAsset from "@/assets/autodome-crane-hero.jpg.asset.json";
-import magicLogo from "@/assets/magic-motorsport.jpg";
-import jaltestLogo from "@/assets/jaltest.jpg";
-import engineDanceLogo from "@/assets/enginedance.png";
-import eculiteLogo from "@/assets/eculite.png";
-import autoveiLogo from "@/assets/autovei.png";
-
-const HERO_PARTNERS = [
-  { name: "Magic Motorsport", logo: magicLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
-  { name: "Jaltest Diagnostics", logo: jaltestLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
-  { name: "Engine Dance", logo: engineDanceLogo },
-  { name: "ECULite", logo: eculiteLogo },
-  { name: "Autovei", logo: autoveiLogo },
-];
 
 const HERO_SLIDES = [
   {
@@ -103,38 +90,6 @@ export function Hero() {
               <a href="#solutions">Explore Services</a>
             </Button>
           </div>
-
-          <div className="mt-5 w-full border-t border-primary-foreground/20 pt-4 sm:mt-10 sm:pt-6">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary-foreground sm:text-base">
-              Authorized Partners
-            </p>
-            <ul className="mt-3 grid w-full grid-cols-2 items-center justify-items-center gap-3 sm:mt-6 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
-              {HERO_PARTNERS.map((partner) => (
-                <li
-                  key={partner.name}
-                  className="flex w-full min-w-0 items-center justify-center last:col-span-2 last:w-1/2 sm:w-auto sm:last:col-span-1 sm:last:w-auto"
-                >
-                  <span
-                    className={cn(
-                      "flex h-16 w-full items-center justify-center rounded-2xl bg-card p-2.5 sm:h-20 sm:w-44 sm:p-3",
-                      partner.sizeClass
-                    )}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} authorized partner logo`}
-                      width={320}
-                      height={120}
-                      loading="lazy"
-                      decoding="async"
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-          </div>
         </div>
       </div>
 
@@ -142,5 +97,6 @@ export function Hero() {
         <ChevronDown className="size-6 animate-bounce" aria-hidden="true" />
       </div>
     </section>
+
   );
 }
