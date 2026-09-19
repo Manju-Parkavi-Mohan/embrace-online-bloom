@@ -90,11 +90,13 @@ export function Hero() {
               <a href="#solutions">Explore Services</a>
             </Button>
           </div>
-
+        </div>
+      </div>
 
       <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-primary-foreground/70 lg:block">
         <ChevronDown className="size-6 animate-bounce" aria-hidden="true" />
       </div>
     </section>
+
   );
 }
