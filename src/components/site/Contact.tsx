@@ -50,7 +50,8 @@ const selectClass =
 
 const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.com";
 
-export function Contact() {
+
+export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string; email?: string }>({});
@@ -106,6 +107,187 @@ export function Contact() {
     setSubmitted(true);
   };
 
+  return (
+    <div className={compact ? "max-h-[68vh] overflow-y-auto pr-1" : undefined}>
+      {submitted ? (
+        <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
+          <span className="grid size-16 place-items-center rounded-full bg-primary-soft text-primary">
+            <CheckCircle2 className="size-8" aria-hidden="true" />
+          </span>
+          <h3 className="mt-8 font-display text-2xl font-bold">Enquiry received</h3>
+          <p className="mt-4 max-w-sm text-base leading-relaxed text-muted-foreground">
+            Thank you. An AutoDome engineer will review your requirement and respond within
+            one business day. For urgent fleet downtime, call {SITE.phones[1]}.
+          </p>
+          <Button
+            variant="outlineBrand"
+            className="mt-9"
+            onClick={() => {
+              setSubmitted(false);
+              setConsent(false);
+            }}
+          >
+            Submit another enquiry
+          </Button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} noValidate className="space-y-5">
+          <p className="text-xs text-muted-foreground">
+            Fields marked <span className="text-destructive">*</span> are required. All other fields are
+            optional.
+          </p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="fullName">
+                Full Name <span className="text-destructive">*</span>
+              </Label>
+              <Input
+                id="fullName"
+                name="fullName"
+                autoComplete="name"
+                aria-invalid={!!errors.fullName}
+                aria-describedby={errors.fullName ? "fullName-error" : undefined}
+                className="h-11"
+              />
+              {errors.fullName ? (
+                <p id="fullName-error" className="text-xs font-medium text-destructive">
+                  {errors.fullName}
+                </p>
+              ) : null}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">
+                Phone <span className="text-destructive">*</span>
+              </Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? "phone-error" : undefined}
+                className="h-11"
+              />
+              {errors.phone ? (
+                <p id="phone-error" className="text-xs font-medium text-destructive">
+                  {errors.phone}
+                </p>
+              ) : null}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email (optional)</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "email-error" : undefined}
+                className="h-11"
+              />
+              {errors.email ? (
+                <p id="email-error" className="text-xs font-medium text-destructive">
+                  {errors.email}
+                </p>
+              ) : null}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="company">Company Name (optional)</Label>
+              <Input id="company" name="company" autoComplete="organization" className="h-11" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="country">Country (optional)</Label>
+              <Input id="country" name="country" defaultValue="" autoComplete="country-name" className="h-11" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="brand">Vehicle Brand (optional)</Label>
+              <select id="brand" name="brand" className={selectClass} defaultValue="">
+                <option value="" disabled>
+                  Select a brand
+                </option>
+                {BRANDS.map((brand) => (
+                  <option key={brand} value={brand}>
+                    {brand}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="service">Service Required (optional)</Label>
+              <select id="service" name="service" className={selectClass} defaultValue="">
+                <option value="" disabled>
+                  Select a service
+                </option>
+                {SERVICES.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="fleetSize">Fleet Size (optional)</Label>
+              <select id="fleetSize" name="fleetSize" className={selectClass} defaultValue="">
+                <option value="" disabled>
+                  Select fleet size
+                </option>
+                {FLEET_SIZES.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+      
+          <div className="space-y-2">
+            <Label htmlFor="message">Message (optional)</Label>
+            <Textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Tell us about the vehicles, fault symptoms, or equipment requirement."
+            />
+          </div>
+      
+      
+          <div className="space-y-2">
+            <Label htmlFor="attachment">Upload File (optional)</Label>
+            <Input
+              id="attachment"
+              name="attachment"
+              type="file"
+              className="h-11 cursor-pointer py-2.5 file:mr-3 file:cursor-pointer file:rounded-full file:border-0 file:bg-secondary file:px-3 file:py-1 file:text-xs file:font-semibold file:text-secondary-foreground"
+            />
+            <p className="text-xs text-muted-foreground">
+              Fault reports, ECU photos, or equipment lists help us respond faster.
+            </p>
+          </div>
+      
+          <div className="flex items-start gap-3 pt-1">
+            <Checkbox
+              id="consent"
+              checked={consent}
+              onCheckedChange={(value) => setConsent(value === true)}
+              required
+              className="mt-1"
+            />
+            <Label htmlFor="consent" className="text-sm font-normal leading-relaxed text-muted-foreground">
+              I consent to AutoDome storing and using the details above to respond to my
+              enquiry.
+            </Label>
+          </div>
+      
+          <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!consent}>
+            Submit Enquiry
+          </Button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+export function Contact() {
   return (
     <section id="contact" className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
@@ -224,180 +406,7 @@ export function Contact() {
 
           <Reveal direction="right">
             <div id="contact-form" className="scroll-mt-24 rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
-              {submitted ? (
-                <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
-                  <span className="grid size-16 place-items-center rounded-full bg-primary-soft text-primary">
-                    <CheckCircle2 className="size-8" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-8 font-display text-2xl font-bold">Enquiry received</h3>
-                  <p className="mt-4 max-w-sm text-base leading-relaxed text-muted-foreground">
-                    Thank you. An AutoDome engineer will review your requirement and respond within
-                    one business day. For urgent fleet downtime, call {SITE.phones[1]}.
-                  </p>
-                  <Button
-                    variant="outlineBrand"
-                    className="mt-9"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setConsent(false);
-                    }}
-                  >
-                    Submit another enquiry
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  <p className="text-xs text-muted-foreground">
-                    Fields marked <span className="text-destructive">*</span> are required. All other fields are
-                    optional.
-                  </p>
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName">
-                        Full Name <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="fullName"
-                        name="fullName"
-                        autoComplete="name"
-                        aria-invalid={!!errors.fullName}
-                        aria-describedby={errors.fullName ? "fullName-error" : undefined}
-                        className="h-11"
-                      />
-                      {errors.fullName ? (
-                        <p id="fullName-error" className="text-xs font-medium text-destructive">
-                          {errors.fullName}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">
-                        Phone <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        autoComplete="tel"
-                        aria-invalid={!!errors.phone}
-                        aria-describedby={errors.phone ? "phone-error" : undefined}
-                        className="h-11"
-                      />
-                      {errors.phone ? (
-                        <p id="phone-error" className="text-xs font-medium text-destructive">
-                          {errors.phone}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email (optional)</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
-                        aria-invalid={!!errors.email}
-                        aria-describedby={errors.email ? "email-error" : undefined}
-                        className="h-11"
-                      />
-                      {errors.email ? (
-                        <p id="email-error" className="text-xs font-medium text-destructive">
-                          {errors.email}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company Name (optional)</Label>
-                      <Input id="company" name="company" autoComplete="organization" className="h-11" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="country">Country (optional)</Label>
-                      <Input id="country" name="country" defaultValue="" autoComplete="country-name" className="h-11" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="brand">Vehicle Brand (optional)</Label>
-                      <select id="brand" name="brand" className={selectClass} defaultValue="">
-                        <option value="" disabled>
-                          Select a brand
-                        </option>
-                        {BRANDS.map((brand) => (
-                          <option key={brand} value={brand}>
-                            {brand}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="service">Service Required (optional)</Label>
-                      <select id="service" name="service" className={selectClass} defaultValue="">
-                        <option value="" disabled>
-                          Select a service
-                        </option>
-                        {SERVICES.map((service) => (
-                          <option key={service} value={service}>
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="fleetSize">Fleet Size (optional)</Label>
-                      <select id="fleetSize" name="fleetSize" className={selectClass} defaultValue="">
-                        <option value="" disabled>
-                          Select fleet size
-                        </option>
-                        {FLEET_SIZES.map((size) => (
-                          <option key={size} value={size}>
-                            {size}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message (optional)</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      placeholder="Tell us about the vehicles, fault symptoms, or equipment requirement."
-                    />
-                  </div>
-
-
-                  <div className="space-y-2">
-                    <Label htmlFor="attachment">Upload File (optional)</Label>
-                    <Input
-                      id="attachment"
-                      name="attachment"
-                      type="file"
-                      className="h-11 cursor-pointer py-2.5 file:mr-3 file:cursor-pointer file:rounded-full file:border-0 file:bg-secondary file:px-3 file:py-1 file:text-xs file:font-semibold file:text-secondary-foreground"
-                    />
-                    <p className="text-xs text-muted-foreground">
-                      Fault reports, ECU photos, or equipment lists help us respond faster.
-                    </p>
-                  </div>
-
-                  <div className="flex items-start gap-3 pt-1">
-                    <Checkbox
-                      id="consent"
-                      checked={consent}
-                      onCheckedChange={(value) => setConsent(value === true)}
-                      required
-                      className="mt-1"
-                    />
-                    <Label htmlFor="consent" className="text-sm font-normal leading-relaxed text-muted-foreground">
-                      I consent to AutoDome storing and using the details above to respond to my
-                      enquiry.
-                    </Label>
-                  </div>
-
-                  <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!consent}>
-                    Submit Enquiry
-                  </Button>
-                </form>
-              )}
+              <ContactForm />
             </div>
           </Reveal>
         </div>
