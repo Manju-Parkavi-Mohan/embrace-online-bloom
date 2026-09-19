@@ -116,7 +116,9 @@ function Index() {
       <SiteHeader />
       <main>
         <Hero />
+        <AuthorizedPartners />
         <Brands />
+
         <About />
         <Services />
         <Testimonials />
