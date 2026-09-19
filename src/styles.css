@@ -271,6 +271,13 @@
   text-shadow: 0 1px 2px oklch(0.235 0.021 258 / 0.55), 0 4px 16px oklch(0.235 0.021 258 / 0.45);
 }
 
+@utility text-hero-shadow-strong {
+  text-shadow:
+    0 1px 2px oklch(0.235 0.021 258 / 0.7),
+    0 2px 8px oklch(0.235 0.021 258 / 0.55),
+    0 6px 20px oklch(0.235 0.021 258 / 0.5);
+}
+
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
