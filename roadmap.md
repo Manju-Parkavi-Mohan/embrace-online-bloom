@@ -4,7 +4,7 @@
 - [x] Link services 5–6 to the requested ADL Automotive categories.
 - [x] Move the About shop showcase into a popup triggered at Online Store.
 - [x] Verify service navigation, popup behavior, and current build.
-- [ ] Show the Online Store content inline on desktop and in a popup on mobile.
-- [ ] Open a reusable contact form popup when visitors reach the footer.
-- [ ] Add the supplied image as the first frame of the hero slideshow.
+- [x] Show the Online Store content inline on desktop and in a popup on mobile.
+- [x] Open a reusable contact form popup when visitors reach the footer.
+- [x] Add the supplied image as the first frame of the hero slideshow.
 - [ ] Verify the updated desktop and mobile experiences.
