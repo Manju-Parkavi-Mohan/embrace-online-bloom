@@ -7,4 +7,4 @@
 - [x] Show the Online Store content inline on desktop and in a popup on mobile.
 - [x] Open a reusable contact form popup when visitors reach the footer.
 - [x] Add the supplied image as the first frame of the hero slideshow.
-- [ ] Verify the updated desktop and mobile experiences.
+- [x] Verify the updated desktop and mobile experiences.
