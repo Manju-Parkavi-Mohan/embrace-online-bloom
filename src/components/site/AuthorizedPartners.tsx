@@ -1,4 +1,6 @@
 import { Reveal } from "./Reveal";
+import { cn } from "@/lib/utils";
+
 
 import magicLogo from "@/assets/magic-motorsport.jpg";
 import jaltestLogo from "@/assets/jaltest.jpg";
@@ -59,4 +61,3 @@ export function AuthorizedPartners() {
   );
 }
 
-import { cn } from "@/lib/utils";
