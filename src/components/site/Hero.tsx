@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Cpu, PackageCheck, Truck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import craneHeroAsset from "@/assets/autodome-crane-hero.jpg.asset.json";
 import hero8073 from "@/assets/hero-IMG_8073.jpg.asset.json";
 import hero8135 from "@/assets/hero-IMG_8135.jpg.asset.json";
 import hero8158 from "@/assets/hero-IMG_8158.jpg.asset.json";
 import hero8183 from "@/assets/hero-IMG_8183.jpg.asset.json";
 
 const HERO_SLIDES = [
-  {
-    src: craneHeroAsset.url,
-    alt: "AutoDome technician servicing a Liebherr mobile crane under a clear blue sky",
-    position: "object-center",
-  },
   {
     src: hero8073.url,
     alt: "AutoDome technician with diagnostic laptop beside a Liebherr crane truck on site",
@@ -34,6 +28,13 @@ const HERO_SLIDES = [
     alt: "AutoDome engineer performing diagnostics on a mobile crane carrier",
     position: "object-[50%_35%]",
   },
+];
+
+const HERO_POINTS = [
+  { icon: Wrench, label: "Truck Repair & Maintenance" },
+  { icon: Cpu, label: "ECU Repair & Programming" },
+  { icon: PackageCheck, label: "Genuine Spare Parts" },
+  { icon: Truck, label: "Fleet Support" },
 ];
 
 export function Hero() {
@@ -87,30 +88,42 @@ export function Hero() {
         <div className="absolute inset-0 bg-hero-veil" />
       </div>
 
-      <div className="section-shell pb-8 pt-20 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <h1 className="font-display text-3xl font-bold leading-[1.1] text-primary-foreground text-hero-shadow sm:text-4xl lg:text-5xl">
+      <div className="section-shell pb-10 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-28">
+        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+          <h1 className="font-display text-4xl font-bold leading-[1.08] text-primary-foreground text-hero-shadow sm:text-5xl lg:text-6xl">
             Advanced Truck Repair & <br />
             <span className="text-accent">Heavy Vehicle Diagnostics in UAE </span>
           </h1>
 
-          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-primary-foreground text-hero-shadow-strong sm:mt-6 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-primary-foreground/95 text-hero-shadow-strong sm:mt-7 sm:text-lg lg:text-xl">
             AutoDome provides professional truck repair, heavy vehicle diagnostics, ECU repair and programming, genuine
             parts, and advanced workshop solutions for fleets, workshops, and commercial vehicle operators across the
             UAE.
           </p>
 
-          <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-9 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-3">
-            <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
+          <div className="mt-6 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+            <Button asChild variant="hero" size="xl" className="w-full text-base sm:w-auto sm:px-11 sm:text-lg">
               <a href="#contact-form">
                 Book a Diagnostic Service
-                <ArrowRight className="size-4" aria-hidden="true" />
+                <ArrowRight className="size-5" aria-hidden="true" />
               </a>
             </Button>
-            <Button asChild variant="onImage" size="xl" className="w-full sm:w-auto">
+            <Button asChild variant="onImage" size="xl" className="w-full text-base sm:w-auto sm:px-11 sm:text-lg">
               <a href="#solutions">Explore Services</a>
             </Button>
           </div>
+
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:mt-12 sm:gap-3">
+            {HERO_POINTS.map(({ icon: Icon, label }) => (
+              <li
+                key={label}
+                className="flex items-center gap-2 rounded-full border border-primary-foreground/40 bg-primary-foreground/15 px-3.5 py-1.5 text-xs font-semibold text-primary-foreground text-hero-shadow backdrop-blur-md sm:px-5 sm:py-2 sm:text-sm"
+              >
+                <Icon className="size-4 shrink-0 text-accent" aria-hidden="true" />
+                {label}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -118,6 +131,5 @@ export function Hero() {
         <ChevronDown className="size-6 animate-bounce" aria-hidden="true" />
       </div>
     </section>
-
   );
 }
