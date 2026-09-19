@@ -1,13 +1,106 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, PackageCheck, ShoppingCart, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "./Reveal";
 import { FeaturedProducts } from "./FeaturedProducts";
 import { SITE } from "@/lib/site";
+import partsImg from "@/assets/service-parts.jpg";
+
+const POINTS = [
+  {
+    Icon: ShoppingCart,
+    title: "Order Online",
+    body: "Browse diagnostic tools, ECUs, electronic components, and workshop equipment in one catalogue.",
+  },
+  {
+    Icon: PackageCheck,
+    title: "Genuine Stock",
+    body: "The same genuine parts and authorised tooling our engineers use on commercial vehicles every day.",
+  },
+  {
+    Icon: Truck,
+    title: "Fast Dispatch",
+    body: "Regional delivery across the UAE and export shipping for fleets and workshops abroad.",
+  },
+];
 
 export function AdlStore() {
   return (
     <section id="store" className="bg-background py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
-        <div className="section-dark overflow-hidden rounded-3xl border border-border bg-background shadow-lifted">
+        {/* Static Online Store content — desktop only */}
+        <div className="hidden md:block">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <Reveal direction="left">
+              <div className="overflow-hidden rounded-3xl shadow-soft">
+                <img
+                  src={partsImg}
+                  alt="Shelves of genuine heavy-duty vehicle parts available on the ADL Automotive online store"
+                  width={1200}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal direction="right">
+              <p className="eyebrow">
+                <span className="h-px w-8" aria-hidden="true" />
+                Online Store
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                ADL Automotive — our e-commerce storefront
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                <a
+                  href={SITE.storefront.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-accent underline underline-offset-4 transition-colors hover:brightness-125"
+                >
+                  {SITE.storefront.name}
+                </a>{" "}
+                is the online store of AutoDome, where workshops, fleets, and technicians can buy
+                diagnostic tools, ECU hardware, heavy-duty vehicle parts, and workshop equipment
+                directly — with the same technical support behind every order.
+              </p>
+
+              <ul className="mt-10 space-y-5">
+                {POINTS.map((point) => (
+                  <li key={point.title} className="flex gap-4">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary-foreground/10 text-accent">
+                      <point.Icon className="size-5" aria-hidden="true" />
+                    </span>
+                    <div>
+                      <p className="font-display text-base font-bold text-foreground">
+                        {point.title}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {point.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
+                  <a href={SITE.storefront.url} target="_blank" rel="noopener noreferrer">
+                    Visit ADL Automotive Store
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
+                </Button>
+                <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
+                  <a href="#contact-form">Request Consultation</a>
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Shop Online showcase — all screens */}
+        <div className="section-dark mt-12 overflow-hidden rounded-3xl border border-border bg-background shadow-lifted md:mt-16">
           <div className="p-6 sm:p-8 lg:p-10">
             <span className="glow-badge inline-flex rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent-foreground">
               Shop Online
