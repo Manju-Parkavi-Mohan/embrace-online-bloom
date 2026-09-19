@@ -7,7 +7,6 @@ import jaltestLogo from "@/assets/jaltest.jpg";
 import engineDanceLogo from "@/assets/enginedance.png";
 import eculiteLogo from "@/assets/eculite.png";
 import autoveiLogo from "@/assets/autovei.png";
-import volvoLogo from "@/assets/brands/volvo.png";
 
 const HERO_PARTNERS = [
   { name: "Magic Motorsport", logo: magicLogo, sizeClass: "h-20 sm:h-24 sm:w-52" },
@@ -15,7 +14,6 @@ const HERO_PARTNERS = [
   { name: "Engine Dance", logo: engineDanceLogo },
   { name: "ECULite", logo: eculiteLogo },
   { name: "Autovei", logo: autoveiLogo },
-  { name: "Volvo", logo: volvoLogo, sizeClass: "h-16 w-16 sm:h-20 sm:w-20" },
 ];
 
 export function AuthorizedPartners() {
