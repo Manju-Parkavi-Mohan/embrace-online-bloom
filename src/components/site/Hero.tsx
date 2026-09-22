@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ChevronDown, Cpu, PackageCheck, Truck, Wrench } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import hero8073 from "@/assets/hero-IMG_8073.jpg.asset.json";
@@ -30,12 +30,6 @@ const HERO_SLIDES = [
   },
 ];
 
-const HERO_POINTS = [
-  { icon: Wrench, label: "Truck Repair & Maintenance" },
-  { icon: Cpu, label: "ECU Repair & Programming" },
-  { icon: PackageCheck, label: "Genuine Spare Parts" },
-  { icon: Truck, label: "Fleet Support" },
-];
 
 export function Hero() {
   const [offset, setOffset] = useState(0);
@@ -112,18 +106,6 @@ export function Hero() {
               <a href="#solutions">Explore Services</a>
             </Button>
           </div>
-
-          <ul className="mx-auto mt-8 grid w-full max-w-[260px] grid-cols-2 gap-2.5 sm:mt-12 sm:flex sm:max-w-none sm:w-auto sm:flex-wrap sm:items-center sm:justify-center sm:gap-3">
-            {HERO_POINTS.map(({ icon: Icon, label }) => (
-              <li
-                key={label}
-                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-primary-foreground/40 bg-primary-foreground/15 px-2 text-center text-[11px] font-semibold leading-tight text-primary-foreground text-hero-shadow backdrop-blur-md sm:aspect-auto sm:flex-row sm:gap-2 sm:rounded-full sm:px-5 sm:py-2 sm:text-sm sm:leading-normal"
-              >
-                <Icon className="size-5 shrink-0 text-accent sm:size-4" aria-hidden="true" />
-                <span>{label}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 
