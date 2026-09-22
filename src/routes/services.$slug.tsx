@@ -1,12 +1,11 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, PhoneCall } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
-import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -47,7 +46,7 @@ function ServicePage() {
       <SiteHeader />
 
       <main>
-        <section className="relative isolate overflow-hidden pb-16 pt-32 sm:pb-20 sm:pt-40">
+        <section className="relative isolate min-h-[22rem] overflow-hidden sm:min-h-[30rem]">
           <img
             src={service.image}
             alt={service.alt}
@@ -55,48 +54,15 @@ function ServicePage() {
             loading="eager"
             decoding="async"
           />
-          <span
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-foreground/90 via-foreground/80 to-foreground/55"
-            aria-hidden="true"
-          />
-          <div className="section-shell">
-            <nav aria-label="Breadcrumb" className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground/70">
-              <Link to="/" className="transition-colors hover:text-primary-foreground">
-                Home
-              </Link>
-              <span className="px-2">/</span>
-              <span className="text-primary-foreground">Services</span>
-            </nav>
-            <h1 className="mt-6 max-w-3xl font-display text-3xl font-bold leading-tight text-primary-foreground sm:text-4xl lg:text-5xl">
-              {service.title}
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-              {service.intro}
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
-                <a href="/#contact-form">
-                  Request Consultation
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-              </Button>
-              <Button asChild variant="light" size="lg" className="w-full sm:w-auto">
-                <a href={`tel:${SITE.phones[1].replace(/\s/g, "")}`}>
-                  <PhoneCall className="size-4" aria-hidden="true" />
-                  Talk to an Engineer
-                </a>
-              </Button>
-            </div>
-          </div>
         </section>
 
         <section className="py-12 sm:py-16">
           <div className="section-shell grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <Reveal>
-              <p className="eyebrow">
+              <h1 className="flex items-center gap-3 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
                 <span className="h-px w-8" aria-hidden="true" />
-                Overview
-              </p>
+                {service.title}
+              </h1>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>

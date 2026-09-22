@@ -1,9 +1,9 @@
-import diagnosticsImg from "@/assets/svc-1-diagnostics.jpg";
 import truckRepairImg from "@/assets/svc-2-truck-repair.jpg";
-import remappingImg from "@/assets/svc-3-remapping.jpg";
-import ecuImg from "@/assets/svc-4-ecu-repair.jpg";
 import tuningSoftwareImg from "@/assets/svc-5-tuning-software.jpg";
 import toolsTradingImg from "@/assets/svc-6-tools-trading.jpg";
+import diagnosticsBannerImg from "@/assets/service-diagnostics.jpg";
+import remappingBannerImg from "@/assets/service-ecu-remapping.jpg";
+import ecuRepairBannerImg from "@/assets/service-ecu-repair.jpg";
 
 export type Service = {
   slug: string;
@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     title: "Diagnosis, Troubleshooting & Repair",
     short: "Diagnosis, Troubleshooting & Repair",
     body: "Professional truck diagnostics and troubleshooting for complex electrical, electronic, engine, transmission, and communication faults.",
-    image: diagnosticsImg,
+    image: diagnosticsBannerImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
     intro: "AutoDome provides professional truck diagnostics and troubleshooting services in the UAE, helping workshops, fleet operators, and heavy vehicle professionals identify complex electrical, electronic, engine, transmission, and communication faults.",
     overview: [
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
     title: "ECU Remapping & File Tuning",
     short: "ECU Remapping & File Tuning",
     body: "Expert ECU remapping and tuning for trucks and commercial heavy vehicles, tailored to each application, vehicle, and engine.",
-    image: remappingImg,
+    image: remappingBannerImg,
     alt: "Engineer running ECU remapping and calibration software on a workstation",
     intro: "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE, adjusting engine control parameters for the intended application, vehicle, and engine.",
     overview: [
@@ -142,7 +142,7 @@ export const SERVICES: Service[] = [
     title: "ECU Repair & Reprogramming",
     short: "ECU Repair & Reprogramming",
     body: "Professional ECU programming and reprogramming solutions for trucks and heavy vehicles using advanced diagnostic tools and software.",
-    image: ecuImg,
+    image: ecuRepairBannerImg,
     alt: "Engineer repairing a vehicle electronic control unit circuit board",
     intro: "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In trucks and heavy automobiles, it gathers sensor data and controls the engine, fuel pump, exhaust, transmission, and other electronic functions.",
     overview: [
