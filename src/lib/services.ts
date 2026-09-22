@@ -26,7 +26,6 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-  {
     slug: "commercial-heavy-vehicle-diagnostics",
     title: "Diagnosis, Troubleshooting & Repair",
     short: "Diagnosis, Troubleshooting & Repair",
@@ -250,7 +249,8 @@ export const SERVICES: Service[] = [
       "Workshop layout and equipment consulting",
       "Delivery, installation and commissioning",
     ],
-  },  {
+  },
+  {
     slug: "truck-repair-maintenance",
     title: "Truck Diagnostics & Advanced Repair Support for Fleets in the UAE",
     short: "Fleet Diagnostics & Repair Support",
