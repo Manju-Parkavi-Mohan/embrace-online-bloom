@@ -8,7 +8,21 @@ import logo from "@/assets/autodome-logo.png";
 import darkLogo from "@/assets/autodome-logo-dark.png";
 import { cn } from "@/lib/utils";
 
-const MENU_SERVICES = SERVICES.filter((service) => service.slug !== "truck-repair-maintenance");
+const MENU_SERVICE_SLUGS = [
+  "commercial-heavy-vehicle-diagnostics",
+  "truck-diagnostic-tools-trading",
+  "ecu-remapping-calibration",
+  "ecu-repair-reprogramming",
+];
+
+const MENU_LABELS: Record<string, string> = {
+  "truck-diagnostic-tools-trading": "Diagnostic Tools",
+};
+
+const MENU_SERVICES = MENU_SERVICE_SLUGS.flatMap((slug) => {
+  const service = SERVICES.find((item) => item.slug === slug);
+  return service ? [{ ...service, title: MENU_LABELS[slug] ?? service.title }] : [];
+});
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
