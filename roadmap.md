@@ -13,4 +13,4 @@
 - [x] Remove the hero service labels.
 - [x] Move service 2 to last and rename services to the five new names.
 - [x] Update the Services nav menu to the five new names.
-- [ ] Replace hero JSON asset pointers with direct image files for Vercel deploys.
+- [x] Replace hero JSON asset pointers with direct image files for Vercel deploys.
