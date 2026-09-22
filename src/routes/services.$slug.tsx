@@ -1,12 +1,11 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, PhoneCall } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
-import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
