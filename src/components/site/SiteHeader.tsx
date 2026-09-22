@@ -8,6 +8,8 @@ import logo from "@/assets/autodome-logo.png";
 import darkLogo from "@/assets/autodome-logo-dark.png";
 import { cn } from "@/lib/utils";
 
+const MENU_SERVICES = SERVICES.filter((service) => service.slug !== "truck-repair-maintenance");
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -87,7 +89,7 @@ src={scrolled ? darkLogo : logo}
                   </a>
                   <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                     <ul className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-lifted">
-                      {SERVICES.map((service) => (
+                      {MENU_SERVICES.map((service) => (
                         <li key={service.slug}>
                           <Link
                             to="/services/$slug"
@@ -215,7 +217,7 @@ src={darkLogo}
                   </button>
                   {servicesOpen && (
                     <ul className="pb-4">
-                      {SERVICES.map((service) => (
+                      {MENU_SERVICES.map((service) => (
                         <li key={service.slug}>
                           <Link
                             to="/services/$slug"

@@ -10,3 +10,7 @@
 - [x] Verify the updated desktop and mobile experiences.
 - [x] Restore the dark Shop Online showcase inline on desktop and mobile without a store popup.
 - [x] Make popup contact-field focus outlines even on every side.
+- [x] Remove the hero service labels.
+- [x] Move service 2 to last and rename services to the five new names.
+- [x] Update the Services nav menu to the five new names.
+- [ ] Replace hero JSON asset pointers with direct image files for Vercel deploys.
