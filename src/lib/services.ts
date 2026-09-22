@@ -26,9 +26,10 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
+  {
     slug: "commercial-heavy-vehicle-diagnostics",
-    title: "Truck Diagnostics & Troubleshooting Services in the UAE",
-    short: "Truck Diagnostics & Troubleshooting",
+    title: "Diagnosis, Troubleshooting & Repair",
+    short: "Diagnosis, Troubleshooting & Repair",
     body: "Professional truck diagnostics and troubleshooting for complex electrical, electronic, engine, transmission, and communication faults.",
     image: diagnosticsImg,
     alt: "Technician diagnosing a heavy-duty commercial vehicle engine",
@@ -81,6 +82,175 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    slug: "ecu-remapping-calibration",
+    title: "ECU Remapping & File Tuning",
+    short: "ECU Remapping & File Tuning",
+    body: "Expert ECU remapping and tuning for trucks and commercial heavy vehicles, tailored to each application, vehicle, and engine.",
+    image: remappingImg,
+    alt: "Engineer running ECU remapping and calibration software on a workstation",
+    intro: "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE, adjusting engine control parameters for the intended application, vehicle, and engine.",
+    overview: [
+      "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE. ECU remapping involves adjusting certain engine control parameters in order to maximize vehicle performance and drivability based on the intended application, vehicle, and engine.",
+      "For commercial and heavy vehicles, ECU calibration adopts a technical perspective that blends engine performance, vehicle load, reliability, and operating conditions. As a result, every ECU solution is specifically crafted to cater to particular vehicles and applications, utilizing proper programming and calibration techniques.",
+    ],
+    sections: [
+      {
+        heading: "Professional Truck ECU Remapping",
+        paragraphs: [
+          "Truck ECU remapping is important for fine-tuning engine parameters such as torque delivery, throttle response, fuel management, and many more functionalities by changing certain calibration factors. It is important to run diagnostics before remapping so you will be able to find and deal with any available mechanical or electronic issues that can affect the outcome of remapping.",
+          "We focus on application-specific ECU solutions rather than generic software modifications, helping ensure that the calibration is appropriate for the vehicle and its operating requirements.",
+        ],
+      },
+      {
+        heading: "Enhance Your Truck’s Performance",
+        paragraphs: [
+          "Improving truck performance begins with precise diagnostics and proper ECU calibration. Recognizing problems before carrying out tuning can improve truck performance, fuel consumption, and reduce downtime.",
+          "Trucks and commercial vehicles travel on differing loads, roads, terrains, and environments, making it essential to ensure that the ECU calibration remains within appropriate limits for optimal performance.",
+        ],
+      },
+      {
+        heading: "Why AutoDome for ECU Tuning?",
+        paragraphs: [
+          "AutoDome offers ECU tuning and remapping assistance for trucks, heavy vehicles, commercial vehicles, and applications involving heavy-duty vehicles. With the advanced technology of professional ECU programming, we can ensure that our calibration services are performed accurately and precisely.",
+          "We can assist you in finding the right remapping solution for your vehicle, such as performance improvement, driving quality, or an application-specific ECU. We also help workshops and fleet management operators to get the best possible performance and efficiency from their heavy vehicles.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Authorised hardware",
+        body: "Magic Motorsport tooling for reading and writing ECUs safely across commercial platforms.",
+      },
+      {
+        title: "Tailored calibration",
+        body: "Files developed per vehicle, duty cycle and load profile rather than generic off-the-shelf maps.",
+      },
+      {
+        title: "Safety margins kept",
+        body: "Changes stay within component tolerances so durability and emissions hardware are respected.",
+      },
+    ],
+    deliverables: [
+      "ECU reading and secure original file backup",
+      "Custom file tuning for economy or performance",
+      "Bench and OBD writing support",
+      "Tool supply, licensing and training",
+      "Post-tune verification and data logging",
+    ],
+  },
+  {
+    slug: "ecu-repair-reprogramming",
+    title: "ECU Repair & Reprogramming",
+    short: "ECU Repair & Reprogramming",
+    body: "Professional ECU programming and reprogramming solutions for trucks and heavy vehicles using advanced diagnostic tools and software.",
+    image: ecuImg,
+    alt: "Engineer repairing a vehicle electronic control unit circuit board",
+    intro: "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In trucks and heavy automobiles, it gathers sensor data and controls the engine, fuel pump, exhaust, transmission, and other electronic functions.",
+    overview: [
+      "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In the case of trucks and heavy automobiles, the ECU gathers data from various sensors and controls systems for functions such as engine operation, fuel pump, exhaust, transmission, and other electronic functions.",
+    ],
+    sections: [
+      {
+        heading: "Reasons to Reprogram an ECU in a Truck",
+        paragraphs: [
+          "An ECU reprogramming may be necessary when a control unit is replaced, a software update is needed, a configuration is modified, or specific vehicle parameters need calibration. Professional ECU reprogramming ensures that the ECU communicates properly with the vehicle's systems and functions according to the necessary requirements.",
+        ],
+      },
+      {
+        heading: "ECU Reprogramming at AutoDome",
+        level: 3,
+        paragraphs: [
+          "At AutoDome, we provide professional ECU programming and reprogramming solutions for trucks and heavy vehicles. Using advanced diagnostic tools and software, our specialists can support ECU coding, programming, calibration, and related electronic solutions for supported and specific vehicle applications.",
+          "We focus on accurate diagnosis and the correct programming procedure to help workshops and heavy-vehicle professionals resolve ECU-related issues efficiently.",
+        ],
+      },
+    ],
+    highlights: [
+      {
+        title: "Board-level repair",
+        body: "Driver stages, power supplies, communication lines and connector damage repaired in-house.",
+      },
+      {
+        title: "Cloning & coding",
+        body: "Unit cloning, immobiliser alignment and parameter coding for a plug-and-drive result.",
+      },
+      {
+        title: "All major brands",
+        body: "Engine and gearbox ECUs for European, Japanese and American commercial platforms.",
+      },
+    ],
+    deliverables: [
+      "Bench testing and fault confirmation",
+      "Component-level electronic repair",
+      "Reprogramming, cloning and adaptation",
+      "Water- and heat-damage recovery where possible",
+      "Fitment support and post-repair validation",
+    ],
+  },
+  {
+    slug: "ecu-tuning-softwares",
+    title: "Advanced Training Programs",
+    short: "Advanced Training Programs",
+    body: "Get Tuning softwares for all trucks, we also provide support for Chinese trucks with customized softwres",
+    image: tuningSoftwareImg,
+    alt: "Truck ECU tuning software running on a laptop with interface hardware",
+    intro:
+      "Genuine and OE-quality parts for commercial vehicles and construction equipment, plus a sourcing team for the hard-to-find items.",
+    externalUrl: "https://adl.apaarr.com/products?category=%2222%22",
+    highlights: [
+      {
+        title: "Deep electronics stock",
+        body: "ECUs, sensors, actuators and electronic components held for fast turnaround.",
+      },
+      {
+        title: "Special sourcing",
+        body: "Obsolete and hard-to-find parts located through our supplier network.",
+      },
+      {
+        title: "Order online",
+        body: "Everyday items available through our ADL Automotive e-commerce storefront.",
+      },
+    ],
+    deliverables: [
+      "Electronic control units and modules",
+      "Sensors, actuators and wiring components",
+      "Mechanical and driveline parts",
+      "Construction equipment spares",
+      "UAE delivery and export shipping",
+    ],
+  },
+  {
+    slug: "truck-diagnostic-tools-trading",
+    title: "Workshop Tools & Equipment",
+    short: "Workshop Tools & Equipment",
+    body: "Choose suitable diagnostic equipment for heavy-duty vehicles and commercial vehicle applications. Our team can help identify the right solution for your workshop.",
+    image: toolsTradingImg,
+    alt: "Professional heavy-duty truck diagnostic tools and interfaces for sale",
+    intro:
+      "Equip or upgrade a complete commercial vehicle workshop — from hand tools to specialised machinery — with advice from engineers who use them.",
+    externalUrl: "https://adl.apaarr.com/products?category=%2217%22",
+    highlights: [
+      {
+        title: "Complete fit-outs",
+        body: "Plan and supply an entire workshop, or add a single specialised station.",
+      },
+      {
+        title: "Quality and value",
+        body: "Durable, professional-grade brands selected for heavy daily use.",
+      },
+      {
+        title: "After-sales backing",
+        body: "Commissioning, operator guidance and spares support after delivery.",
+      },
+    ],
+    deliverables: [
+      "Hand and power tools",
+      "Diagnostic and measurement equipment",
+      "Lifting, pressing and specialised machinery",
+      "Workshop layout and equipment consulting",
+      "Delivery, installation and commissioning",
+    ],
+  },  {
     slug: "truck-repair-maintenance",
     title: "Truck Diagnostics & Advanced Repair Support for Fleets in the UAE",
     short: "Fleet Diagnostics & Repair Support",
@@ -137,176 +307,7 @@ export const SERVICES: Service[] = [
       "Specialist fleet and workshop technical support",
     ],
   },
-  {
-    slug: "ecu-remapping-calibration",
-    title: "Truck ECU Remapping & ECU Tuning in the UAE",
-    short: "Truck ECU Remapping & Tuning",
-    body: "Expert ECU remapping and tuning for trucks and commercial heavy vehicles, tailored to each application, vehicle, and engine.",
-    image: remappingImg,
-    alt: "Engineer running ECU remapping and calibration software on a workstation",
-    intro: "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE, adjusting engine control parameters for the intended application, vehicle, and engine.",
-    overview: [
-      "AutoDome delivers expert ECU remapping and ECU tuning services for all trucks and commercial heavy vehicles in the UAE. ECU remapping involves adjusting certain engine control parameters in order to maximize vehicle performance and drivability based on the intended application, vehicle, and engine.",
-      "For commercial and heavy vehicles, ECU calibration adopts a technical perspective that blends engine performance, vehicle load, reliability, and operating conditions. As a result, every ECU solution is specifically crafted to cater to particular vehicles and applications, utilizing proper programming and calibration techniques.",
-    ],
-    sections: [
-      {
-        heading: "Professional Truck ECU Remapping",
-        paragraphs: [
-          "Truck ECU remapping is important for fine-tuning engine parameters such as torque delivery, throttle response, fuel management, and many more functionalities by changing certain calibration factors. It is important to run diagnostics before remapping so you will be able to find and deal with any available mechanical or electronic issues that can affect the outcome of remapping.",
-          "We focus on application-specific ECU solutions rather than generic software modifications, helping ensure that the calibration is appropriate for the vehicle and its operating requirements.",
-        ],
-      },
-      {
-        heading: "Enhance Your Truck’s Performance",
-        paragraphs: [
-          "Improving truck performance begins with precise diagnostics and proper ECU calibration. Recognizing problems before carrying out tuning can improve truck performance, fuel consumption, and reduce downtime.",
-          "Trucks and commercial vehicles travel on differing loads, roads, terrains, and environments, making it essential to ensure that the ECU calibration remains within appropriate limits for optimal performance.",
-        ],
-      },
-      {
-        heading: "Why AutoDome for ECU Tuning?",
-        paragraphs: [
-          "AutoDome offers ECU tuning and remapping assistance for trucks, heavy vehicles, commercial vehicles, and applications involving heavy-duty vehicles. With the advanced technology of professional ECU programming, we can ensure that our calibration services are performed accurately and precisely.",
-          "We can assist you in finding the right remapping solution for your vehicle, such as performance improvement, driving quality, or an application-specific ECU. We also help workshops and fleet management operators to get the best possible performance and efficiency from their heavy vehicles.",
-        ],
-      },
-    ],
-    highlights: [
-      {
-        title: "Authorised hardware",
-        body: "Magic Motorsport tooling for reading and writing ECUs safely across commercial platforms.",
-      },
-      {
-        title: "Tailored calibration",
-        body: "Files developed per vehicle, duty cycle and load profile rather than generic off-the-shelf maps.",
-      },
-      {
-        title: "Safety margins kept",
-        body: "Changes stay within component tolerances so durability and emissions hardware are respected.",
-      },
-    ],
-    deliverables: [
-      "ECU reading and secure original file backup",
-      "Custom file tuning for economy or performance",
-      "Bench and OBD writing support",
-      "Tool supply, licensing and training",
-      "Post-tune verification and data logging",
-    ],
-  },
-  {
-    slug: "ecu-repair-reprogramming",
-    title: "What is an ECU in a Truck?",
-    short: "Truck ECU Reprogramming",
-    body: "Professional ECU programming and reprogramming solutions for trucks and heavy vehicles using advanced diagnostic tools and software.",
-    image: ecuImg,
-    alt: "Engineer repairing a vehicle electronic control unit circuit board",
-    intro: "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In trucks and heavy automobiles, it gathers sensor data and controls the engine, fuel pump, exhaust, transmission, and other electronic functions.",
-    overview: [
-      "An ECU (Electronic Control Unit) is an electronic device that oversees and controls the essential aspects of a vehicle. In the case of trucks and heavy automobiles, the ECU gathers data from various sensors and controls systems for functions such as engine operation, fuel pump, exhaust, transmission, and other electronic functions.",
-    ],
-    sections: [
-      {
-        heading: "Reasons to Reprogram an ECU in a Truck",
-        paragraphs: [
-          "An ECU reprogramming may be necessary when a control unit is replaced, a software update is needed, a configuration is modified, or specific vehicle parameters need calibration. Professional ECU reprogramming ensures that the ECU communicates properly with the vehicle's systems and functions according to the necessary requirements.",
-        ],
-      },
-      {
-        heading: "ECU Reprogramming at AutoDome",
-        level: 3,
-        paragraphs: [
-          "At AutoDome, we provide professional ECU programming and reprogramming solutions for trucks and heavy vehicles. Using advanced diagnostic tools and software, our specialists can support ECU coding, programming, calibration, and related electronic solutions for supported and specific vehicle applications.",
-          "We focus on accurate diagnosis and the correct programming procedure to help workshops and heavy-vehicle professionals resolve ECU-related issues efficiently.",
-        ],
-      },
-    ],
-    highlights: [
-      {
-        title: "Board-level repair",
-        body: "Driver stages, power supplies, communication lines and connector damage repaired in-house.",
-      },
-      {
-        title: "Cloning & coding",
-        body: "Unit cloning, immobiliser alignment and parameter coding for a plug-and-drive result.",
-      },
-      {
-        title: "All major brands",
-        body: "Engine and gearbox ECUs for European, Japanese and American commercial platforms.",
-      },
-    ],
-    deliverables: [
-      "Bench testing and fault confirmation",
-      "Component-level electronic repair",
-      "Reprogramming, cloning and adaptation",
-      "Water- and heat-damage recovery where possible",
-      "Fitment support and post-repair validation",
-    ],
-  },
-  {
-    slug: "ecu-tuning-softwares",
-    title: "ECU Tuning Softwares",
-    short: "ECU Tuning Softwares",
-    body: "Get Tuning softwares for all trucks, we also provide support for Chinese trucks with customized softwres",
-    image: tuningSoftwareImg,
-    alt: "Truck ECU tuning software running on a laptop with interface hardware",
-    intro:
-      "Genuine and OE-quality parts for commercial vehicles and construction equipment, plus a sourcing team for the hard-to-find items.",
-    externalUrl: "https://adl.apaarr.com/products?category=%2222%22",
-    highlights: [
-      {
-        title: "Deep electronics stock",
-        body: "ECUs, sensors, actuators and electronic components held for fast turnaround.",
-      },
-      {
-        title: "Special sourcing",
-        body: "Obsolete and hard-to-find parts located through our supplier network.",
-      },
-      {
-        title: "Order online",
-        body: "Everyday items available through our ADL Automotive e-commerce storefront.",
-      },
-    ],
-    deliverables: [
-      "Electronic control units and modules",
-      "Sensors, actuators and wiring components",
-      "Mechanical and driveline parts",
-      "Construction equipment spares",
-      "UAE delivery and export shipping",
-    ],
-  },
-  {
-    slug: "truck-diagnostic-tools-trading",
-    title: "Professional Truck Diagnostic Tools trading",
-    short: "Professional Truck Diagnostic Tools trading",
-    body: "Choose suitable diagnostic equipment for heavy-duty vehicles and commercial vehicle applications. Our team can help identify the right solution for your workshop.",
-    image: toolsTradingImg,
-    alt: "Professional heavy-duty truck diagnostic tools and interfaces for sale",
-    intro:
-      "Equip or upgrade a complete commercial vehicle workshop — from hand tools to specialised machinery — with advice from engineers who use them.",
-    externalUrl: "https://adl.apaarr.com/products?category=%2217%22",
-    highlights: [
-      {
-        title: "Complete fit-outs",
-        body: "Plan and supply an entire workshop, or add a single specialised station.",
-      },
-      {
-        title: "Quality and value",
-        body: "Durable, professional-grade brands selected for heavy daily use.",
-      },
-      {
-        title: "After-sales backing",
-        body: "Commissioning, operator guidance and spares support after delivery.",
-      },
-    ],
-    deliverables: [
-      "Hand and power tools",
-      "Diagnostic and measurement equipment",
-      "Lifting, pressing and specialised machinery",
-      "Workshop layout and equipment consulting",
-      "Delivery, installation and commissioning",
-    ],
-  },
+
 ];
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
