@@ -1,28 +1,92 @@
-# Lovable Connect Hub
+# AutoDome — Precision Fleet Solutions Website
 
-connect to the lovable project that was created by lovable in other instance and we will start working here
-https://github.com/Manju-Parkavi-Mohan/precision-fleet-solutions.git
+Marketing and services website for **AutoDome** (Sharjah, UAE) — commercial-vehicle diagnostics, ECU services, training and workshop tools. Built with [TanStack Start](https://tanstack.com/start) (React 19 + Vite 7) and styled with Tailwind CSS v4.
 
-do the following changes in that 
-change the bg color of featured products to bg color of services section and the stats section bg also to bg color of services section  whatsapp icon is required for whatsapp linking in the floating icons....  contact form need to be sent to office@autodome.ae  make each services in the services section clickable to link to services page instead of showing a separate link to view service page in services section  give me the color principle that is followed here and make sure color principle followed for website design and prove me you did it and also the typography too...and what fonts used throughout the web and what you will think first if i ask for a new page in the website before executing it
+Repository: https://github.com/Manju-Parkavi-Mohan/precision-fleet-solutions.git
 
-This project was built with [Lovable](https://lovable.dev).
+## Tech Stack
 
-## Build with Lovable
+| Layer      | Technology                                    |
+| ---------- | --------------------------------------------- |
+| Framework  | TanStack Start v1 (React 19, SSR/SSG)         |
+| Build tool | Vite 7                                        |
+| Styling    | Tailwind CSS v4 (CSS-first `@theme` tokens)   |
+| UI kit     | shadcn-style components (`src/components/ui`) |
+| Fonts      | Sora (headings) + Manrope (body)              |
+| Language   | TypeScript                                    |
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/68763f44-0f25-4532-9897-053189e502c0).
+## Prerequisites
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Node.js 20 or newer** — install via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) if you don't have it:
+  ```sh
+  nvm install 20
+  nvm use 20
+  ```
+- **npm** (ships with Node).
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Local Setup
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# 1. Clone the repository
+git clone https://github.com/Manju-Parkavi-Mohan/precision-fleet-solutions.git
+cd precision-fleet-solutions
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
 npm run dev
 ```
+
+The site runs at **http://localhost:8080** (the terminal prints the exact URL). Hot reload is enabled — edits under `src/` refresh automatically.
+
+## Available Scripts
+
+| Command             | What it does                       |
+| ------------------- | ---------------------------------- |
+| `npm run dev`       | Start the dev server (hot reload)  |
+| `npm run build`     | Production build                   |
+| `npm run build:dev` | Development-mode build (prerender) |
+| `npm run preview`   | Serve the production build locally |
+| `npm run lint`      | Run ESLint                         |
+| `npm run format`    | Format the codebase with Prettier  |
+
+## Project Structure
+
+```
+src/
+├── assets/                 # Images (hero photos, brand & partner logos)
+├── components/
+│   ├── site/               # Page sections (Hero, Services, Contact, etc.)
+│   └── ui/                 # Reusable UI primitives (buttons, cards…)
+├── lib/
+│   ├── services.ts         # Service content: titles, copy, images, links
+│   └── site.ts             # Site-wide config (contact info, storefront URL)
+├── routes/
+│   ├── __root.tsx          # App shell (fonts, metadata, global chrome)
+│   ├── index.tsx           # Home page — section composition
+│   └── services.$slug.tsx  # Individual service pages
+├── styles.css              # Tailwind theme tokens & global styles
+└── start.ts                # App bootstrap
+```
+
+Routes are file-based (`src/routes/`); `src/routeTree.gen.ts` is generated automatically — never edit it by hand.
+
+## Design Conventions
+
+Follow these rules when editing so the site stays consistent:
+
+- **Colors** — defined as oklch tokens in `src/styles.css`. Never hardcode color utilities (`text-white`, `bg-[#…]`) in components; use semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, …).
+  - Palette principle: ~60% neutral background, ~30% brand blue / dark ink, ~10% amber accent.
+  - Dark sections use the `.section-dark` class (never `bg-primary`) so child tokens invert automatically.
+- **Typography** — Sora for display/headings (`var(--font-display)`), Manrope for body (`var(--font-sans)`); loaded via `<link>` tags in `src/routes/__root.tsx`.
+- **Images** — stored as real files in `src/assets/` and imported directly (required for the Vercel deploy); no external asset pointers.
+- **Contact form** — sends via mailto to md@autodome.ae, md@adlautomotive.com, sales@adlautomotive.com; name and phone are required fields.
+
+## Deployment
+
+The site is deployed to **Vercel**. After pushing to `main`, the deployment picks up the changes — no extra build configuration is needed (standard Vite output).
+
+## Working with Lovable (optional)
+
+This project can also be developed in the [Lovable editor](https://lovable.dev/projects/68763f44-0f25-4532-9897-053189e502c0). Changes made in Lovable are pushed to this repository, and pushes to `main` sync back into Lovable automatically.
