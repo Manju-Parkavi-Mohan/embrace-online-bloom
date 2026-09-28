@@ -86,7 +86,3 @@ Follow these rules when editing so the site stays consistent:
 ## Deployment
 
 The site is deployed to **Vercel**. After pushing to `main`, the deployment picks up the changes — no extra build configuration is needed (standard Vite output).
-
-## Working with Lovable (optional)
-
-This project can also be developed in the [Lovable editor](https://lovable.dev/projects/68763f44-0f25-4532-9897-053189e502c0). Changes made in Lovable are pushed to this repository, and pushes to `main` sync back into Lovable automatically.
