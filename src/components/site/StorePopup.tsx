@@ -46,7 +46,7 @@ export function StorePopup() {
             Browse professional diagnostic tools, parts, and workshop equipment with AutoDome technical support behind every order.
           </DialogDescription>
           <Button asChild variant="light" size="lg" className="mt-6 w-full sm:w-auto">
-            <a href={SITE.storefront.url} target="_blank" rel="noopener noreferrer">
+            <a href={SITE.storefront.url}>
               Visit the {SITE.storefront.name} store
               <ArrowRight aria-hidden="true" />
             </a>

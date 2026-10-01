@@ -9,7 +9,6 @@ import { Credentials } from "@/components/site/Credentials";
 import { Industries } from "@/components/site/Industries";
 import { AdlStore } from "@/components/site/AdlStore";
 import { Brands } from "@/components/site/Brands";
-import { Gallery } from "@/components/site/Gallery";
 import { Training } from "@/components/site/Training";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
@@ -43,8 +42,7 @@ const STRUCTURED_DATA = {
   currenciesAccepted: "AED",
   foundingDate: "2008",
   slogan: SITE.tagline,
-  sameAs: [`https://wa.me/${SITE.whatsapp}`, SITE.storefront.url],
-  subOrganization: { "@type": "Organization", name: SITE.storefront.name, url: SITE.storefront.url },
+  sameAs: [`https://wa.me/${SITE.whatsapp}`],
   address: {
     "@type": "PostalAddress",
     streetAddress: "407A, Al Sajaa Industrial",
@@ -52,7 +50,7 @@ const STRUCTURED_DATA = {
     addressRegion: "Sharjah",
     addressCountry: "AE",
   },
-  geo: { "@type": "GeoCoordinates", latitude: "25.3548", longitude: "55.4210" },
+  geo: { "@type": "GeoCoordinates", latitude: "25.3421411", longitude: "55.6481055" },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -125,7 +123,6 @@ function Index() {
         <Credentials />
         <Industries />
         <AdlStore />
-        <Gallery />
         <Training />
         <Faq />
         <FinalCta />

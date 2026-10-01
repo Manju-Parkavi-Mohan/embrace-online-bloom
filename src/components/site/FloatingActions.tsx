@@ -24,8 +24,6 @@ export function FloatingActions() {
       <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
         <a
           href={SITE.storefront.url}
-          target="_blank"
-          rel="noopener noreferrer"
           aria-label={`Shop at ${SITE.storefront.name}`}
           className={cn(
             "group flex h-13 items-center overflow-hidden rounded-full bg-accent text-accent-foreground shadow-lifted transition-all duration-500 hover:-translate-y-0.5",

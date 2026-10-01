@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, PackageCheck, ShoppingCart, Truck } from "lucide-react";
+import { ArrowRight, PackageCheck, ShoppingCart, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { FeaturedProducts } from "./FeaturedProducts";
@@ -55,8 +55,6 @@ export function AdlStore() {
               <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 <a
                   href={SITE.storefront.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="font-semibold text-accent underline underline-offset-4 transition-colors hover:brightness-125"
                 >
                   {SITE.storefront.name}
@@ -86,9 +84,9 @@ export function AdlStore() {
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
-                  <a href={SITE.storefront.url} target="_blank" rel="noopener noreferrer">
+                  <a href={SITE.storefront.url}>
                     Visit ADL Automotive Store
-                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                    <ArrowRight className="size-4" aria-hidden="true" />
                   </a>
                 </Button>
                 <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
@@ -113,7 +111,7 @@ export function AdlStore() {
               technical support behind every order.
             </p>
             <Button asChild variant="light" size="lg" className="mt-6 w-full sm:w-auto">
-              <a href={SITE.storefront.url} target="_blank" rel="noopener noreferrer">
+              <a href={SITE.storefront.url}>
                 Visit the {SITE.storefront.name} store
                 <ArrowRight aria-hidden="true" />
               </a>

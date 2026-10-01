@@ -14,3 +14,4 @@
 - [x] Move service 2 to last and rename services to the five new names.
 - [x] Update the Services nav menu to the five new names.
 - [x] Replace hero JSON asset pointers with direct image files for Vercel deploys.
+- [x] Hide Inside AutoDome, point store links home, update service boxes with supplied text and photos, and pin the company map.

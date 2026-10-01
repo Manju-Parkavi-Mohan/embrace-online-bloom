@@ -117,8 +117,6 @@ export function SiteFooter() {
             Online store:{" "}
             <a
               href={SITE.storefront.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-primary-foreground hover:underline"
             >
               {SITE.storefront.name}
