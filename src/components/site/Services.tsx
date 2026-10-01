@@ -16,7 +16,7 @@ export function Services() {
   const cardContent = (service: (typeof SERVICES)[number], index: number) => (
     <>
       <img
-        src={service.image}
+        src={service.cardImage}
         alt={service.alt}
         width={1280}
         height={720}
@@ -37,11 +37,11 @@ export function Services() {
         <h3 className="font-display text-xl font-bold leading-snug text-primary-foreground transition-colors duration-300 group-hover:text-primary-light">
           {service.title}
         </h3>
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-primary-foreground/75">
+        <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-primary-foreground/75">
           {service.body}
         </p>
         <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground transition-colors duration-300 group-hover:text-primary-light">
-          {service.externalUrl ? "Shop Online" : "Request Consultation"}
+          View Service
           <ArrowRight
             className="size-4 transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
@@ -53,13 +53,6 @@ export function Services() {
 
   const card = (service: (typeof SERVICES)[number], index: number) => {
     const className = "group relative flex h-[380px] flex-col justify-end overflow-hidden rounded-3xl border border-primary-foreground/15 shadow-soft transition-colors duration-500 hover:border-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-[420px]";
-    if (service.externalUrl) {
-      return (
-        <a href={service.externalUrl} target="_blank" rel="noopener noreferrer" aria-label={`Shop ${service.title}`} className={className}>
-          {cardContent(service, index)}
-        </a>
-      );
-    }
     return (
       <Link to="/services/$slug" params={{ slug: service.slug }} aria-label={`Open ${service.title} service page`} className={className}>
         {cardContent(service, index)}

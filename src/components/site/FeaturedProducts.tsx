@@ -16,9 +16,6 @@ type Product = {
 const money = (value: number | null) =>
   value == null ? null : `AED ${Number(value).toLocaleString("en-AE")}`;
 
-// The store serves product detail pages under /products/<slug>.
-const productHref = (url: string) => url.replace("/product/", "/products/");
-
 export function FeaturedProducts() {
   const [items, setItems] = useState<Product[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -70,9 +67,7 @@ export function FeaturedProducts() {
             }`}
           >
             <a
-              href={productHref(product.url)}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/"
               className="flex h-full flex-col"
             >
               <div className="aspect-square w-full overflow-hidden bg-white p-2">

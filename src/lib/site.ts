@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Powering Smarter Mobility Through Advanced Vehicle Technology",
   storefront: {
     name: "ADL Automotive",
-    url: "https://adlautomotive.com",
+    url: "/",
   },
   email: "office@autodome.ae",
   phones: ["+971 6 565 8212", "+971 52 191 4444"],
@@ -14,7 +14,7 @@ export const SITE = {
     { days: "Saturday", time: "8:00 AM – 6:00 PM" },
     { days: "Sunday", time: "Closed" },
   ],
-  mapQuery: "Al+Sajaa+Industrial+Area+Sharjah+United+Arab+Emirates",
+  mapQuery: "25.3421411,55.6481055",
 } as const;
 
 export const NAV_LINKS = [

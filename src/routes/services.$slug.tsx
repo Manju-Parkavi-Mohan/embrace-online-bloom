@@ -122,17 +122,10 @@ function ServicePage() {
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                {others.map((item) => (
                 <li key={item.slug}>
-                   {item.externalUrl ? (
-                     <a href={item.externalUrl} target="_blank" rel="noopener noreferrer" className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40">
-                       <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
-                       <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                     </a>
-                   ) : (
                      <Link to="/services/$slug" params={{ slug: item.slug }} className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40">
                        <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
                        <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
                      </Link>
-                   )}
                 </li>
               ))}
             </ul>
