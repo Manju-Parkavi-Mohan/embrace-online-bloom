@@ -14,7 +14,7 @@ export const SITE = {
     { days: "Saturday", time: "8:00 AM – 6:00 PM" },
     { days: "Sunday", time: "Closed" },
   ],
-  mapQuery: "25.3421411,55.6481055",
+  mapQuery: "AutoDome+Truck+Diagnostic+Centre,+Al+Sajaa+Industrial,+Sharjah",
 } as const;
 
 export const NAV_LINKS = [
