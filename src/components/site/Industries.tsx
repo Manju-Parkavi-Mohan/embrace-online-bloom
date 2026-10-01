@@ -15,9 +15,6 @@ const INDUSTRIES = [
   { name: "Construction", body: "Site machinery and tipper fleets", image: construction },
   { name: "Mining", body: "Haulage and heavy earthmoving", image: mining },
   { name: "Agriculture", body: "Tractors and harvesting equipment", image: agriculture },
-  { name: "Marine", body: "Auxiliary and propulsion engines", image: marine },
-  { name: "Public Transport", body: "Bus and passenger fleets", image: transport },
-  { name: "Industrial Equipment", body: "Generators and plant machinery", image: equipment },
 ];
 
 export function Industries() {
@@ -90,14 +87,11 @@ export function Industries() {
                 <h3 className="font-display text-base font-bold leading-snug text-primary-foreground">
                   {industry.name}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-primary-foreground/80">
-                  {industry.body}
-                </p>
+                <p className="mt-1 text-xs leading-relaxed text-primary-foreground/80">{industry.body}</p>
               </div>
             </article>
           ))}
         </div>
-
 
         {/* Tablet and up: image cards */}
         <div className="mt-10 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
@@ -123,9 +117,7 @@ export function Industries() {
                   aria-hidden="true"
                 />
                 <div className="relative flex h-full flex-col justify-end p-8">
-                  <h3 className="font-display text-2xl font-bold text-primary-foreground">
-                    {industry.name}
-                  </h3>
+                  <h3 className="font-display text-2xl font-bold text-primary-foreground">{industry.name}</h3>
                   <p className="mt-2 text-sm text-primary-foreground/80">{industry.body}</p>
                 </div>
               </article>
