@@ -31,11 +31,7 @@ const BRANDS: Brand[] = [
   { name: "Perkins", logo: perkinsLogo },
   { name: "Caterpillar", logo: caterpillarLogo },
   { name: "John Deere", logo: johnDeereLogo },
-  { name: "Autovei", logo: autoveiLogo },
-  { name: "ECUlite", logo: eculiteLogo },
-  { name: "Engine Dance", logo: engineDanceLogo },
   { name: "JALTEST", logo: jaltestLogo },
-  { name: "Magic Motor Sports", logo: magicLogo },
 ];
 
 export function Brands() {
