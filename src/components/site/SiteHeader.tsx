@@ -47,16 +47,14 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "border-b border-border bg-background shadow-soft"
-          : "border-b border-transparent",
+        scrolled ? "border-b border-border bg-background shadow-soft" : "border-b border-transparent",
       )}
     >
       <div className="section-shell flex h-14 items-center justify-between gap-4 sm:h-16 sm:gap-6">
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
           <span className="grid shrink-0 place-items-center transition-all duration-300">
             <img
-src={scrolled ? darkLogo : logo}
+              src={scrolled ? darkLogo : logo}
               alt="AutoDome logo"
               width={200}
               height={80}
@@ -79,11 +77,10 @@ src={scrolled ? darkLogo : logo}
                 scrolled ? "text-muted-foreground" : "text-primary-foreground/70",
               )}
             >
-              Commercial Vehicle Technology
+              Smart Diagnostic Solutions
             </span>
           </span>
         </a>
-
 
         <nav className="hidden items-center gap-5 lg:flex xl:gap-8" aria-label="Primary">
           {NAV_LINKS.map((link) => {
@@ -146,7 +143,6 @@ src={scrolled ? darkLogo : logo}
           </Button>
         </div>
 
-
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -164,10 +160,7 @@ src={scrolled ? darkLogo : logo}
 
       {/* Slide-in mobile menu */}
       <div
-        className={cn(
-          "fixed inset-0 z-50 lg:hidden",
-          open ? "pointer-events-auto" : "pointer-events-none",
-        )}
+        className={cn("fixed inset-0 z-50 lg:hidden", open ? "pointer-events-auto" : "pointer-events-none")}
         aria-hidden={!open}
       >
         <div
@@ -188,7 +181,7 @@ src={scrolled ? darkLogo : logo}
             <span className="flex min-w-0 items-center gap-3">
               <span className="grid shrink-0 place-items-center rounded-2xl">
                 <img
-src={darkLogo}
+                  src={darkLogo}
                   alt="AutoDome logo"
                   width={180}
                   height={72}
@@ -199,7 +192,7 @@ src={darkLogo}
               <span className="min-w-0 leading-tight">
                 <span className="block font-display text-lg font-bold tracking-tight">AUTODOME</span>
                 <span className="block truncate text-[9px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Commercial Vehicle Technology
+                  Smart Diagnostic Solutions
                 </span>
               </span>
             </span>
