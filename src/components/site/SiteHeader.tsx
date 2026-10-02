@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { SERVICES } from "@/lib/services";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, SITE } from "@/lib/site";
