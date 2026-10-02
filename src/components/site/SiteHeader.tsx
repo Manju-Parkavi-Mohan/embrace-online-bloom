@@ -154,7 +154,7 @@ export function SiteHeader() {
           aria-label="Open menu"
           className={cn(
             "grid size-11 place-items-center rounded-full border transition-colors lg:hidden",
-            scrolled
+            solid
               ? "border-border bg-card text-foreground"
               : "border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground",
           )}
