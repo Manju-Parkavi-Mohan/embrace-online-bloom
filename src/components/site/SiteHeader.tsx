@@ -28,6 +28,11 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  /* Service pages have bright banner images at the top, so the header always
+     uses its solid light style there instead of transparent-over-image. */
+  const solid = scrolled || pathname.startsWith("/services/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
