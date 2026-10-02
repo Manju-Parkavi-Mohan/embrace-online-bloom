@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { SERVICES } from "@/lib/services";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, SITE } from "@/lib/site";
@@ -28,6 +28,11 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  /* Service pages have bright banner images at the top, so the header always
+     uses its solid light style there instead of transparent-over-image. */
+  const solid = scrolled || pathname.startsWith("/services/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -47,14 +52,14 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "border-b border-border bg-background shadow-soft" : "border-b border-transparent",
+        solid ? "border-b border-border bg-background shadow-soft" : "border-b border-transparent",
       )}
     >
       <div className="section-shell flex h-14 items-center justify-between gap-4 sm:h-16 sm:gap-6">
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
           <span className="grid shrink-0 place-items-center transition-all duration-300">
             <img
-              src={scrolled ? darkLogo : logo}
+              src={solid ? darkLogo : logo}
               alt="AutoDome logo"
               width={200}
               height={80}
@@ -66,7 +71,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "block font-display text-lg font-bold tracking-tight transition-colors sm:text-xl",
-                scrolled ? "text-foreground" : "text-primary-foreground lg:text-primary-foreground",
+                solid ? "text-foreground" : "text-primary-foreground lg:text-primary-foreground",
               )}
             >
               AUTODOME
@@ -74,7 +79,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "block truncate text-[9px] font-semibold uppercase tracking-[0.2em] transition-colors sm:text-[10px] sm:tracking-[0.22em]",
-                scrolled ? "text-muted-foreground" : "text-primary-foreground/70",
+                solid ? "text-muted-foreground" : "text-primary-foreground/70",
               )}
             >
               Smart Diagnostic Solutions
@@ -86,7 +91,7 @@ export function SiteHeader() {
           {NAV_LINKS.map((link) => {
             const linkClass = cn(
               "relative whitespace-nowrap text-sm font-semibold transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full",
-              scrolled
+              solid
                 ? "text-muted-foreground hover:text-primary"
                 : "text-primary-foreground/85 hover:text-primary-foreground",
             );
@@ -130,7 +135,7 @@ export function SiteHeader() {
             href={`tel:${SITE.phones[0].replace(/\s/g, "")}`}
             className={cn(
               "hidden items-center gap-2 whitespace-nowrap text-sm font-semibold transition-colors xl:flex",
-              scrolled
+              solid
                 ? "text-foreground hover:text-primary"
                 : "text-primary-foreground hover:text-primary-foreground/70",
             )}
@@ -149,7 +154,7 @@ export function SiteHeader() {
           aria-label="Open menu"
           className={cn(
             "grid size-11 place-items-center rounded-full border transition-colors lg:hidden",
-            scrolled
+            solid
               ? "border-border bg-card text-foreground"
               : "border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground",
           )}
