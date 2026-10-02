@@ -52,7 +52,7 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "border-b border-border bg-background shadow-soft" : "border-b border-transparent",
+        solid ? "border-b border-border bg-background shadow-soft" : "border-b border-transparent",
       )}
     >
       <div className="section-shell flex h-14 items-center justify-between gap-4 sm:h-16 sm:gap-6">
