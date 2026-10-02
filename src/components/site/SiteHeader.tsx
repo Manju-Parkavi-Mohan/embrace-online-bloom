@@ -135,7 +135,7 @@ export function SiteHeader() {
             href={`tel:${SITE.phones[0].replace(/\s/g, "")}`}
             className={cn(
               "hidden items-center gap-2 whitespace-nowrap text-sm font-semibold transition-colors xl:flex",
-              scrolled
+              solid
                 ? "text-foreground hover:text-primary"
                 : "text-primary-foreground hover:text-primary-foreground/70",
             )}
