@@ -46,7 +46,7 @@ function ServicePage() {
       <SiteHeader />
 
       <main>
-        <section className="relative isolate min-h-[22rem] overflow-hidden sm:min-h-[30rem]">
+        <section className="relative isolate mt-14 min-h-[22rem] overflow-hidden sm:mt-16 sm:min-h-[30rem]">
           <img
             src={service.image}
             alt={service.alt}
