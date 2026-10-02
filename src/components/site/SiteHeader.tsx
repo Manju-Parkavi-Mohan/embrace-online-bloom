@@ -59,7 +59,7 @@ export function SiteHeader() {
         <a href="/#top" className="group flex min-w-0 items-center gap-3" aria-label="AutoDome home">
           <span className="grid shrink-0 place-items-center transition-all duration-300">
             <img
-              src={scrolled ? darkLogo : logo}
+              src={solid ? darkLogo : logo}
               alt="AutoDome logo"
               width={200}
               height={80}
@@ -71,7 +71,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "block font-display text-lg font-bold tracking-tight transition-colors sm:text-xl",
-                scrolled ? "text-foreground" : "text-primary-foreground lg:text-primary-foreground",
+                solid ? "text-foreground" : "text-primary-foreground lg:text-primary-foreground",
               )}
             >
               AUTODOME
@@ -79,7 +79,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "block truncate text-[9px] font-semibold uppercase tracking-[0.2em] transition-colors sm:text-[10px] sm:tracking-[0.22em]",
-                scrolled ? "text-muted-foreground" : "text-primary-foreground/70",
+                solid ? "text-muted-foreground" : "text-primary-foreground/70",
               )}
             >
               Smart Diagnostic Solutions
@@ -91,7 +91,7 @@ export function SiteHeader() {
           {NAV_LINKS.map((link) => {
             const linkClass = cn(
               "relative whitespace-nowrap text-sm font-semibold transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full",
-              scrolled
+              solid
                 ? "text-muted-foreground hover:text-primary"
                 : "text-primary-foreground/85 hover:text-primary-foreground",
             );
