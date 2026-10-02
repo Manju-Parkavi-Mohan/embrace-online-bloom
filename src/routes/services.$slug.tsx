@@ -59,8 +59,7 @@ function ServicePage() {
         <section className="py-12 sm:py-16">
           <div className="section-shell grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <Reveal>
-              <h1 className="flex items-center gap-3 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
-                <span className="h-px w-8" aria-hidden="true" />
+              <h1 className="text-left font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
                 {service.title}
               </h1>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
