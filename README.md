@@ -81,8 +81,17 @@ Follow these rules when editing so the site stays consistent:
   - Dark sections use the `.section-dark` class (never `bg-primary`) so child tokens invert automatically.
 - **Typography** — Sora for display/headings (`var(--font-display)`), Manrope for body (`var(--font-sans)`); loaded via `<link>` tags in `src/routes/__root.tsx`.
 - **Images** — stored as real files in `src/assets/` and imported directly (required for the Vercel deploy); no external asset pointers.
-- **Contact form** — sends via mailto to md@autodome.ae, md@adlautomotive.com, sales@adlautomotive.com; name and phone are required fields.
+- **Contact form** — posts to `/api/contact` (`src/routes/api/contact.ts`), which emails md@autodome.ae, md@adlautomotive.com and sales@adlautomotive.com via SMTP from sales@adlautomotive.com. Name and phone are required. SMTP settings come from environment variables (see `.env.example`).
 
-## Deployment
+## Deployment (Hostinger Node.js)
 
-The site is deployed to **Vercel**. After pushing to `main`, the deployment picks up the changes — no extra build configuration is needed (standard Vite output).
+`npm run build` produces a Node server in `.output/` — start it with `node .output/server/index.mjs` (uses the `PORT` env var).
+
+1. In hPanel → **Websites → Add website → Node.js Web App** (Business/Cloud plan) — or use a VPS.
+2. Connect this GitHub repo (or upload the project zip without `node_modules`).
+3. Build settings: Node **20+**, install `npm install`, build `npm run build`, entry file `.output/server/index.mjs`.
+4. Add environment variables from `.env.example` (`SMTP_PASS` = the sales@adlautomotive.com mailbox password from hPanel → Emails).
+5. Deploy, then attach the domain (autodome.ae) and enable SSL.
+6. Submit the contact form on the live site and confirm all three inboxes receive it.
+
+**VPS alternative:** `git clone`, `npm install`, `npm run build`, create `.env`, run `npx pm2 start .output/server/index.mjs --name autodome` (with env vars exported), and proxy the domain to the port with Nginx.
