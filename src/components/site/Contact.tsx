@@ -48,20 +48,18 @@ const FLEET_SIZES = ["1 – 5 vehicles", "6 – 20 vehicles", "21 – 100 vehicl
 const selectClass =
   "flex h-11 w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
-const CONTACT_INBOX = "md@autodome.ae,md@adlautomotive.com,sales@adlautomotive.com";
-
-
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const idPrefix = compact ? "lead-" : "";
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string; email?: string }>({});
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const value = (key: string) => String(data.get(key) ?? "").trim() || "—";
 
     const rawName = String(data.get("fullName") ?? "").trim();
     const rawPhone = String(data.get("phone") ?? "").trim();
@@ -83,29 +81,21 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       form.querySelector<HTMLInputElement>(`[name="${Object.keys(nextErrors)[0]}"]`)?.focus();
       return;
     }
-
-
-    const subject = `Website enquiry — ${value("service")} — ${value("fullName")}`;
-    const body = [
-      `Full Name: ${value("fullName")}`,
-      `Company: ${value("company")}`,
-      `Country: ${value("country")}`,
-      `Email: ${value("email")}`,
-      `Phone: ${value("phone")}`,
-      `Vehicle Brand: ${value("brand")}`,
-      `Service Required: ${value("service")}`,
-      `Fleet Size: ${value("fleetSize")}`,
-      "",
-      "Message:",
-      value("message"),
-      "",
-      "Sent from autodome.ae contact form",
-    ].join("\n");
-
-    window.location.href = `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    setSending(true);
+    setSendError(null);
+    try {
+      const res = await fetch("/api/contact", { method: "POST", body: data });
+      const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !json.ok) throw new Error(json.error || "Could not send your enquiry.");
+      form.reset();
+      setSubmitted(true);
+    } catch (err) {
+      setSendError(
+        `${err instanceof Error ? err.message : "Could not send your enquiry."} You can also call ${SITE.phones[1]}.`,
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
