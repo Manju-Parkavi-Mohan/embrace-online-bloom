@@ -269,8 +269,14 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             </Label>
           </div>
       
-          <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!consent}>
-            Submit Enquiry
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+          {sendError ? (
+            <p role="alert" className="text-sm font-medium text-destructive">
+              {sendError}
+            </p>
+          ) : null}
+          <Button type="submit" variant="hero" size="lg" className="w-full" disabled={!consent || sending}>
+            {sending ? "Sending…" : "Submit Enquiry"}
           </Button>
         </form>
       )}
