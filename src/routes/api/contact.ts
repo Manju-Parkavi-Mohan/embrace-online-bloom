@@ -48,14 +48,14 @@ export const Route = createFileRoute("/api/contact")({
             attachments.push({ filename: file.name || "attachment", content: Buffer.from(await file.arrayBuffer()) });
           }
 
-          const host = process.env.SMTP_HOST;
-          const user = process.env.SMTP_USER;
-          const pass = process.env.SMTP_PASS;
+          const host = process.env['SMTP_HOST'];
+          const user = process.env['SMTP_USER'];
+          const pass = process.env['SMTP_PASS'];
           if (!host || !user || !pass) {
             console.error("SMTP_HOST / SMTP_USER / SMTP_PASS not configured");
             return Response.json({ ok: false, error: "Email is not configured on the server." }, { status: 500 });
           }
-          const port = Number(process.env.SMTP_PORT || 465);
+          const port = Number(process.env['SMTP_PORT'] || 465);
 
           const nodemailer = (await import("nodemailer")).default;
           const transporter = nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } });
@@ -66,7 +66,7 @@ export const Route = createFileRoute("/api/contact")({
             .join("")}</table><p style="color:#888;font-size:12px">Sent from the autodome.ae contact form</p>`;
 
           await transporter.sendMail({
-            from: `"AutoDome Website" <${process.env.SMTP_FROM || user}>`,
+            from: `"AutoDome Website" <${process.env['SMTP_FROM'] || user}>`,
             to: RECIPIENTS,
             replyTo: email || undefined,
             subject: `Website enquiry — ${get("service") || "General"} — ${fullName}`,
