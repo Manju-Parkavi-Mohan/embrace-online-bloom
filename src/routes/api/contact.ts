@@ -48,9 +48,12 @@ export const Route = createFileRoute("/api/contact")({
             attachments.push({ filename: file.name || "attachment", content: Buffer.from(await file.arrayBuffer()) });
           }
 
-          const host = process.env['SMTP_HOST'];
-          const user = process.env['SMTP_USER'];
-          const pass = process.env['SMTP_PASS'];
+          // Trim + strip surrounding quotes: .env files edited on Windows or
+          // loaded via shell can carry stray \r, spaces or literal quotes.
+          const clean = (v?: string) => v?.trim().replace(/^["']|["']$/g, "").trim();
+          const host = clean(process.env['SMTP_HOST']);
+          const user = clean(process.env['SMTP_USER']);
+          const pass = clean(process.env['SMTP_PASS']);
           if (!host || !user || !pass) {
             console.error("SMTP_HOST / SMTP_USER / SMTP_PASS not configured");
             return Response.json({ ok: false, error: "Email is not configured on the server." }, { status: 500 });
