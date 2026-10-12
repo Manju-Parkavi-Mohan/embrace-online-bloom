@@ -13,8 +13,14 @@ export default defineConfig(({ command }) => ({
     tailwindcss(),
     // src/server.ts wraps SSR with a friendly error page
     tanstackStart({ server: { entry: "server" } }),
-    // Node.js server output (.output/server/index.mjs) for Hostinger / any Node host
-    ...(command === "build" ? [nitro({ preset: "node-server" })] : []),
+    // Default build -> dist/ (edge preview). `npm run build:node` -> .output/ Node server for Hostinger.
+    ...(command === "build"
+      ? [
+          process.env["NITRO_PRESET"] === "node-server"
+            ? nitro({ preset: "node-server" })
+            : nitro({ preset: "cloudflare-module", output: { dir: "dist" } }),
+        ]
+      : []),
     viteReact(),
   ],
 }));
