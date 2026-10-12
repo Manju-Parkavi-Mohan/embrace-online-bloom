@@ -85,13 +85,13 @@ Follow these rules when editing so the site stays consistent:
 
 ## Deployment (Hostinger Node.js)
 
-`npm run build` produces a Node server in `.output/` — start it with `node .output/server/index.mjs` (uses the `PORT` env var).
+`npm run build:node` produces a Node server in `.output/` — start it with `node .output/server/index.mjs` (uses the `PORT` env var).
 
 1. In hPanel → **Websites → Add website → Node.js Web App** (Business/Cloud plan) — or use a VPS.
 2. Connect this GitHub repo (or upload the project zip without `node_modules`).
-3. Build settings: Node **20+**, install `npm install`, build `npm run build`, entry file `.output/server/index.mjs`.
+3. Build settings: Node **20+**, install `npm install`, build `npm run build:node`, entry file `.output/server/index.mjs` (or start command `npm start`).
 4. Add environment variables from `.env.example` (`SMTP_PASS` = the sales@adlautomotive.com mailbox password from hPanel → Emails).
 5. Deploy, then attach the domain (autodome.ae) and enable SSL.
 6. Submit the contact form on the live site and confirm all three inboxes receive it.
 
-**VPS alternative:** `git clone`, `npm install`, `npm run build`, create `.env`, run `npx pm2 start .output/server/index.mjs --name autodome` (with env vars exported), and proxy the domain to the port with Nginx.
+**VPS alternative:** `git clone`, `npm install`, `npm run build:node`, create `.env`, run `npx pm2 start .output/server/index.mjs --name autodome` (with env vars exported), and proxy the domain to the port with Nginx.
