@@ -14,8 +14,11 @@ export const Route = createFileRoute("/api/contact")({
           const form = await request.formData();
           const get = (k: string) => String(form.get(k) ?? "").trim().slice(0, 4000);
 
-          // Honeypot: bots fill hidden "website" field
-          if (get("website")) return Response.json({ ok: true });
+          // Honeypot: bots fill this hidden field. Name avoids browser autofill.
+          if (get("hp_check")) {
+            console.warn("Contact form: honeypot filled, enquiry skipped");
+            return Response.json({ ok: true });
+          }
 
           const fullName = get("fullName");
           const phone = get("phone");
@@ -68,8 +71,8 @@ export const Route = createFileRoute("/api/contact")({
             .map(([k, v]) => `<tr><td><b>${k}</b></td><td>${escapeHtml(v || "—").replace(/\n/g, "<br>")}</td></tr>`)
             .join("")}</table><p style="color:#888;font-size:12px">Sent from the autodome.ae contact form</p>`;
 
-          await transporter.sendMail({
-            from: `"AutoDome Website" <${process.env['SMTP_FROM'] || user}>`,
+          const info = await transporter.sendMail({
+            from: `"AutoDome Website" <${clean(process.env['SMTP_FROM']) || user}>`,
             to: RECIPIENTS,
             replyTo: email || undefined,
             subject: `Website enquiry — ${get("service") || "General"} — ${fullName}`,
@@ -77,6 +80,9 @@ export const Route = createFileRoute("/api/contact")({
             html,
             attachments,
           });
+          console.log(
+            `Contact form sent: id=${info.messageId} accepted=${JSON.stringify(info.accepted)} rejected=${JSON.stringify(info.rejected)} response=${info.response}`,
+          );
 
           return Response.json({ ok: true });
         } catch (error) {

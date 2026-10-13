@@ -269,7 +269,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             </Label>
           </div>
       
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+          <input type="text" name="hp_check" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
           {sendError ? (
             <p role="alert" className="text-sm font-medium text-destructive">
               {sendError}
