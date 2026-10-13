@@ -1,16 +1,9 @@
 import { Mail, MapPin, Phone, Linkedin, Instagram, Facebook } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/site";
+import { Link } from "@tanstack/react-router";
+import { SERVICES } from "@/lib/services";
 import logo from "@/assets/autodome-logo.png";
 
-const SERVICES = [
-  "Diagnosis, Troubleshooting & Repair",
-  "Dealer-Level Diagnostic Tools",
-  "ECU Remapping & File Tuning",
-  "ECU Repair & Reprogramming",
-  "Advanced Training Programs",
-  "Heavy Duty Vehicle Parts",
-  "Workshop Tools & Equipment",
-];
 
 export function SiteFooter() {
   return (
@@ -63,10 +56,10 @@ export function SiteFooter() {
             <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Services</h2>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {SERVICES.map((service) => (
-                <li key={service}>
-                  <a href="#solutions" className="transition-colors hover:text-primary-foreground">
-                    {service}
-                  </a>
+                <li key={service.slug}>
+                  <Link to="/services/$slug" params={{ slug: service.slug }} className="transition-colors hover:text-primary-foreground">
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>

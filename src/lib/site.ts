@@ -20,7 +20,6 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#solutions", hasServicesMenu: true },
-  { label: "Industries", href: "/#industries" },
   { label: "Training", href: "/#training" },
   { label: "Online Store", href: "/#store" },
   { label: "Contact", href: "/#contact-form" },
