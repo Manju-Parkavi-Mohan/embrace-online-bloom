@@ -21,6 +21,7 @@ export const Route = createFileRoute("/services/$slug")({
     }
     const title = `${loaderData.service.title} | AutoDome`;
     const description = loaderData.service.intro;
+    const url = `https://autodome.ae/services/${loaderData.service.slug}`;
     return {
       meta: [
         { title },
@@ -31,6 +32,29 @@ export const Route = createFileRoute("/services/$slug")({
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:image", content: "https://autodome.ae/og-image.jpg" },
+        { name: "twitter:image", content: "https://autodome.ae/og-image.jpg" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: loaderData.service.title,
+            description,
+            url,
+            areaServed: "United Arab Emirates",
+            provider: {
+              "@type": "AutoRepair",
+              name: "AutoDome",
+              url: "https://autodome.ae/",
+              telephone: "+971 52 191 4444",
+            },
+          }),
+        },
       ],
     };
   },

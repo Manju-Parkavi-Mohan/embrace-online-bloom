@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const RECIPIENTS = ["md@autodome.ae", "md@adlautomotive.com", "sales@adlautomotive.com"];
+const RECIPIENTS = ["md@autodome.ae", "office@autodome.ae"];
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
 
 const escapeHtml = (s: string) =>

@@ -23,7 +23,7 @@ const TITLE = "AutoDome | Dubai Truck Diagnostics & Heavy Vehicle Repair UAE";
 const DESCRIPTION =
   "AutoDome is a leading truck diagnostics and heavy vehicle repair specialist serving Dubai, Sharjah and Abu Dhabi — ECU repair, genuine parts, technical training and workshop equipment.";
 const CANONICAL = "https://autodome.ae";
-const OG_IMAGE = "https://autodome.ae/assets/autodome-dubai-truck-diagnostics.jpg";
+const OG_IMAGE = "https://autodome.ae/og-image.jpg";
 const KEYWORDS =
   "truck repair Dubai, heavy truck repair, truck diagnostics Dubai, commercial vehicle diagnostics UAE, AutoDome, fleet maintenance Dubai, truck ECU programming Dubai, DPF regeneration Dubai, Volvo truck repair Dubai, Mercedes truck repair Dubai, Scania truck repair Dubai, MAN truck repair Dubai, truck parts Dubai, AutoDome Sharjah, تشخيص الشاحنات دبي, إصلاح المركبات التجارية الإمارات";
 
