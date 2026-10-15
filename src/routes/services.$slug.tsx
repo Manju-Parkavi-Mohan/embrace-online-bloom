@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
-import { SITE } from "@/lib/site";
+import { SERVICE_SCHEMA } from "@/lib/service-schema";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -44,21 +44,13 @@ export const Route = createFileRoute("/services/$slug")({
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify({
+          children: JSON.stringify(SERVICE_SCHEMA[loaderData.service.slug] ?? {
             "@context": "https://schema.org",
             "@type": "Service",
             name: loaderData.service.title,
             description,
             url,
-            areaServed: "United Arab Emirates",
-            provider: {
-              "@type": "AutoRepair",
-              name: "AutoDome",
-              url: "https://autodome.ae/",
-              logo: SITE.logoUrl,
-              sameAs: SITE.socialLinks.map((social) => social.url),
-              telephone: "+971 52 191 4444",
-            },
+            provider: { "@id": "https://autodome.ae/#business" },
           }),
         },
       ],
