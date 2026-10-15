@@ -1,5 +1,10 @@
 # Roadmap
 
+- [ ] Apply attached sitemap and approved page search metadata.
+- [ ] Add social destinations and update only the requested service menu labels.
+- [ ] Replace stale search icon and expose the AutoDome logo URL.
+- [ ] Verify sitemap, metadata, social links and menu navigation.
+
 - [x] Replace service content for services 1–4 and render structured sections.
 - [x] Link services 5–6 to the requested ADL Automotive categories.
 - [x] Move the About shop showcase into a popup triggered at Online Store.
