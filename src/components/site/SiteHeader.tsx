@@ -98,7 +98,7 @@ export function SiteHeader() {
                             params={{ slug: service.slug }}
                             className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-surface hover:text-primary"
                           >
-                            {service.title}
+                             {service.menuTitle ?? service.title}
                           </Link>
                         </li>
                       ))}
@@ -223,7 +223,7 @@ export function SiteHeader() {
                             onClick={() => setOpen(false)}
                             className="block py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
                           >
-                            {service.title}
+                             {service.menuTitle ?? service.title}
                           </Link>
                         </li>
                       ))}

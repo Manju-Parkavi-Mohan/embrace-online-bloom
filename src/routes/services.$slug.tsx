@@ -6,6 +6,8 @@ import { FloatingActions } from "@/components/site/FloatingActions";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
+import { PAGE_SEO } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -19,13 +21,15 @@ export const Route = createFileRoute("/services/$slug")({
         meta: [{ title: "Service unavailable | AutoDome" }, { name: "robots", content: "noindex" }],
       };
     }
-    const title = `${loaderData.service.title} | AutoDome`;
-    const description = loaderData.service.intro;
+    const seo = PAGE_SEO[loaderData.service.slug];
+    const title = seo?.title ?? `${loaderData.service.title} | AutoDome`;
+    const description = seo?.description ?? loaderData.service.intro;
     const url = `https://autodome.ae/services/${loaderData.service.slug}`;
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        ...(seo ? [{ name: "keywords", content: seo.keywords }] : []),
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
@@ -51,6 +55,8 @@ export const Route = createFileRoute("/services/$slug")({
               "@type": "AutoRepair",
               name: "AutoDome",
               url: "https://autodome.ae/",
+              logo: SITE.logoUrl,
+              sameAs: SITE.socialLinks.map((social) => social.url),
               telephone: "+971 52 191 4444",
             },
           }),

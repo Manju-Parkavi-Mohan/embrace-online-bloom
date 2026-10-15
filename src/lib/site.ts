@@ -1,6 +1,12 @@
 export const SITE = {
   name: "AutoDome",
   tagline: "Powering Smarter Mobility Through Advanced Vehicle Technology",
+  logoUrl: "https://autodome.ae/autodome-logo.png",
+  socialLinks: [
+    { label: "LinkedIn", url: "https://www.linkedin.com/company/autodome-by-adl-automotive/" },
+    { label: "Instagram", url: "https://instagram.com/autodome.ae?dlrf=bWN5amd0YnU0OXYy" },
+    { label: "Facebook", url: "https://www.facebook.com/share/1A89DGnNJk/" },
+  ],
   storefront: {
     name: "ADL Automotive",
     url: "/",
