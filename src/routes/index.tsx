@@ -24,59 +24,163 @@ const { title: TITLE, description: DESCRIPTION, keywords: KEYWORDS } = PAGE_SEO[
 const CANONICAL = "https://autodome.ae";
 const OG_IMAGE = "https://autodome.ae/og-image.jpg";
 
+// Homepage schema supplied by the client (logo/image point to files that exist on the site).
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
-  "@type": ["AutoRepair", "LocalBusiness", "AutomotiveBusiness"],
-  name: "AutoDome UAE",
-  alternateName: ["AutoDome", "Auto Dome", "AutoDome Dubai", "AutoDome Sharjah"],
-  description: DESCRIPTION,
-  url: CANONICAL,
-  image: OG_IMAGE,
-  logo: SITE.logoUrl,
-  email: SITE.email,
-  telephone: SITE.phones,
-  priceRange: "$$",
-  paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
-  currenciesAccepted: "AED",
-  foundingDate: "2008",
-  slogan: SITE.tagline,
-  sameAs: [...SITE.socialLinks.map((social) => social.url), `https://wa.me/${SITE.whatsapp}`],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "407A, Al Sajaa Industrial",
-    addressLocality: "Sharjah",
-    addressRegion: "Sharjah",
-    addressCountry: "AE",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: "25.3421411", longitude: "55.6481055" },
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "19:00",
+      "@type": "AutoRepair",
+      "@id": "https://autodome.ae/#business",
+      "name": "AutoDome",
+      "alternateName": [
+        "Auto Dome",
+        "AutoDome UAE",
+        "ADL Automotive"
+      ],
+      "url": "https://autodome.ae/",
+      "logo": SITE.logoUrl,
+      "image": OG_IMAGE,
+      "description": "AutoDome is a technology-driven automotive solutions provider specializing in heavy vehicle diagnostics, ECU solutions, ECU repair and reprogramming, ECU remapping, diagnostic tools, tuning software, technical training and commercial vehicle support.",
+      "telephone": [
+        "+971565658212",
+        "+971521914444"
+      ],
+      "email": "office@autodome.ae",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "407A, Al Sajaa Industrial Area",
+        "addressLocality": "Sharjah",
+        "addressRegion": "Sharjah",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.3548,
+        "longitude": 55.421
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "AED",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Oman"
+        },
+        {
+          "@type": "Country",
+          "name": "Saudi Arabia"
+        },
+        {
+          "@type": "Country",
+          "name": "Qatar"
+        },
+        {
+          "@type": "Country",
+          "name": "Kuwait"
+        },
+        {
+          "@type": "Country",
+          "name": "Bahrain"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Africa"
+        }
+      ],
+      "foundingDate": "2008",
+      "sameAs": [
+        "https://www.linkedin.com/company/autodome-by-adl-automotive/",
+        "https://instagram.com/autodome.ae",
+        "https://www.facebook.com/share/1A89DGnNJk/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AutoDome Automotive Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Heavy Vehicle Diagnostics",
+              "url": "https://autodome.ae/services/commercial-heavy-vehicle-diagnostics"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ECU Remapping and Calibration",
+              "url": "https://autodome.ae/services/ecu-remapping-calibration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ECU Repair and Reprogramming",
+              "url": "https://autodome.ae/services/ecu-repair-reprogramming"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Truck Diagnostic Tools",
+              "url": "https://autodome.ae/services/truck-diagnostic-tools-trading"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ECU Tuning Software",
+              "url": "https://autodome.ae/services/ecu-tuning-softwares"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Heavy Vehicle Repair and Maintenance",
+              "url": "https://autodome.ae/services/truck-repair-maintenance"
+            }
+          }
+        ]
+      }
     },
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
-      opens: "08:00",
-      closes: "18:00",
-    },
-  ],
-  areaServed: ["Dubai", "Sharjah", "Abu Dhabi", "Northern Emirates", "United Arab Emirates"],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Commercial vehicle solutions",
-    itemListElement: [
-      "Diagnosis, Troubleshooting & Repair",
-      "Dealer-Level Diagnostic Tools & Support",
-      "ECU Remapping Tools & File Tuning",
-      "ECU Repair & Reprogramming",
-      "Advanced Training Programs",
-      "Heavy Duty Vehicle Parts Supply",
-      "Workshop Tools & Equipment Trading",
-    ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
-  },
+      "@type": "WebSite",
+      "@id": "https://autodome.ae/#website",
+      "url": "https://autodome.ae/",
+      "name": "AutoDome",
+      "publisher": {
+        "@id": "https://autodome.ae/#business"
+      },
+      "inLanguage": "en"
+    }
+  ]
 };
 
 export const Route = createFileRoute("/")({
