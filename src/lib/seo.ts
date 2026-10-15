@@ -1,4 +1,6 @@
-export const PAGE_SEO: Record<string, { title: string; description: string; keywords: string }> = {
+type PageSeo = { title: string; description: string; keywords: string };
+
+export const PAGE_SEO: Record<string, PageSeo> & { "/": PageSeo } = {
   "/": {
     title: "Heavy Duty Truck Diagnostics & ECU Solutions UAE | AutoDome",
     description: "AutoDome is a leading truck diagnostics and heavy vehicle repair specialist serving Dubai, Sharjah and Abu Dhabi — ECU repair, genuine parts, technical training and workshop equipment.",
