@@ -18,14 +18,11 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { ContactLeadPopup } from "@/components/site/ContactLeadPopup";
 import { SITE } from "@/lib/site";
+import { PAGE_SEO } from "@/lib/seo";
 
-const TITLE = "AutoDome | Dubai Truck Diagnostics & Heavy Vehicle Repair UAE";
-const DESCRIPTION =
-  "AutoDome is a leading truck diagnostics and heavy vehicle repair specialist serving Dubai, Sharjah and Abu Dhabi — ECU repair, genuine parts, technical training and workshop equipment.";
+const { title: TITLE, description: DESCRIPTION, keywords: KEYWORDS } = PAGE_SEO["/"];
 const CANONICAL = "https://autodome.ae";
 const OG_IMAGE = "https://autodome.ae/og-image.jpg";
-const KEYWORDS =
-  "truck repair Dubai, heavy truck repair, truck diagnostics Dubai, commercial vehicle diagnostics UAE, AutoDome, fleet maintenance Dubai, truck ECU programming Dubai, DPF regeneration Dubai, Volvo truck repair Dubai, Mercedes truck repair Dubai, Scania truck repair Dubai, MAN truck repair Dubai, truck parts Dubai, AutoDome Sharjah, تشخيص الشاحنات دبي, إصلاح المركبات التجارية الإمارات";
 
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
@@ -35,6 +32,7 @@ const STRUCTURED_DATA = {
   description: DESCRIPTION,
   url: CANONICAL,
   image: OG_IMAGE,
+  logo: SITE.logoUrl,
   email: SITE.email,
   telephone: SITE.phones,
   priceRange: "$$",
@@ -42,7 +40,7 @@ const STRUCTURED_DATA = {
   currenciesAccepted: "AED",
   foundingDate: "2008",
   slogan: SITE.tagline,
-  sameAs: [`https://wa.me/${SITE.whatsapp}`],
+  sameAs: [...SITE.socialLinks.map((social) => social.url), `https://wa.me/${SITE.whatsapp}`],
   address: {
     "@type": "PostalAddress",
     streetAddress: "407A, Al Sajaa Industrial",

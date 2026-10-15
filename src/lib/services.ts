@@ -14,6 +14,7 @@ import fleetCardImg from "@/assets/service-card-fleet.jpg";
 export type Service = {
   slug: string;
   title: string;
+  menuTitle?: string;
   short: string;
   body: string;
   image: string;
@@ -34,6 +35,7 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     slug: "commercial-heavy-vehicle-diagnostics",
+    menuTitle: "Diagnosis & Troubleshooting",
     title: "Diagnosis, Troubleshooting & Repair",
     short: "Diagnosis, Troubleshooting & Repair",
     body: "We provide diagnosis, troubleshooting, and repair for heavy-duty commercial vehicles to keep your fleet running smoothly. Our skilled technicians use advanced tools to find and fix problems quickly and efficiently. From engines and transmissions to electrical and hydraulic systems, we take care of every part of your vehicle. With a focus on reliability, safety, and minimal downtime, we help businesses get the best performance and longer life from their commercial vehicles.",
@@ -230,6 +232,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "truck-diagnostic-tools-trading",
+    menuTitle: "Workshop Tools & Equipment",
     title: "Workshop Tools & Equipment Trading",
     short: "Workshop Tools & Equipment Trading",
     body: "We specialize in trading workshop tools and equipment, offering a wide range of high-quality products for automotive and industrial workshops. From hand tools and power tools to diagnostic equipment and specialized machinery, we provide reliable solutions to meet every workshop's needs. Our focus is on quality, durability, and affordability, ensuring that professionals have the right tools to work efficiently and maintain high standards of service.",
@@ -262,6 +265,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "truck-repair-maintenance",
+    menuTitle: "Fleet support",
     title: "Truck Diagnostics & Advanced Repair Support for Fleets in the UAE",
     short: "Fleet Diagnostics & Repair Support",
     body: "Advanced truck diagnostics and electronic repair support for fleet operators and heavy-vehicle businesses across the UAE.",
