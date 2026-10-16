@@ -105,9 +105,9 @@ export const SERVICES: Service[] = [
     ],
     sections: [
       {
-        heading: "Professional Truck ECU Remapping",
+        heading: "Truck Engine control unit remapping",
         paragraphs: [
-          "Truck ECU remapping is important for fine-tuning engine parameters such as torque delivery, throttle response, fuel management, and many more functionalities by changing certain calibration factors. It is important to run diagnostics before remapping so you will be able to find and deal with any available mechanical or electronic issues that can affect the outcome of remapping.",
+          "Truck engine control unit remapping is important for fine-tuning engine parameters such as torque delivery, throttle response, fuel management, and many more functionalities by changing certain calibration factors. It is important to run diagnostics before remapping so you will be able to find and deal with any available mechanical or electronic issues that can affect the outcome of remapping.",
           "We focus on application-specific ECU solutions rather than generic software modifications, helping ensure that the calibration is appropriate for the vehicle and its operating requirements.",
         ],
       },
