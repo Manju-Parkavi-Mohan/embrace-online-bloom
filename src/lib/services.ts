@@ -168,7 +168,7 @@ export const SERVICES: Service[] = [
         ],
       },
       {
-        heading: "ECU Reprogramming at AutoDome",
+        heading: "Engine control unit reprogramming at AutoDome",
         level: 3,
         paragraphs: [
           "At AutoDome, we provide professional ECU programming and reprogramming solutions for trucks and heavy vehicles. Using advanced diagnostic tools and software, our specialists can support ECU coding, programming, calibration, and related electronic solutions for supported and specific vehicle applications.",
