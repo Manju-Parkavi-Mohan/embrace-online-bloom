@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Investigate missing preview styles and images: fresh loads work; recurring failure was not reproduced and cause remains unconfirmed.
+- [x] Package and verify the latest Hostinger VPS deployment ZIP and redeployment instructions.
+
 - [x] Apply attached sitemap and approved page search metadata.
 - [x] Add social destinations and update only the requested service menu labels.
 - [x] Replace stale search icon and expose the AutoDome logo URL.
