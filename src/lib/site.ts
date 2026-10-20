@@ -28,7 +28,7 @@ export const NAV_LINKS = [
   { label: "Services", href: "/#solutions", hasServicesMenu: true },
   { label: "Training", href: "/#training" },
   { label: "Online Store", href: "/#store" },
-  { label: "Contact", href: "/#contact-form" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const REVIEWS_URL =

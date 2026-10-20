@@ -59,7 +59,7 @@ export function SiteFooter() {
               {SERVICES.map((service) => (
                 <li key={service.slug}>
                   <Link to="/services/$slug" params={{ slug: service.slug }} className="transition-colors hover:text-primary-foreground">
-                    {service.title}
+                    {service.menuTitle ?? service.title}
                   </Link>
                 </li>
               ))}
