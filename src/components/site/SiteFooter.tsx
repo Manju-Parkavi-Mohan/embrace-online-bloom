@@ -4,7 +4,6 @@ import { Link } from "@tanstack/react-router";
 import { SERVICES } from "@/lib/services";
 import logo from "@/assets/autodome-logo.png";
 
-
 export function SiteFooter() {
   return (
     <footer className="section-dark text-primary-foreground">
@@ -18,7 +17,8 @@ export function SiteFooter() {
               <span className="font-display text-xl font-bold tracking-tight">AUTODOME</span>
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              AutoDome is a Trusted heavy truck service centre in Dubai, providing advanced diagnostics, ECU programming, repair, remapping and electronic troubleshooting for commercial and heavy vehicles.
+              AutoDome is a trusted heavy truck service centre in Dubai, providing advanced diagnostics, ECU
+              programming, repair, remapping and electronic troubleshooting for commercial and heavy vehicles.
             </p>
             <div className="mt-7 flex gap-3">
               {[
@@ -28,9 +28,9 @@ export function SiteFooter() {
               ].map(({ Icon, label }) => (
                 <a
                   key={label}
-                   href={SITE.socialLinks.find((social) => social.label === label)?.url}
-                   target="_blank"
-                   rel="noopener noreferrer"
+                  href={SITE.socialLinks.find((social) => social.label === label)?.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`AutoDome on ${label}`}
                   className="grid size-10 place-items-center rounded-full border border-primary-foreground/25 text-primary-foreground/80 transition-colors hover:border-primary-foreground hover:text-primary-foreground"
                 >
@@ -58,7 +58,11 @@ export function SiteFooter() {
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
-                  <Link to="/services/$slug" params={{ slug: service.slug }} className="transition-colors hover:text-primary-foreground">
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: service.slug }}
+                    className="transition-colors hover:text-primary-foreground"
+                  >
                     {service.menuTitle ?? service.title}
                   </Link>
                 </li>
@@ -109,10 +113,7 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} AutoDome. All rights reserved.</p>
           <p className="font-semibold tracking-wide text-primary-foreground/80">
             Online store:{" "}
-            <a
-              href={SITE.storefront.url}
-              className="text-primary-foreground hover:underline"
-            >
+            <a href={SITE.storefront.url} className="text-primary-foreground hover:underline">
               {SITE.storefront.name}
             </a>
           </p>
