@@ -169,7 +169,6 @@ export const SERVICES: Service[] = [
       },
       {
         heading: "Engine Control Unit Reprogramming at AutoDome",
-        level: 3,
         paragraphs: [
           "At AutoDome, we provide professional Engine Control unit programming and reprogramming solutions for trucks and heavy vehicles. Using advanced diagnostic tools and software, our specialists can support Engine Control unit coding, programming, calibration, and related electronic solutions for supported and specific vehicle applications.",
           "We focus on accurate diagnosis and the correct programming procedure to help workshops and heavy-vehicle professionals resolve ECU-related issues efficiently.",
