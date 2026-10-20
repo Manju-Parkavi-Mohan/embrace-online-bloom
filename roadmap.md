@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Update the footer introduction, restore service-page consultation navigation, and capitalize the pictured heading consistently.
+- [x] Update the footer introduction, restore service-page consultation navigation, and capitalize the pictured heading consistently; verified desktop and mobile navigation.
 
 - [x] Investigate missing preview styles and images: fresh loads work; recurring failure was not reproduced and cause remains unconfirmed.
 - [x] Package and verify the latest Hostinger VPS deployment ZIP and redeployment instructions.
