@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "./Reveal";
 
 const FAQS = [
@@ -21,7 +16,7 @@ const FAQS = [
   },
   {
     q: "Are you an authorised partner for any technology brands?",
-    a: "AutoDome is an authorised partner of Magic Motorsport and Jaltest Diagnostics, giving our customers access to genuine tooling, licensed software, and manufacturer-level support.",
+    a: "AutoDome is an authorised partner of Engine Dance, Eculite and Magic Motosport, giving our customers access to genuine tooling, licensed software, and manufacturer-level support.",
   },
   {
     q: "Who are your training programs for?",
