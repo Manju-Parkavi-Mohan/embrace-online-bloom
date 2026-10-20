@@ -284,8 +284,15 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function Contact({ animated = true }: { animated?: boolean }) {
+export function Contact({
+  animated = true,
+  headingLevel = "h2",
+}: {
+  animated?: boolean;
+  headingLevel?: "h1" | "h2";
+}) {
   const Content = animated ? Reveal : "div";
+  const Heading = headingLevel;
   return (
     <section id="contact" className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
@@ -294,9 +301,9 @@ export function Contact({ animated = true }: { animated?: boolean }) {
             <span className="h-px w-8" aria-hidden="true" />
             Contact
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+          <Heading className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Request a technical consultation.
-          </h2>
+          </Heading>
         </Content>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
