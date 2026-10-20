@@ -90,7 +90,7 @@ export function AdlStore() {
                   </a>
                 </Button>
                 <Button asChild variant="hero" size="lg" className="w-full sm:w-auto">
-                  <a href="#contact-form">Request Consultation</a>
+                  <a href="/contact#contact-form">Request Consultation</a>
                 </Button>
               </div>
             </Reveal>

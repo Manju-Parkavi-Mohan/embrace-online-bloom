@@ -130,7 +130,7 @@ function ServicePage() {
                   ))}
                 </ul>
                 <Button asChild variant="hero" className="mt-8 w-full">
-                  <a href="/#contact-form">Request Consultation</a>
+                  <a href="/contact#contact-form">Request Consultation</a>
                 </Button>
               </div>
             </Reveal>

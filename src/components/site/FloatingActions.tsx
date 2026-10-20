@@ -72,7 +72,7 @@ export function FloatingActions() {
         )}
       >
         <Button asChild variant="hero" size="lg" className="w-full pr-20">
-          <a href="/#contact-form">Request Consultation</a>
+          <a href="/contact#contact-form">Request Consultation</a>
         </Button>
       </div>
     </>
