@@ -11,6 +11,8 @@ import {
 import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+// Side-effect import as a fallback so styles always attach in the dev preview.
+import "../styles.css";
 
 function NotFoundComponent() {
   return (
