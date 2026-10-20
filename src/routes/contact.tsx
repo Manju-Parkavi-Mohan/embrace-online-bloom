@@ -29,7 +29,7 @@ function ContactPage() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main className="pt-14 sm:pt-16">
-        <Contact />
+        <Contact animated={false} />
       </main>
       <SiteFooter />
       <FloatingActions />

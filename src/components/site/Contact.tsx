@@ -284,11 +284,12 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function Contact() {
+export function Contact({ animated = true }: { animated?: boolean }) {
+  const Content = animated ? Reveal : "div";
   return (
     <section id="contact" className="bg-surface py-10 sm:py-14 lg:py-16">
       <div className="section-shell">
-        <Reveal className="max-w-3xl">
+        <Content className="max-w-3xl">
           <p className="eyebrow">
             <span className="h-px w-8" aria-hidden="true" />
             Contact
@@ -296,10 +297,10 @@ export function Contact() {
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Request a technical consultation.
           </h2>
-        </Reveal>
+        </Content>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <Reveal direction="left">
+          <Content {...(animated ? { direction: "left" as const } : {})}>
             <div className="space-y-8">
               <ul className="space-y-7">
                 <li className="flex gap-4">
@@ -399,13 +400,13 @@ export function Contact() {
                 />
               </div>
             </div>
-          </Reveal>
+          </Content>
 
-          <Reveal direction="right">
+          <Content {...(animated ? { direction: "right" as const } : {})}>
             <div id="contact-form" className="scroll-mt-24 rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
               <ContactForm />
             </div>
-          </Reveal>
+          </Content>
         </div>
       </div>
     </section>
