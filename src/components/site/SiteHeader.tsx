@@ -16,9 +16,8 @@ export function SiteHeader() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const { pathname } = useLocation();
 
-  /* Service pages have bright banner images at the top, so the header always
-     uses its solid light style there instead of transparent-over-image. */
-  const solid = scrolled || pathname.startsWith("/services/");
+  /* Interior pages use the solid light header from the first viewport. */
+  const solid = scrolled || pathname.startsWith("/services/") || pathname === "/contact";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -130,7 +129,7 @@ export function SiteHeader() {
             {SITE.phones[0]}
           </a>
           <Button asChild variant="hero" className="whitespace-nowrap">
-            <a href="/contact#contact-form">Request Consultation</a>
+            <a href="/contact">Request Consultation</a>
           </Button>
         </div>
 
@@ -245,7 +244,7 @@ export function SiteHeader() {
 
           <div className="mt-auto space-y-3 pt-10">
             <Button asChild variant="hero" size="lg" className="w-full">
-              <a href="/contact#contact-form" onClick={() => setOpen(false)}>
+              <a href="/contact" onClick={() => setOpen(false)}>
                 Request Consultation
               </a>
             </Button>

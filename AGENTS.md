@@ -9,4 +9,4 @@ Service data keeps separate card and banner image fields so homepage tiles can c
 Service navigation uses optional menuTitle independently of page titles so menu-only renames do not alter service content.
 Approved route metadata lives in src/lib/seo.ts independently of service descriptions so search copy can change without rewriting visible content.
 Public favicon and logo files are direct, optimized images so VPS deployments and search crawlers can access them without asset proxies.
-Shared consultation links target /contact#contact-form so every "Request Consultation" button reaches the form on the dedicated Contact page from any route.
+Shared consultation links target /contact without a hash so every "Request Consultation" button opens the dedicated Contact page at the top rather than skipping its introduction.
