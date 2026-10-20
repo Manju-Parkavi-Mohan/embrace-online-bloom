@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Where are you located and can you support fleets outside the UAE?",
-    a: "Our facility is in Al Sajaa Industrial, Sharjah, UAE. We support customers regionally and internationally through equipment supply, file services, and remote technical support.",
+    a: "Our facility is in Al Sajaa Industrial, Sharjah, UAE. We support customers regionally and internationally through equipment supply, Ecu file tuning service, and remote technical support.",
   },
 ];
 
