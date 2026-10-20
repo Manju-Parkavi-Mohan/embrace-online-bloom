@@ -8,7 +8,7 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
@@ -135,17 +135,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  // On a fresh page load, always start at the top of the page (never jump to a
-  // leftover in-page anchor such as #contact-form).
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      window.scrollTo(0, 0);
-      requestAnimationFrame(() => window.scrollTo(0, 0));
-    }
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
