@@ -3,7 +3,8 @@
 - [x] Apply the November SEO document to five service pages and homepage, preserving menus and URLs.
 - [x] Add visible service FAQs, contextual links and consistent service structured data (no new FAQ rich-result markup).
 - [x] Document the VPS www redirect; verify metadata, content, navigation and mobile layouts.
-- [ ] Apply www → non-www redirect on Hostinger VPS — requires access to the user's Nginx configuration; instructions in docs/SEO-DEPLOYMENT.md.
+- [x] Apply www → non-www redirect on Hostinger VPS — user confirmed HTTPS www returns 301 to https://autodome.ae/.
+- [x] Package and verify the November SEO VPS deployment release with redeployment instructions; all eight pages, metadata, assets, FAQ interaction and Contact landing checked.
 
 - [x] Update the footer introduction, restore service-page consultation navigation, and capitalize the pictured heading consistently; verified desktop and mobile navigation.
 
