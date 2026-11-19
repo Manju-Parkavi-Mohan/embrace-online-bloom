@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -64,7 +65,7 @@ function ServicePage() {
   const others = SERVICES.filter((s) => s.slug !== service.slug);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <SiteHeader />
 
       <main>
@@ -80,9 +81,9 @@ function ServicePage() {
 
         <section className="py-12 sm:py-16">
           <div className="section-shell grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-            <Reveal>
+            <div className="min-w-0">
               <h1 className="text-left font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
-                {service.title}
+                {service.pageHeading ?? service.title}
               </h1>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -106,6 +107,33 @@ function ServicePage() {
                 </div>
               ) : null}
 
+              {service.relatedSlugs?.length ? (
+                <nav aria-label="Related technical services" className="mt-8 border-t border-border pt-6">
+                  <p className="font-display font-semibold text-foreground">Related technical support</p>
+                  <ul className="mt-3 space-y-3">
+                    {service.relatedSlugs.map((slug) => {
+                      const related = getService(slug);
+                      if (!related) return null;
+                      return <li key={slug}><Link to="/services/$slug" params={{ slug }} className="inline-flex items-center gap-2 text-primary underline underline-offset-4 hover:text-foreground">{related.menuTitle ?? related.title}<ArrowRight className="size-4 shrink-0" aria-hidden="true" /></Link></li>;
+                    })}
+                  </ul>
+                </nav>
+              ) : null}
+
+              {service.faqs?.length ? (
+                <section className="mt-10" aria-labelledby="service-faq-heading">
+                  <h2 id="service-faq-heading" className="font-display text-2xl font-bold text-foreground sm:text-3xl">Frequently Asked Questions</h2>
+                  <Accordion type="single" collapsible className="mt-4 w-full">
+                    {service.faqs.map((faq, index) => (
+                      <AccordionItem key={faq.q} value={`service-faq-${index}`}>
+                        <AccordionTrigger className="py-5 text-left font-display text-base font-semibold hover:text-primary hover:no-underline">{faq.q}</AccordionTrigger>
+                        <AccordionContent className="text-base leading-relaxed text-muted-foreground">{faq.a}</AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </section>
+              ) : null}
+
               <div className="mt-10 grid gap-5 sm:grid-cols-3">
                 {service.highlights.map((item) => (
                   <div key={item.title} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
@@ -114,7 +142,7 @@ function ServicePage() {
                   </div>
                 ))}
               </div>
-            </Reveal>
+            </div>
 
             <Reveal direction="right">
               <div className="rounded-3xl border border-border bg-surface p-8 shadow-soft">

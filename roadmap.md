@@ -1,5 +1,10 @@
 # Roadmap
 
+- [x] Apply the November SEO document to five service pages and homepage, preserving menus and URLs.
+- [x] Add visible service FAQs, contextual links and consistent service structured data (no new FAQ rich-result markup).
+- [x] Document the VPS www redirect; verify metadata, content, navigation and mobile layouts.
+- [ ] Apply www → non-www redirect on Hostinger VPS — requires access to the user's Nginx configuration; instructions in docs/SEO-DEPLOYMENT.md.
+
 - [x] Update the footer introduction, restore service-page consultation navigation, and capitalize the pictured heading consistently; verified desktop and mobile navigation.
 
 - [x] Investigate missing preview styles and images: fresh loads work; recurring failure was not reproduced and cause remains unconfirmed.

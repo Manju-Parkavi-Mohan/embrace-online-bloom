@@ -17,7 +17,7 @@ const FACTS = [
   },
   {
     value: "Fleet & Workshop Support",
-    label: "Reliable diagnostic solutions to reduce vehicle downtime and improve fleet uptime",
+    label: "Mobile diagnostic fleet support to reduce towing and vehicle downtime",
   },
 ];
 
@@ -36,7 +36,7 @@ export function About() {
             </h2>
           </Reveal>
 
-          <Reveal delay={100}>
+          <div>
             <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
                 AutoDome is a specialist truck and heavy vehicle diagnostic center in the UAE, providing professional
@@ -50,6 +50,15 @@ export function About() {
                 fleet operators to identify faults faster, reduce vehicle downtime, and improve the efficiency and
                 reliability of their operations.
               </p>
+              <h3 className="font-display text-xl font-bold text-foreground sm:text-2xl">
+                Why Choose AutoDome for Heavy Truck Service in Dubai & Sharjah?
+              </h3>
+              <p>
+                From our workshop in Al Sajaa Industrial, Sharjah, we support fleet operators across Dubai and the UAE.
+                Our diagnostic solutions cover trucks, buses, construction equipment and industrial engines.
+                Mobile diagnostic fleet support can help identify faults at your location without towing the truck
+                to the workshop for an initial assessment. Contact our team to confirm availability and vehicle compatibility.
+              </p>
               <p>
                 In addition to our diagnostic services, AutoDome supplies professional truck diagnostic equipment, ECU
                 programming tools, and workshop software for businesses looking to expand their diagnostic capabilities.
@@ -58,7 +67,7 @@ export function About() {
                 running efficiently.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           <Reveal delay={180}>
             <dl className="mt-12 hidden grid-cols-2 gap-8 border-t border-border pt-10 sm:grid">

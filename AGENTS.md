@@ -11,3 +11,6 @@ Approved route metadata lives in src/lib/seo.ts independently of service descrip
 Public favicon and logo files are direct, optimized images so VPS deployments and search crawlers can access them without asset proxies.
 Shared consultation links target /contact without a hash so every "Request Consultation" button opens the dedicated Contact page at the top rather than skipping its introduction.
 The shared Contact section supports disabling reveal animations; the dedicated Contact page disables them so tall content is visible on arrival without waiting for intersection thresholds.
+Service-page SEO content is composed from src/lib/service-content.ts over the base service data so search headings and long-form copy do not rename menus or homepage cards.
+Service structured data derives names and descriptions from the rendered service data and route metadata while preserving existing graph identifiers and coverage, preventing content/schema drift.
+Long-form service content and homepage body copy render without scroll-reveal wrappers because tall blocks may never meet proportional intersection thresholds.

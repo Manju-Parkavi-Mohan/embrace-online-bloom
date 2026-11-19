@@ -1,5 +1,7 @@
-// Approved per-service structured data supplied by the client.
-export const SERVICE_SCHEMA: Record<string, object> = {
+// Preserve supplied graph identifiers and coverage; synchronize service copy with the page.
+import { SERVICES } from "./services";
+import { PAGE_SEO } from "./seo";
+const BASE_SERVICE_SCHEMA = {
   "commercial-heavy-vehicle-diagnostics": {
     "@context": "https://schema.org",
     "@graph": [
@@ -409,3 +411,23 @@ export const SERVICE_SCHEMA: Record<string, object> = {
     ]
   }
 };
+
+
+export const SERVICE_SCHEMA: Record<string, object> = Object.fromEntries(
+  Object.entries(BASE_SERVICE_SCHEMA).map(([slug, schema]) => {
+    const service = SERVICES.find((item) => item.slug === slug);
+    if (!service?.pageHeading) return [slug, schema];
+    return [slug, {
+      ...schema,
+      "@graph": schema["@graph"].map((node) => {
+        if (node["@type"] === "Service") {
+          return { ...node, name: service.pageHeading, serviceType: service.pageHeading, description: PAGE_SEO[slug]?.description ?? service.intro };
+        }
+        if ("itemListElement" in node) {
+          return { ...node, itemListElement: node.itemListElement.map((item) => item.position === 2 ? { ...item, name: service.pageHeading } : item) };
+        }
+        return node;
+      }),
+    }];
+  }),
+);

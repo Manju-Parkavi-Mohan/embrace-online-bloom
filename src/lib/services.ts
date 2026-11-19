@@ -1,3 +1,4 @@
+import { SEO_SERVICE_CONTENT, type ServiceContent } from "@/lib/service-content";
 import truckRepairImg from "@/assets/svc-2-truck-repair.jpg";
 import tuningSoftwareImg from "@/assets/svc-5-tuning-software.jpg";
 import toolsTradingImg from "@/assets/svc-6-tools-trading.jpg";
@@ -11,7 +12,7 @@ import trainingCardImg from "@/assets/service-card-training.png";
 import workshopCardImg from "@/assets/service-card-workshop.jpg";
 import fleetCardImg from "@/assets/service-card-fleet.jpg";
 
-export type Service = {
+export type Service = Partial<Pick<ServiceContent, "pageHeading" | "faqs" | "relatedSlugs">> & {
   slug: string;
   title: string;
   menuTitle?: string;
@@ -32,7 +33,7 @@ export type Service = {
   deliverables: string[];
 };
 
-export const SERVICES: Service[] = [
+const BASE_SERVICES: Service[] = [
   {
     slug: "commercial-heavy-vehicle-diagnostics",
     menuTitle: "Diagnosis & Troubleshooting",
@@ -323,5 +324,10 @@ export const SERVICES: Service[] = [
   },
 
 ];
+
+export const SERVICES: Service[] = BASE_SERVICES.map((service) => {
+  const content = SEO_SERVICE_CONTENT[service.slug];
+  return content ? { ...service, ...content, intro: content.overview[0] ?? service.intro } : service;
+});
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
