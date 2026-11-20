@@ -18,7 +18,7 @@ export default defineConfig(({ command }) => ({
       ? [
           process.env["NITRO_PRESET"] === "node-server"
             ? nitro({ preset: "node-server" })
-            : nitro({ preset: "cloudflare-module", output: { dir: "dist" } }),
+            : nitro({ preset: "cloudflare-module", output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" } }),
         ]
       : []),
     viteReact(),
