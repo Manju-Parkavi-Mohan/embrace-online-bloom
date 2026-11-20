@@ -11,7 +11,7 @@ export type ServiceContent = {
 // Inline phrases the SEO document marks bold inside paragraphs, per service page.
 export const SERVICE_BOLD_PHRASES: Record<string, string[]> = {
   "ecu-repair-reprogramming": ["ECU repair in Dubai & Sharjah", "ECU repair, diagnostics, and custom remapping in Dubai"],
-  "ecu-remapping-calibration": ["engine command unit repair in Dubai"],
+  "ecu-remapping-calibration": ["Exhaust Gas Recirculation (EGR), and DPFs"],
   "truck-repair-maintenance": ["heavy truck repair workshop", "heavy truck workshop", "truck service center", "truck garage", "heavy truck electrical faults", "construction equipment", "auto electrical repairs in Dubai"],
 };
 export const SEO_SERVICE_CONTENT: Record<string, ServiceContent> = {
