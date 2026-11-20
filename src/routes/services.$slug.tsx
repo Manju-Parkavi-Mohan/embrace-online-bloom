@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
+import { SERVICE_BOLD_PHRASES } from "@/lib/service-content";
 import { Contact } from "@/components/site/Contact";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -87,7 +88,7 @@ function ServicePage() {
                 {service.pageHeading ?? service.title}
               </h1>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}><BoldPhrases text={paragraph} slug={service.slug} /></p>)}
               </div>
 
               {service.sections ? (
@@ -100,7 +101,7 @@ function ServicePage() {
                           {section.heading}
                         </Heading>
                         <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                          {section.paragraphs.map((paragraph) => <ServiceParagraph key={paragraph} text={paragraph} />)}
+                          {section.paragraphs.map((paragraph) => <ServiceParagraph key={paragraph} text={paragraph} slug={service.slug} />)}
                         </div>
                       </section>
                     );
@@ -192,13 +193,21 @@ function ServicePage() {
 }
 
 // "Label: text" list items (optionally bulleted) render with a bold h5 lead-in followed by a colon.
-function ServiceParagraph({ text }: { text: string }) {
+function ServiceParagraph({ text, slug }: { text: string; slug: string }) {
   const match = /^(?:•\s*)?([^:.]{2,80}):\s+(.+)$/.exec(text);
-  if (!match) return <p>{text}</p>;
+  if (!match) return <p><BoldPhrases text={text} slug={slug} /></p>;
   return (
     <div>
       <h5 className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</h5>{" "}
-      <span>{match[2]}</span>
+      <span><BoldPhrases text={match[2] ?? ""} slug={slug} /></span>
     </div>
   );
+}
+
+function BoldPhrases({ text, slug }: { text: string; slug: string }) {
+  const phrases = SERVICE_BOLD_PHRASES[slug];
+  if (!phrases?.length) return <>{text}</>;
+  const escaped = [...phrases].sort((a, b) => b.length - a.length).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const parts = text.split(new RegExp(`(${escaped.join("|")})`, "gi"));
+  return <>{parts.map((part, i) => (i % 2 === 1 ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part))}</>;
 }

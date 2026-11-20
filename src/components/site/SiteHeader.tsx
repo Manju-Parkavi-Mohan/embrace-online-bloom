@@ -14,6 +14,7 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [menuSuppressed, setMenuSuppressed] = useState(false);
   const { pathname } = useLocation();
 
   /* Interior pages use the solid light header from the first viewport. */
@@ -83,18 +84,19 @@ export function SiteHeader() {
 
             if ("hasServicesMenu" in link && link.hasServicesMenu) {
               return (
-                <div key={link.href} className="group relative">
+                <div key={link.href} className="group relative" onMouseLeave={() => setMenuSuppressed(false)}>
                   <a href={link.href} className={cn(linkClass, "inline-flex items-center gap-1")}>
                     {link.label}
                     <ChevronDown className="size-3.5" aria-hidden="true" />
                   </a>
-                  <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className={cn("invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100", menuSuppressed && "!invisible !opacity-0")}>
                     <ul className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-lifted">
                       {MENU_SERVICES.map((service) => (
                         <li key={service.slug}>
                           <Link
                             to="/services/$slug"
                             params={{ slug: service.slug }}
+                            onClick={(e) => { e.currentTarget.blur(); setMenuSuppressed(true); }}
                             className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-surface hover:text-primary"
                           >
                              {service.menuTitle ?? service.title}
