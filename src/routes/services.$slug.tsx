@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
+import { Contact } from "@/components/site/Contact";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -99,7 +100,7 @@ function ServicePage() {
                           {section.heading}
                         </Heading>
                         <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                          {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                          {section.paragraphs.map((paragraph) => <ServiceParagraph key={paragraph} text={paragraph} />)}
                         </div>
                       </section>
                     );
@@ -158,12 +159,14 @@ function ServicePage() {
                   ))}
                 </ul>
                 <Button asChild variant="hero" className="mt-8 w-full">
-                  <a href="/contact">Request Consultation</a>
+                  <a href="#contact-form">Request Consultation</a>
                 </Button>
               </div>
             </Reveal>
           </div>
         </section>
+
+        <Contact animated={false} />
 
         <section className="bg-surface py-12 sm:py-16">
           <div className="section-shell">
@@ -184,6 +187,18 @@ function ServicePage() {
 
       <SiteFooter />
       <FloatingActions />
+    </div>
+  );
+}
+
+// "Label: text" list items (optionally bulleted) render with a bold h5 lead-in followed by a colon.
+function ServiceParagraph({ text }: { text: string }) {
+  const match = /^(?:•\s*)?([^:.]{2,80}):\s+(.+)$/.exec(text);
+  if (!match) return <p>{text}</p>;
+  return (
+    <div>
+      <h5 className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</h5>{" "}
+      <span>{match[2]}</span>
     </div>
   );
 }

@@ -19,18 +19,18 @@ export const SEO_SERVICE_CONTENT: Record<string, ServiceContent> = {
       {
         "heading": "How Our ECU Repair & Remapping Works",
         "paragraphs": [
-          "Diagnostics & File Backup. We run a full system scan and extract a secure backup of your original factory ECU software via OBD or bench connection.",
-          "Board Repair & Calibration. Our specialists fix damaged circuit components, clear corrupted data, and safely calibrate engine maps within strict mechanical limits.",
-          "Flashing & Live Testing. We write the verified software back to your ECU, validate checksums, and review live data logs to verify system operation."
+          "Diagnostics & File Backup: We run a full system scan and extract a secure backup of your original factory ECU software via OBD or bench connection.",
+          "Board Repair & Calibration: Our specialists fix damaged circuit components, clear corrupted data, and safely calibrate engine maps within strict mechanical limits.",
+          "Flashing & Live Testing: We write the verified software back to your ECU, validate checksums, and review live data logs to verify system operation."
         ]
       },
       {
         "heading": "Common Signs Your ECU Needs Attention",
         "paragraphs": [
-          "Persistent Check Engine Light. Warning codes that return immediately after clearing often point to internal ECU faults.",
-          "Limp Mode or Power Loss. Stalling, misfires, or sluggish acceleration happen when the ECU mismanages fuel or boost delivery.",
-          "No-Start Issues. Corrupted flash memory or damaged immobilizer circuits can stop your engine from starting.",
-          "High Fuel Consumption. Faulty internal sensor readings can force the engine to burn excess fuel"
+          "Persistent Check Engine Light: Warning codes that return immediately after clearing often point to internal ECU faults.",
+          "Limp Mode or Power Loss: Stalling, misfires, or sluggish acceleration happen when the ECU mismanages fuel or boost delivery.",
+          "No-Start Issues: Corrupted flash memory or damaged immobilizer circuits can stop your engine from starting.",
+          "High Fuel Consumption: Faulty internal sensor readings can force the engine to burn excess fuel"
         ]
       },
       {
@@ -71,9 +71,9 @@ export const SEO_SERVICE_CONTENT: Record<string, ServiceContent> = {
       {
         "heading": "Why Choose AutoDome?",
         "paragraphs": [
-          "Repair Over Replacement. We fix circuit-level faults and clone damaged units where repair is a suitable alternative to replacement.",
-          "Heavy-Duty Coverage. We support heavy-duty trucks and commercial fleets across the UAE. Contact us to confirm compatibility for other vehicles.",
-          "Tuned for UAE Conditions. Every calibration accounts for Dubai’s high temperatures and local fuel grades, with original-file backup and restoration where technically supported."
+          "Repair Over Replacement: We fix circuit-level faults and clone damaged units where repair is a suitable alternative to replacement.",
+          "Heavy-Duty Coverage: We support heavy-duty trucks and commercial fleets across the UAE. Contact us to confirm compatibility for other vehicles.",
+          "Tuned for UAE Conditions: Every calibration accounts for Dubai’s high temperatures and local fuel grades, with original-file backup and restoration where technically supported."
         ]
       }
     ],
