@@ -17,8 +17,8 @@ export function SiteFooter() {
               <span className="font-display text-xl font-bold tracking-tight">AUTODOME</span>
             </div>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              AutoDome is a trusted heavy truck service centre in Dubai, providing advanced diagnostics, ECU
-              programming, repair, remapping and electronic troubleshooting for commercial and heavy vehicles.
+              AutoDome is a trusted heavy truck service centre in UAE, providing advanced diagnostics, ECU programming,
+              repair, remapping and electronic troubleshooting for commercial and heavy vehicles.
             </p>
             <div className="mt-7 flex gap-3">
               {[
