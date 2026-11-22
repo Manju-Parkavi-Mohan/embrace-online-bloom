@@ -21,7 +21,15 @@ export function FloatingActions({ consultHref = "/contact" }: { consultHref?: st
 
   return (
     <>
-      <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
+      <div
+        className={cn(
+          "fixed right-5 z-40 flex flex-col items-end gap-3 transition-[bottom] duration-500 sm:right-8",
+          // keep the stack clear of the full-width consultation bar below lg
+          show
+            ? "bottom-[calc(5.25rem+env(safe-area-inset-bottom))] lg:bottom-8"
+            : "bottom-5 lg:bottom-8",
+        )}
+      >
         <a
           href={SITE.storefront.url}
           aria-label={`Shop at ${SITE.storefront.name}`}

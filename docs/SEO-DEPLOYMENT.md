@@ -29,9 +29,9 @@ pm2 status
 
 Preserve the real `.env`, PM2 configuration and SSL certificates. Do not copy source files into `public_html` and expect the contact form to run. If deploying a prebuilt ZIP instead, use a newly built package; the previous October ZIP does not contain these changes.
 
-## www → non-www redirect (VPS action required)
+## www → non-www redirect (applied on the VPS)
 
-On November 19, 2026, `https://www.autodome.ae/` returned HTTP 200 rather than redirecting. This repository cannot change your VPS Nginx configuration remotely.
+The redirect is live: `https://www.autodome.ae/` returns `301` with `Location: https://autodome.ae/`. The steps below are kept as reference in case the Nginx configuration is rebuilt.
 
 1. Run `sudo nginx -T` and locate the active AutoDome server blocks. Back up the configuration before editing.
 2. Keep the HTTPS application block listening for `autodome.ae` only, with its existing proxy settings.
