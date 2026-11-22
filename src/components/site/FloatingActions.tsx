@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-export function FloatingActions() {
+export function FloatingActions({ consultHref = "/contact" }: { consultHref?: string }) {
   const [show, setShow] = useState(false);
   const [showShop, setShowShop] = useState(false);
 
@@ -67,12 +67,12 @@ export function FloatingActions() {
 
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 z-30 border-t border-border bg-card/95 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md transition-transform duration-500 lg:hidden",
-          show ? "translate-y-0" : "translate-y-full",
+          "fixed inset-x-0 bottom-0 z-30 border-t border-border bg-card/95 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-md transition-transform duration-500 lg:inset-x-auto lg:bottom-8 lg:left-8 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none",
+          show ? "translate-y-0" : "translate-y-full lg:translate-y-[calc(100%+3rem)]",
         )}
       >
-        <Button asChild variant="hero" size="lg" className="w-full pr-20">
-          <a href="/contact">Request Consultation</a>
+        <Button asChild variant="hero" size="lg" className="w-full pr-20 shadow-lifted lg:w-auto lg:px-8">
+          <a href={consultHref}>Request Consultation</a>
         </Button>
       </div>
     </>

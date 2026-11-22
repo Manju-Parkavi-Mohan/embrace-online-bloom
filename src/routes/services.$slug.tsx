@@ -187,7 +187,7 @@ function ServicePage() {
       </main>
 
       <SiteFooter />
-      <FloatingActions />
+      <FloatingActions consultHref="#contact-form" />
     </div>
   );
 }

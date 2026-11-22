@@ -307,7 +307,7 @@ export function Contact({
         </Content>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <Content {...(animated ? { direction: "left" as const } : {})}>
+          <Content className="order-2 lg:order-none" {...(animated ? { direction: "left" as const } : {})}>
             <div className="space-y-8">
               <ul className="space-y-7">
                 <li className="flex gap-4">
@@ -409,7 +409,7 @@ export function Contact({
             </div>
           </Content>
 
-          <Content {...(animated ? { direction: "right" as const } : {})}>
+          <Content className="order-1 lg:order-none" {...(animated ? { direction: "right" as const } : {})}>
             <div id="contact-form" className="scroll-mt-24 rounded-3xl border border-border bg-card p-7 shadow-lifted sm:p-10">
               <ContactForm />
             </div>
