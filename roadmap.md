@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Add live ADL Automotive featured products below What's included on Truck Diagnostic Tools Trading, with working product and catalogue links; verify desktop and mobile.
 - [x] Apply the November SEO document to five service pages and homepage, preserving menus and URLs.
 - [x] Add visible service FAQs, contextual links and consistent service structured data (no new FAQ rich-result markup).
 - [x] Document the VPS www redirect; verify metadata, content, navigation and mobile layouts.

@@ -3,13 +3,13 @@ import { ArrowRight, Check } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
 import { SERVICE_BOLD_PHRASES } from "@/lib/service-content";
 import { Contact } from "@/components/site/Contact";
+import { FeaturedProducts } from "@/components/site/FeaturedProducts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -146,24 +146,52 @@ function ServicePage() {
               </div>
             </div>
 
-            <Reveal direction="right">
-              <div className="rounded-3xl border border-border bg-surface p-8 shadow-soft">
-                <p className="font-display text-lg font-bold text-foreground">What&apos;s included</p>
-                <ul className="mt-6 space-y-4">
-                  {service.deliverables.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                      <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-primary-soft text-primary">
-                        <Check className="size-3" aria-hidden="true" />
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild variant="hero" className="mt-8 w-full">
-                  <a href="#contact-form">Request Consultation</a>
-                </Button>
+            <div>
+              <div className="space-y-6">
+                <div className="rounded-3xl border border-border bg-surface p-8 shadow-soft">
+                  <p className="font-display text-lg font-bold text-foreground">What&apos;s included</p>
+                  <ul className="mt-6 space-y-4">
+                    {service.deliverables.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-primary-soft text-primary">
+                          <Check className="size-3" aria-hidden="true" />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild variant="hero" className="mt-8 w-full">
+                    <a href="#contact-form">Request Consultation</a>
+                  </Button>
+                </div>
+
+                {service.slug === "truck-diagnostic-tools-trading" ? (
+                  <section aria-labelledby="featured-store-products" className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6">
+                    <h2 id="featured-store-products" className="font-display text-lg font-bold text-foreground">
+                      Featured products
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      Buy professional diagnostic equipment online from ADL Automotive.
+                    </p>
+                    <div className="mt-5">
+                      <FeaturedProducts
+                        limit={4}
+                        className="grid-cols-1 sm:grid-cols-1 lg:grid-cols-1"
+                        eagerImages
+                        skeletonCount={1}
+                        animated={false}
+                      />
+                    </div>
+                    <Button asChild variant="outlineBrand" className="mt-5 w-full">
+                      <a href="https://adl.apaarr.com/products" target="_blank" rel="noopener noreferrer">
+                        Visit ADL Automotive Store
+                        <ArrowRight aria-hidden="true" />
+                      </a>
+                    </Button>
+                  </section>
+                ) : null}
               </div>
-            </Reveal>
+            </div>
           </div>
         </section>
 
