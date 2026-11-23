@@ -47,14 +47,16 @@ export const Route = createFileRoute("/services/$slug")({
       scripts: [
         {
           type: "application/ld+json",
-          children: JSON.stringify(SERVICE_SCHEMA[loaderData.service.slug] ?? {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: loaderData.service.title,
-            description,
-            url,
-            provider: { "@id": "https://autodome.ae/#business" },
-          }),
+          children: JSON.stringify(
+            SERVICE_SCHEMA[loaderData.service.slug] ?? {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: loaderData.service.title,
+              description,
+              url,
+              provider: { "@id": "https://autodome.ae/#business" },
+            },
+          ),
         },
       ],
     };
@@ -88,7 +90,11 @@ function ServicePage() {
                 {service.pageHeading ?? service.title}
               </h1>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {(service.overview ?? [service.body]).map((paragraph) => <p key={paragraph}><BoldPhrases text={paragraph} slug={service.slug} /></p>)}
+                {(service.overview ?? [service.body]).map((paragraph) => (
+                  <p key={paragraph}>
+                    <BoldPhrases text={paragraph} slug={service.slug} />
+                  </p>
+                ))}
               </div>
 
               {service.sections ? (
@@ -97,11 +103,19 @@ function ServicePage() {
                     const Heading = section.level === 3 ? "h3" : "h2";
                     return (
                       <section key={section.heading}>
-                        <Heading className={section.level === 3 ? "font-display text-xl font-bold text-foreground sm:text-2xl" : "font-display text-2xl font-bold text-foreground sm:text-3xl"}>
+                        <Heading
+                          className={
+                            section.level === 3
+                              ? "font-display text-xl font-bold text-foreground sm:text-2xl"
+                              : "font-display text-2xl font-bold text-foreground sm:text-3xl"
+                          }
+                        >
                           {section.heading}
                         </Heading>
                         <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                          {section.paragraphs.map((paragraph) => <ServiceParagraph key={paragraph} text={paragraph} slug={service.slug} />)}
+                          {section.paragraphs.map((paragraph) => (
+                            <ServiceParagraph key={paragraph} text={paragraph} slug={service.slug} />
+                          ))}
                         </div>
                       </section>
                     );
@@ -116,7 +130,18 @@ function ServicePage() {
                     {service.relatedSlugs.map((slug) => {
                       const related = getService(slug);
                       if (!related) return null;
-                      return <li key={slug}><Link to="/services/$slug" params={{ slug }} className="inline-flex items-center gap-2 text-primary underline underline-offset-4 hover:text-foreground">{related.menuTitle ?? related.title}<ArrowRight className="size-4 shrink-0" aria-hidden="true" /></Link></li>;
+                      return (
+                        <li key={slug}>
+                          <Link
+                            to="/services/$slug"
+                            params={{ slug }}
+                            className="inline-flex items-center gap-2 text-primary underline underline-offset-4 hover:text-foreground"
+                          >
+                            {related.menuTitle ?? related.title}
+                            <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      );
                     })}
                   </ul>
                 </nav>
@@ -124,12 +149,18 @@ function ServicePage() {
 
               {service.faqs?.length ? (
                 <section className="mt-10" aria-labelledby="service-faq-heading">
-                  <h2 id="service-faq-heading" className="font-display text-2xl font-bold text-foreground sm:text-3xl">Frequently Asked Questions</h2>
+                  <h2 id="service-faq-heading" className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+                    Frequently Asked Questions
+                  </h2>
                   <Accordion type="single" collapsible className="mt-4 w-full">
                     {service.faqs.map((faq, index) => (
                       <AccordionItem key={faq.q} value={`service-faq-${index}`}>
-                        <AccordionTrigger className="py-5 text-left font-display text-base font-semibold hover:text-primary hover:no-underline">{faq.q}</AccordionTrigger>
-                        <AccordionContent className="text-base leading-relaxed text-muted-foreground">{faq.a}</AccordionContent>
+                        <AccordionTrigger className="py-5 text-left font-display text-base font-semibold hover:text-primary hover:no-underline">
+                          {faq.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                          {faq.a}
+                        </AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>
@@ -170,19 +201,33 @@ function ServicePage() {
                     aria-labelledby="online-store-heading"
                     className="section-dark relative isolate overflow-hidden rounded-3xl border border-primary/30 p-5 shadow-lifted sm:p-6"
                   >
-                    <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 size-52 rounded-full bg-primary/25 blur-3xl" />
-                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-20 size-48 rounded-full bg-accent/10 blur-3xl" />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-20 -top-20 size-52 rounded-full bg-primary/25 blur-3xl"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -bottom-24 -left-20 size-48 rounded-full bg-accent/10 blur-3xl"
+                    />
 
                     <div className="relative">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className="font-display text-lg font-extrabold uppercase tracking-[0.12em] text-accent sm:text-xl">ADL Automotive</p>
-                          <h2 id="online-store-heading" className="mt-2 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-2xl">
+                          <p className="font-display text-lg font-extrabold uppercase tracking-[0.12em] text-accent sm:text-xl">
+                            ADL Automotive
+                          </p>
+                          <h2
+                            id="online-store-heading"
+                            className="mt-2 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-2xl"
+                          >
                             Our Online Store
                           </h2>
                         </div>
                         <span className="relative grid size-11 shrink-0 place-items-center">
-                          <span aria-hidden="true" className="bag-radiance pointer-events-none absolute -inset-3 rounded-[1.75rem]" />
+                          <span
+                            aria-hidden="true"
+                            className="bag-radiance pointer-events-none absolute -inset-3 rounded-[1.75rem]"
+                          />
                           <span className="bag-badge relative grid size-11 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-soft transition-transform duration-300 ease-out hover:scale-105">
                             <ShoppingBag className="bag-attention size-5" aria-hidden="true" />
                           </span>
@@ -194,12 +239,7 @@ function ServicePage() {
                       </p>
 
                       <div className="mt-5">
-                        <FeaturedProducts
-                          browsing
-                          eagerImages
-                          skeletonCount={1}
-                          animated={false}
-                        />
+                        <FeaturedProducts browsing eagerImages skeletonCount={1} animated={false} />
                       </div>
 
                       <Button asChild variant="accent" size="lg" className="mt-5 w-full">
@@ -208,7 +248,6 @@ function ServicePage() {
                           <ArrowUpRight aria-hidden="true" />
                         </a>
                       </Button>
-                      <p className="mt-3 text-center text-xs text-muted-foreground">Opens the ADL Automotive store in a new tab</p>
                     </div>
                   </section>
                 ) : null}
@@ -223,12 +262,16 @@ function ServicePage() {
           <div className="section-shell">
             <h2 className="font-display text-2xl font-bold sm:text-3xl">Other AutoDome services</h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-               {others.map((item) => (
+              {others.map((item) => (
                 <li key={item.slug}>
-                     <Link to="/services/$slug" params={{ slug: item.slug }} className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40">
-                       <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
-                       <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                     </Link>
+                  <Link
+                    to="/services/$slug"
+                    params={{ slug: item.slug }}
+                    className="flex h-full items-center justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40"
+                  >
+                    <span className="font-display text-sm font-bold text-foreground">{item.title}</span>
+                    <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -245,11 +288,18 @@ function ServicePage() {
 // "Label: text" list items (optionally bulleted) render with a bold h5 lead-in followed by a colon.
 function ServiceParagraph({ text, slug }: { text: string; slug: string }) {
   const match = /^(?:•\s*)?([^:.]{2,80}):\s+(.+)$/.exec(text);
-  if (!match) return <p><BoldPhrases text={text} slug={slug} /></p>;
+  if (!match)
+    return (
+      <p>
+        <BoldPhrases text={text} slug={slug} />
+      </p>
+    );
   return (
     <div>
       <h5 className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</h5>{" "}
-      <span><BoldPhrases text={match[2] ?? ""} slug={slug} /></span>
+      <span>
+        <BoldPhrases text={match[2] ?? ""} slug={slug} />
+      </span>
     </div>
   );
 }
@@ -259,5 +309,17 @@ function BoldPhrases({ text, slug }: { text: string; slug: string }) {
   if (!phrases?.length) return <>{text}</>;
   const escaped = [...phrases].sort((a, b) => b.length - a.length).map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const parts = text.split(new RegExp(`(${escaped.join("|")})`, "gi"));
-  return <>{parts.map((part, i) => (i % 2 === 1 ? <strong key={i} className="font-bold text-foreground">{part}</strong> : part))}</>;
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-bold text-foreground">
+            {part}
+          </strong>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
 }
