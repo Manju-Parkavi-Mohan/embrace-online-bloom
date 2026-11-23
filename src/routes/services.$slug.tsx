@@ -1,5 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ShoppingBag } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingActions } from "@/components/site/FloatingActions";
@@ -166,28 +166,59 @@ function ServicePage() {
                 </div>
 
                 {service.slug === "truck-diagnostic-tools-trading" ? (
-                  <section aria-labelledby="featured-store-products" className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6">
-                    <h2 id="featured-store-products" className="font-display text-lg font-bold text-foreground">
-                      Featured products
-                    </h2>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      Buy professional diagnostic equipment online from ADL Automotive.
-                    </p>
-                    <div className="mt-5">
-                      <FeaturedProducts
-                        limit={4}
-                        className="grid-cols-1 sm:grid-cols-1 lg:grid-cols-1"
-                        eagerImages
-                        skeletonCount={1}
-                        animated={false}
-                      />
+                  <section
+                    aria-labelledby="online-store-heading"
+                    className="section-dark relative isolate overflow-hidden rounded-3xl border border-primary/30 p-5 shadow-lifted sm:p-6"
+                  >
+                    <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 size-52 rounded-full bg-primary/25 blur-3xl" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-20 size-48 rounded-full bg-accent/10 blur-3xl" />
+
+                    <div className="relative">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent">ADL Automotive</p>
+                          <h2 id="online-store-heading" className="mt-2 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-2xl">
+                            Our Online Store
+                          </h2>
+                        </div>
+                        <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-soft">
+                          <ShoppingBag className="size-5" aria-hidden="true" />
+                        </span>
+                      </div>
+
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        Explore professional diagnostic tools and equipment, with live availability and direct online ordering.
+                      </p>
+
+                      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-y border-border py-3 text-xs font-semibold text-foreground">
+                        <span className="inline-flex items-center gap-1.5">
+                          <Check className="size-3.5 text-accent" aria-hidden="true" />
+                          Live availability
+                        </span>
+                        <span className="inline-flex items-center gap-1.5">
+                          <Check className="size-3.5 text-accent" aria-hidden="true" />
+                          Prices in AED
+                        </span>
+                      </div>
+
+                      <div className="mt-5">
+                        <FeaturedProducts
+                          limit={4}
+                          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-1"
+                          eagerImages
+                          skeletonCount={1}
+                          animated={false}
+                        />
+                      </div>
+
+                      <Button asChild variant="accent" size="lg" className="mt-5 w-full">
+                        <a href="https://adl.apaarr.com/products" target="_blank" rel="noopener noreferrer">
+                          Explore the ADL Store
+                          <ArrowUpRight aria-hidden="true" />
+                        </a>
+                      </Button>
+                      <p className="mt-3 text-center text-xs text-muted-foreground">Opens the ADL Automotive store in a new tab</p>
                     </div>
-                    <Button asChild variant="outlineBrand" className="mt-5 w-full">
-                      <a href="https://adl.apaarr.com/products" target="_blank" rel="noopener noreferrer">
-                        Visit ADL Automotive Store
-                        <ArrowRight aria-hidden="true" />
-                      </a>
-                    </Button>
                   </section>
                 ) : null}
               </div>
