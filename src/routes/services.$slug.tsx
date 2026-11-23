@@ -181,8 +181,11 @@ function ServicePage() {
                             Our Online Store
                           </h2>
                         </div>
-                        <span className="bag-badge grid size-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-soft transition-transform duration-300 ease-out hover:scale-105">
-                          <ShoppingBag className="bag-attention size-5" aria-hidden="true" />
+                        <span className="relative grid size-11 shrink-0 place-items-center">
+                          <span aria-hidden="true" className="bag-radiance pointer-events-none absolute -inset-3 rounded-[1.75rem]" />
+                          <span className="bag-badge relative grid size-11 place-items-center rounded-2xl bg-accent text-accent-foreground shadow-soft transition-transform duration-300 ease-out hover:scale-105">
+                            <ShoppingBag className="bag-attention size-5" aria-hidden="true" />
+                          </span>
                         </span>
                       </div>
 

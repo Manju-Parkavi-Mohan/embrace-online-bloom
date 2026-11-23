@@ -304,9 +304,34 @@
   animation: bag-badge-glow 4.5s ease-in-out infinite;
 }
 
+/* Radiance: a soft amber halo that breathes behind the store badge */
+@keyframes bag-radiance {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+}
+
+@utility bag-radiance {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-accent) 90%, transparent),
+    color-mix(in oklab, var(--color-accent) 40%, transparent) 62%,
+    transparent 82%
+  );
+  filter: blur(9px);
+  animation: bag-radiance 4.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bag-attention,
-  .bag-badge {
+  .bag-badge,
+  .bag-radiance {
     animation: none;
   }
 }
