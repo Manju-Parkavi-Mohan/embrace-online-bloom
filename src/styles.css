@@ -263,6 +263,54 @@
   }
 }
 
+/* Store badge: a brief, restrained sway so the shopping bag catches the eye, then rests */
+@keyframes bag-attention {
+  0%,
+  58%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  64% {
+    transform: rotate(-8deg) translateY(-2px);
+  }
+  71% {
+    transform: rotate(7deg) translateY(-3px);
+  }
+  78% {
+    transform: rotate(-4deg) translateY(-1px);
+  }
+  85% {
+    transform: rotate(2deg) translateY(0);
+  }
+}
+
+@keyframes bag-badge-glow {
+  0%,
+  58%,
+  100% {
+    box-shadow: var(--shadow-soft);
+  }
+  71% {
+    box-shadow: 0 0 22px oklch(0.756 0.156 66 / 0.55);
+  }
+}
+
+@utility bag-attention {
+  transform-origin: 50% 88%;
+  animation: bag-attention 4.5s var(--ease-premium) infinite;
+}
+
+@utility bag-badge {
+  animation: bag-badge-glow 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bag-attention,
+  .bag-badge {
+    animation: none;
+  }
+}
+
 @utility bg-hero-veil {
   background-image: var(--gradient-hero);
 }
