@@ -176,7 +176,7 @@ function ServicePage() {
                     <div className="relative">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent">ADL Automotive</p>
+                          <p className="font-display text-lg font-extrabold uppercase tracking-[0.12em] text-accent sm:text-xl">ADL Automotive</p>
                           <h2 id="online-store-heading" className="mt-2 font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-2xl">
                             Our Online Store
                           </h2>
@@ -187,19 +187,8 @@ function ServicePage() {
                       </div>
 
                       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        Explore professional diagnostic tools and equipment, with live availability and direct online ordering.
+                        Explore professional diagnostic tools and equipment with direct online ordering.
                       </p>
-
-                      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 border-y border-border py-3 text-xs font-semibold text-foreground">
-                        <span className="inline-flex items-center gap-1.5">
-                          <Check className="size-3.5 text-accent" aria-hidden="true" />
-                          Live availability
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <Check className="size-3.5 text-accent" aria-hidden="true" />
-                          Prices in AED
-                        </span>
-                      </div>
 
                       <div className="mt-5">
                         <FeaturedProducts
