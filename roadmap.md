@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Add compact mobile product swipe controls and a capped desktop vertical product feed; verified the live product plus six-product navigation on mobile and desktop.
+
 - [x] Add live ADL Automotive featured products below What's included on Truck Diagnostic Tools Trading, with working product and catalogue links; verify desktop and mobile.
 - [x] Apply the November SEO document to five service pages and homepage, preserving menus and URLs.
 - [x] Add visible service FAQs, contextual links and consistent service structured data (no new FAQ rich-result markup).

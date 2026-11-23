@@ -433,6 +433,44 @@
   scrollbar-width: none;
 }
 
+/* Product browsing stays horizontal on touch layouts and height-capped in the sidebar. */
+.store-product-track {
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.store-product-track::-webkit-scrollbar { display: none; }
+.store-product-track > .store-product-card {
+  flex: 0 0 86%;
+  height: auto;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.store-product-track > .store-product-card:only-child { flex-basis: 100%; }
+.store-scroll-fade {
+  background: linear-gradient(to bottom, transparent, var(--background));
+}
+@media (min-width: 1024px) {
+  .store-product-track {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--surface);
+    scrollbar-gutter: stable;
+    padding-right: 0.5rem;
+  }
+  .store-product-track::-webkit-scrollbar { display: block; width: 5px; }
+  .store-product-track::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; }
+  .store-product-track::-webkit-scrollbar-track { background: var(--surface); }
+}
+
 @keyframes marquee-scroll {
   from {
     transform: translateX(0);

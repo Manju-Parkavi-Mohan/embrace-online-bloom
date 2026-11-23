@@ -14,3 +14,4 @@ The shared Contact section supports disabling reveal animations; the dedicated C
 Service-page SEO content is composed from src/lib/service-content.ts over the base service data so search headings and long-form copy do not rename menus or homepage cards.
 Service structured data derives names and descriptions from the rendered service data and route metadata while preserving existing graph identifiers and coverage, preventing content/schema drift.
 Long-form service content and homepage body copy render without scroll-reveal wrappers because tall blocks may never meet proportional intersection thresholds.
+FeaturedProducts uses an opt-in browsing layout for the service sidebar: native horizontal scroll-snap below desktop and height-capped vertical scrolling on desktop, preserving the existing grid elsewhere.

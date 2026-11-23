@@ -146,7 +146,7 @@ function ServicePage() {
               </div>
             </div>
 
-            <div>
+            <div className="min-w-0">
               <div className="space-y-6">
                 <div className="rounded-3xl border border-border bg-surface p-8 shadow-soft">
                   <p className="font-display text-lg font-bold text-foreground">What&apos;s included</p>
@@ -195,8 +195,7 @@ function ServicePage() {
 
                       <div className="mt-5">
                         <FeaturedProducts
-                          limit={4}
-                          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-1"
+                          browsing
                           eagerImages
                           skeletonCount={1}
                           animated={false}
