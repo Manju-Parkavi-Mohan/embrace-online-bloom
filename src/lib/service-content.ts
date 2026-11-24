@@ -19,6 +19,8 @@ export const SERVICE_BOLD_PHRASES: Record<string, string[]> = {
     "Selective Catalytic Reduction (SCR/AdBlue)",
   ],
 };
+// Pages whose "Label: text" list items render the label as an h3 instead of h5.
+export const SERVICE_H3_LABEL_SLUGS = new Set(["truck-repair-maintenance"]);
 export const SEO_SERVICE_CONTENT: Record<string, ServiceContent> = {
   "ecu-repair-reprogramming": {
     pageHeading: "ECU Repair Dubai – Engine Control Module Unit Repair for Heavy Trucks",

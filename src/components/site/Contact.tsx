@@ -302,7 +302,7 @@ export function Contact({
             Contact
           </p>
           <Heading className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Request a technical consultation.
+            Request a Technical Consultation
           </Heading>
         </Content>
 

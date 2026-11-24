@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
-import { SERVICE_BOLD_PHRASES } from "@/lib/service-content";
+import { SERVICE_BOLD_PHRASES, SERVICE_H3_LABEL_SLUGS } from "@/lib/service-content";
 import { Contact } from "@/components/site/Contact";
 import { FeaturedProducts } from "@/components/site/FeaturedProducts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -294,9 +294,10 @@ function ServiceParagraph({ text, slug }: { text: string; slug: string }) {
         <BoldPhrases text={text} slug={slug} />
       </p>
     );
+  const Label = SERVICE_H3_LABEL_SLUGS.has(slug) ? "h3" : "h5";
   return (
     <div>
-      <h5 className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</h5>{" "}
+      <Label className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</Label>{" "}
       <span>
         <BoldPhrases text={match[2] ?? ""} slug={slug} />
       </span>

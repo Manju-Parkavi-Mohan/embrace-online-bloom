@@ -41,7 +41,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Quick links">
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Quick Links</h2>
+            <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Quick Links</p>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -54,7 +54,7 @@ export function SiteFooter() {
           </nav>
 
           <div>
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Services</h2>
+            <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Services</p>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/75">
               {SERVICES.map((service) => (
                 <li key={service.slug}>
@@ -71,7 +71,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Contact</h2>
+            <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">Contact</p>
             <ul className="mt-6 space-y-4 text-sm text-primary-foreground/75">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
@@ -96,9 +96,9 @@ export function SiteFooter() {
               </li>
             </ul>
 
-            <h2 className="mt-8 font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
+            <p className="mt-8 font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
               Business Hours
-            </h2>
+            </p>
             <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
               {SITE.hours.map((slot) => (
                 <li key={slot.days}>
