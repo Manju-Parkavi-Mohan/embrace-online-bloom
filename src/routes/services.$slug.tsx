@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SERVICES, getService } from "@/lib/services";
 import { PAGE_SEO } from "@/lib/seo";
 import { SERVICE_SCHEMA } from "@/lib/service-schema";
-import { SERVICE_BOLD_PHRASES, SERVICE_H3_LABEL_SLUGS } from "@/lib/service-content";
+import { SERVICE_BOLD_PHRASES } from "@/lib/service-content";
 import { Contact } from "@/components/site/Contact";
 import { FeaturedProducts } from "@/components/site/FeaturedProducts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -285,7 +285,7 @@ function ServicePage() {
   );
 }
 
-// "Label: text" list items (optionally bulleted) render with a bold h5 lead-in followed by a colon.
+// "Label: text" list items (optionally bulleted) render with a bold h3 lead-in followed by a colon.
 function ServiceParagraph({ text, slug }: { text: string; slug: string }) {
   const match = /^(?:•\s*)?([^:.]{2,80}):\s+(.+)$/.exec(text);
   if (!match)
@@ -294,7 +294,7 @@ function ServiceParagraph({ text, slug }: { text: string; slug: string }) {
         <BoldPhrases text={text} slug={slug} />
       </p>
     );
-  const Label = SERVICE_H3_LABEL_SLUGS.has(slug) ? "h3" : "h5";
+  const Label = "h3";
   return (
     <div>
       <Label className="inline font-display text-base font-bold text-foreground sm:text-lg">{match[1]}:</Label>{" "}
