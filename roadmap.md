@@ -35,3 +35,5 @@
 - [x] Replace hero JSON asset pointers with direct image files for Vercel deploys.
 - [x] Hide Inside AutoDome, point store links home, update service boxes with supplied text and photos, and pin the company map.
 - [x] Package and verify the 2026-11-22 VPS release: contact form on service pages, fixed consultation button in all views, mobile form-first order, and floating buttons clear of the bar.
+
+- [x] Package and verify the 2026-11-28 VPS release: sitewide H3 list lead-ins, footer titles as paragraphs, ADL store browsing layout; all eight pages, sitemap, robots, contact landing and mobile layouts checked.
